@@ -15,7 +15,7 @@
 
 ## 🌐 公開サイト
 
-https://[username].github.io/tokyo-gensai-labo/
+https://hdmg2004-ux.github.io/tokyo-gensai-labo/
 
 ## 📄 ライセンス
 
