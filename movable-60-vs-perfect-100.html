@@ -433,58 +433,58 @@
     
     <!-- 目次メニュー -->
     <div class="toc-menu" id="tocMenu">
-        <div class="toc-item" onclick="scrollToPage('page1')">
+        <div class="toc-item" data-page="page1">
             <div class="toc-title">表紙</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page2')">
+        <div class="toc-item" data-page="page2">
             <div class="toc-title">第1部: 研修としての成功</div>
             <div class="toc-subtitle">推奨度9.25/10のA評価</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page3')">
+        <div class="toc-item" data-page="page3">
             <div class="toc-title">成長の実証データ</div>
             <div class="toc-subtitle">知識+69%、自信+89%</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page4')">
+        <div class="toc-item" data-page="page4">
             <div class="toc-title">第2部: 実践の壁</div>
             <div class="toc-subtitle">実践率2.5/10のC評価</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page5')">
+        <div class="toc-item" data-page="page5">
             <div class="toc-title">なぜC評価なのか？</div>
             <div class="toc-subtitle">70%ギャップの正体</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page6')">
+        <div class="toc-item" data-page="page6">
             <div class="toc-title">なぜ実践できないのか？</div>
             <div class="toc-subtitle">問題の本質</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page7')">
+        <div class="toc-item" data-page="page7">
             <div class="toc-title">昭和的無目的根性主義</div>
             <div class="toc-subtitle">三大症状</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page8')">
+        <div class="toc-item" data-page="page8">
             <div class="toc-title">第3部: 「減じる」減災の実践</div>
             <div class="toc-subtitle">今の災害対策を減じる</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page9')">
+        <div class="toc-item" data-page="page9">
             <div class="toc-title">デカルト的方法序説の実践</div>
             <div class="toc-subtitle">4つの規則</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page10')">
+        <div class="toc-item" data-page="page10">
             <div class="toc-title">「減じる」の具体例</div>
             <div class="toc-subtitle">パレートの法則</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page11')">
+        <div class="toc-item" data-page="page11">
             <div class="toc-title">60点合格主義</div>
             <div class="toc-subtitle">完璧主義からの解放</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page12')">
+        <div class="toc-item" data-page="page12">
             <div class="toc-title">2026年への挑戦</div>
             <div class="toc-subtitle">実証と普及</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page13')">
+        <div class="toc-item" data-page="page13">
             <div class="toc-title">意識改革とデカルト</div>
             <div class="toc-subtitle">まとめ</div>
         </div>
-        <div class="toc-item" onclick="scrollToPage('page14')">
+        <div class="toc-item" data-page="page14">
             <div class="toc-title">関連資料</div>
         </div>
     </div>
@@ -1279,21 +1279,44 @@
         
         function scrollToPage(pageId) {
             const element = document.getElementById(pageId);
+            const menu = document.getElementById('tocMenu');
+            
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                toggleTOC(); // 目次を閉じる
+                // メニューを閉じる
+                menu.classList.remove('show');
+                
+                // スクロール実行
+                setTimeout(function() {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
             }
         }
         
-        // 目次外クリックで閉じる
-        document.addEventListener('click', function(e) {
-            const menu = document.getElementById('tocMenu');
-            const button = document.querySelector('.toc-button');
-            if (menu.classList.contains('show') && 
-                !menu.contains(e.target) && 
-                !button.contains(e.target)) {
-                menu.classList.remove('show');
-            }
+        // DOMロード後に初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 目次アイテムにイベントリスナーを追加
+            const tocItems = document.querySelectorAll('.toc-item');
+            tocItems.forEach(function(item) {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const pageId = this.getAttribute('data-page');
+                    if (pageId) {
+                        scrollToPage(pageId);
+                    }
+                });
+            });
+            
+            // 目次外クリックで閉じる
+            document.addEventListener('click', function(e) {
+                const menu = document.getElementById('tocMenu');
+                const button = document.querySelector('.toc-button');
+                
+                if (menu.classList.contains('show') && 
+                    !menu.contains(e.target) && 
+                    !button.contains(e.target)) {
+                    menu.classList.remove('show');
+                }
+            });
         });
     </script>
 </body>
