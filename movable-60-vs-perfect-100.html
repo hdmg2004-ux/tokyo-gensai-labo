@@ -433,58 +433,58 @@
     
     <!-- 目次メニュー -->
     <div class="toc-menu" id="tocMenu">
-        <div class="toc-item" data-page="page1">
+        <div class="toc-item" onclick="jumpToPage('page1')">
             <div class="toc-title">表紙</div>
         </div>
-        <div class="toc-item" data-page="page2">
+        <div class="toc-item" onclick="jumpToPage('page2')">
             <div class="toc-title">第1部: 研修としての成功</div>
             <div class="toc-subtitle">推奨度9.25/10のA評価</div>
         </div>
-        <div class="toc-item" data-page="page3">
+        <div class="toc-item" onclick="jumpToPage('page3')">
             <div class="toc-title">成長の実証データ</div>
             <div class="toc-subtitle">知識+69%、自信+89%</div>
         </div>
-        <div class="toc-item" data-page="page4">
+        <div class="toc-item" onclick="jumpToPage('page4')">
             <div class="toc-title">第2部: 実践の壁</div>
             <div class="toc-subtitle">実践率2.5/10のC評価</div>
         </div>
-        <div class="toc-item" data-page="page5">
+        <div class="toc-item" onclick="jumpToPage('page5')">
             <div class="toc-title">なぜC評価なのか？</div>
             <div class="toc-subtitle">70%ギャップの正体</div>
         </div>
-        <div class="toc-item" data-page="page6">
+        <div class="toc-item" onclick="jumpToPage('page6')">
             <div class="toc-title">なぜ実践できないのか？</div>
             <div class="toc-subtitle">問題の本質</div>
         </div>
-        <div class="toc-item" data-page="page7">
+        <div class="toc-item" onclick="jumpToPage('page7')">
             <div class="toc-title">昭和的無目的根性主義</div>
             <div class="toc-subtitle">三大症状</div>
         </div>
-        <div class="toc-item" data-page="page8">
+        <div class="toc-item" onclick="jumpToPage('page8')">
             <div class="toc-title">第3部: 「減じる」減災の実践</div>
             <div class="toc-subtitle">今の災害対策を減じる</div>
         </div>
-        <div class="toc-item" data-page="page9">
+        <div class="toc-item" onclick="jumpToPage('page9')">
             <div class="toc-title">デカルト的方法序説の実践</div>
             <div class="toc-subtitle">4つの規則</div>
         </div>
-        <div class="toc-item" data-page="page10">
+        <div class="toc-item" onclick="jumpToPage('page10')">
             <div class="toc-title">「減じる」の具体例</div>
             <div class="toc-subtitle">パレートの法則</div>
         </div>
-        <div class="toc-item" data-page="page11">
+        <div class="toc-item" onclick="jumpToPage('page11')">
             <div class="toc-title">60点合格主義</div>
             <div class="toc-subtitle">完璧主義からの解放</div>
         </div>
-        <div class="toc-item" data-page="page12">
+        <div class="toc-item" onclick="jumpToPage('page12')">
             <div class="toc-title">2026年への挑戦</div>
             <div class="toc-subtitle">実証と普及</div>
         </div>
-        <div class="toc-item" data-page="page13">
+        <div class="toc-item" onclick="jumpToPage('page13')">
             <div class="toc-title">意識改革とデカルト</div>
             <div class="toc-subtitle">まとめ</div>
         </div>
-        <div class="toc-item" data-page="page14">
+        <div class="toc-item" onclick="jumpToPage('page14')">
             <div class="toc-title">関連資料</div>
         </div>
     </div>
@@ -1271,52 +1271,61 @@
             if (e.key === 'ArrowRight') changePage(1);
         });
         
-        // 目次機能
+        // 目次機能（シンプル版）
         function toggleTOC() {
             const menu = document.getElementById('tocMenu');
             menu.classList.toggle('show');
+            console.log('TOC toggled, show:', menu.classList.contains('show'));
         }
         
-        function scrollToPage(pageId) {
+        function jumpToPage(pageId) {
+            console.log('jumpToPage called with:', pageId);
+            
+            // 目次を閉じる
+            document.getElementById('tocMenu').classList.remove('show');
+            
+            // ページに移動
             const element = document.getElementById(pageId);
-            const menu = document.getElementById('tocMenu');
+            console.log('Found element:', element);
             
             if (element) {
-                // メニューを閉じる
-                menu.classList.remove('show');
+                // エレメントの位置を取得
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - 20; // 20px上部余白
+                
+                console.log('Scrolling to position:', offsetPosition);
                 
                 // スクロール実行
-                setTimeout(function() {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                console.log('Scroll executed for', pageId);
+            } else {
+                console.log('ERROR: Element not found:', pageId);
             }
+            
+            // イベント伝播を停止
+            if (typeof event !== 'undefined') {
+                event.stopPropagation();
+            }
+            
+            return false;
         }
         
-        // DOMロード後に初期化
-        document.addEventListener('DOMContentLoaded', function() {
-            // 目次アイテムにイベントリスナーを追加
-            const tocItems = document.querySelectorAll('.toc-item');
-            tocItems.forEach(function(item) {
-                item.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const pageId = this.getAttribute('data-page');
-                    if (pageId) {
-                        scrollToPage(pageId);
-                    }
-                });
-            });
+        // 目次外クリックで閉じる
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('tocMenu');
+            const button = document.querySelector('.toc-button');
             
-            // 目次外クリックで閉じる
-            document.addEventListener('click', function(e) {
-                const menu = document.getElementById('tocMenu');
-                const button = document.querySelector('.toc-button');
-                
-                if (menu.classList.contains('show') && 
-                    !menu.contains(e.target) && 
-                    !button.contains(e.target)) {
-                    menu.classList.remove('show');
-                }
-            });
+            if (!menu || !button) return;
+            
+            if (menu.classList.contains('show') && 
+                !menu.contains(e.target) && 
+                e.target !== button) {
+                menu.classList.remove('show');
+            }
         });
     </script>
 </body>
