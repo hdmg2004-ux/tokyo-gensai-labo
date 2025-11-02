@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動ける60点 > 動けない100点 | 東京医療減災Labo</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="推奨度9.25/10の研修が実践率2.5/10になる理由と解決策。パレートの法則で昭和的無目的根性主義から解放される。東京医療減災Labo 2025年版。">
+    <meta name="keywords" content="災害対応,減災,パレート,デカルト,実践,研修効果,完璧主義,中島康,東京医療減災Labo">
+    <meta name="author" content="中島康">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="動ける60点 > 動けない100点">
+    <meta property="og:description" content="今の災害対策を減じる「減災対策」。推奨度9.25、実践率2.5の70%ギャップを解消する。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="東京医療減災Labo">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="動ける60点 > 動けない100点">
+    <meta name="twitter:description" content="今の災害対策を減じる「減災対策」。70%ギャップの正体と解決策。">
+    
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .serif {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'MS Mincho', serif;
+        }
+        
+        .saigai-red {
+            color: #dc143c;
+            font-weight: bold;
+        }
+        
+        .book-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .page {
+            min-height: 100vh;
+            padding: 45px 60px 120px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background: white;
+        }
+        
+        .cover {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+            align-items: center;
+        }
+        
+        .cover h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+        }
+        
+        .cover .gt {
+            font-size: 2.5em;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .cover .subtitle {
+            font-size: 1.3em;
+            margin: 30px 0;
+            opacity: 0.9;
+        }
+        
+        .cover .tagline {
+            font-size: 1.1em;
+            margin: 20px 0;
+            opacity: 0.8;
+        }
+        
+        .cover .version {
+            font-size: 0.9em;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+        
+        .content-page {
+            background: #fafafa;
+        }
+        
+        .page-title {
+            font-size: 2.2em;
+            color: #2a5298;
+            margin-bottom: 30px;
+            font-weight: 300;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 15px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #2a5298;
+            margin: 30px 0 20px 0;
+            font-weight: bold;
+        }
+        
+        .text-block {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.9;
+        }
+        
+        .highlight-box {
+            background: white;
+            border-left: 6px solid #2a5298;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .highlight-box.warning {
+            border-left-color: #dc143c;
+        }
+        
+        .highlight-box.success {
+            border-left-color: #4caf50;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            color: #2a5298;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-number.bad {
+            color: #dc143c;
+        }
+        
+        .stat-label {
+            font-size: 1em;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .comparison-table {
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #2a5298;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .list-item {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .list-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .list-item.cross:before {
+            content: "✗";
+            color: #dc143c;
+        }
+        
+        .arrow-down {
+            text-align: center;
+            font-size: 2em;
+            color: #2a5298;
+            margin: 20px 0;
+        }
+        
+        .example-box {
+            background: #fff;
+            border: 2px solid #2a5298;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .example-title {
+            font-size: 1.2em;
+            color: #2a5298;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(42, 82, 152, 0.95);
+            padding: 15px 30px;
+            border-radius: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        .nav-button {
+            background: white;
+            color: #2a5298;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .nav-button:hover {
+            background: #ffd700;
+            transform: scale(1.05);
+        }
+        
+        .nav-button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        .page-indicator {
+            color: white;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .book-container {
+                box-shadow: none;
+                max-width: none;
+            }
+            
+            .page {
+                page-break-after: always;
+                min-height: auto;
+                padding: 40px;
+            }
+            
+            .navigation {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page {
+                padding: 30px 25px 100px 25px;
+            }
+            
+            .cover h1 {
+                font-size: 2em;
+            }
+            
+            .cover .gt {
+                font-size: 1.8em;
+            }
+            
+            .page-title {
+                font-size: 1.8em;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <!-- P1: 表紙 -->
+        <div class="page cover" id="page1">
+            <h1>動ける60点</h1>
+            <div class="gt">&gt;</div>
+            <h1>動けない100点</h1>
+            <div class="subtitle">今の<span class="saigai-red">災</span>害対策を減じる「減<span class="saigai-red">災</span>対策」</div>
+            <div class="tagline">推奨度9.25/10の研修が<br>実践率2.5/10になる理由と、その解決策</div>
+            <div class="version">東京医療減<span class="saigai-red">災</span>Labo<br>2025年版 理論+初期実証編</div>
+        </div>
+
+        <!-- P2: 研修としての成功 -->
+        <div class="page content-page" id="page2">
+            <h2 class="page-title">第1部: 研修としての成功（A評価）</h2>
+            
+            <div class="text-block">
+                東京医療減<span class="saigai-red">災</span>Laboの<span class="saigai-red">災</span>害対応力向上研修は、<strong>参加者の成長</strong>という観点では圧倒的な成功を収めています。
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">9.25</span>
+                    <div class="stat-label">推奨度<br>/10点満点</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+69%</span>
+                    <div class="stat-label">知識向上</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+89%</span>
+                    <div class="stat-label">自信度向上</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">95%</span>
+                    <div class="stat-label">メタ認知達成<br><span style="font-size: 0.8em; font-weight: normal;">（複数視点の体験による<br>視野拡大の自覚）</span></div>
+                </div>
+            </div>
+            
+            <div class="highlight-box success">
+                <strong>研修プログラムとしての評価: A (95点)</strong>
+                <div style="margin-top: 15px;">
+                    <div class="list-item">2025年7月〜10月、5回実施で得られた実証データ</div>
+                    <div class="list-item">初学者から上級者まで、幅広い層が成長を実感</div>
+                    <div class="list-item">参加者全員が「自分の認知の癖」に気づく体験</div>
+                </div>
+            </div>
+            
+            <div class="text-block">
+                参加者からは「他の視点を学べた」「実践的な訓練方法がわかった」「五感で学ぶ体験が新鮮だった」といった高評価の声が寄せられています。
+            </div>
+        </div>
+
+        <!-- P3: データビジュアライゼーション -->
+        <div class="page content-page" id="page3">
+            <h2 class="page-title">成長の実証データ</h2>
+            
+            <div class="section-title">5回の研修で確認された一貫した成長</div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th>測定項目</th>
+                        <th>研修前</th>
+                        <th>研修後</th>
+                        <th>向上率</th>
+                    </tr>
+                    <tr>
+                        <td>知識レベル（10点満点）</td>
+                        <td>3.83点</td>
+                        <td>6.48点</td>
+                        <td><strong>+69%</strong></td>
+                    </tr>
+                    <tr>
+                        <td>自信度（10点満点）</td>
+                        <td>3.45点</td>
+                        <td>6.52点</td>
+                        <td><strong>+89%</strong></td>
+                    </tr>
+                    <tr>
+                        <td>推奨度（10点満点）</td>
+                        <td>─</td>
+                        <td>9.25点</td>
+                        <td>─</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- P4: 問題提起 -->
+        <div class="page content-page" id="page4">
+            <h2 class="page-title">第2部: 実践の壁（C評価）</h2>
+            
+            <div class="text-block">
+                しかし、研修から1ヶ月後の追跡調査で、<strong class="saigai-red">残酷な現実</strong>が明らかになりました。
+            </div>
+            
+            <div class="highlight-box warning">
+                <h3 style="font-size: 1.5em; margin-bottom: 20px;">研修1ヶ月後の現実</h3>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">8.27</span>
+                        <div class="stat-label">意欲<br>「やりたい」</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number bad">2.5</span>
+                        <div class="stat-label">実践<br>「できた」</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <div style="font-size: 2.5em; color: #dc143c; font-weight: bold;">ギャップ: -5.77点</div>
+                    <div style="font-size: 1.3em; margin-top: 10px;">= 70%の未達成率</div>
+                </div>
+            </div>
+            
+            <div class="text-block">
+                障害要因として挙げられたのは:
+            </div>
+            
+            <div class="example-box">
+                <div class="list-item">時間不足: 68%</div>
+                <div class="list-item">他業務優先: 27%</div>
+                <div class="list-item">機会不足: 27%</div>
+            </div>
+            
+            <div class="text-block">
+                一見、「忙しい」が原因に見えます。しかし、<strong>本当の原因は何でしょうか？</strong>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; color: #2a5298; font-size: 1.2em;">
+                → 次ページで、教育効果の評価基準から考えます
+            </div>
+        </div>
+
+        <!-- P5: 教育効果の4段階評価 -->
+        <div class="page content-page" id="page5">
+            <h2 class="page-title">なぜ C評価なのか？</h2>
+            
+            <div class="text-block">
+                教育効果を正しく評価するためには、<strong>Kirkpatrickモデル（1959）</strong>という4段階の評価基準を用います。
+            </div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th style="width: 25%;">レベル</th>
+                        <th style="width: 35%;">評価内容</th>
+                        <th style="width: 20%;">HDMGが実施する<br>研修訓練</th>
+                        <th style="width: 20%;">評価</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Level 1</strong><br>反応</td>
+                        <td>研修は良かったか？</td>
+                        <td>推奨度<br>9.25/10</td>
+                        <td style="color: #4caf50;"><strong>A評価<br>(95点)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Level 2</strong><br>学習</td>
+                        <td>知識・スキルは<br>向上したか？</td>
+                        <td>知識+69%<br>自信+89%</td>
+                        <td style="color: #4caf50;"><strong>A評価<br>(95点)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Level 3</strong><br>行動</td>
+                        <td>職場で実践<br>しているか？</td>
+                        <td>実践率<br>2.5/10</td>
+                        <td style="color: #dc143c;"><strong>D評価<br>(25点)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Level 4</strong><br>結果</td>
+                        <td>組織の成果に<br>繋がったか？</td>
+                        <td>未測定</td>
+                        <td>評価不能</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="highlight-box warning">
+                <strong>総合評価の計算:</strong>
+                <div style="margin-top: 15px; font-size: 1.1em;">
+                    (95 + 95 + 25) ÷ 3 = <strong style="font-size: 1.5em; color: #dc143c;">71.6点</strong>
+                </div>
+                <div style="margin-top: 15px;">
+                    教育システムとしては <strong>C評価（約70点）</strong>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <strong>研修業界の現実:</strong>
+                <div style="margin-top: 10px;">
+                    <div class="list-item">Level 1-2だけ測定: 90%の研修</div>
+                    <div class="list-item">Level 3まで測定: 5%の研修</div>
+                    <div class="list-item">Level 4まで測定: 1%未満</div>
+                </div>
+                <div class="text-block" style="margin-top: 15px;">
+                    つまり、ほとんどの研修は「参加者の満足度」しか測っていません。HDMGが実施する研修訓練は、Level 3（行動変容）まで測定し、その結果を<strong>正直に開示</strong>しています。
+                </div>
+            </div>
+        </div>
+
+        <!-- P6: なぜ実践できないのか -->
+        <div class="page content-page" id="page6">
+            <h2 class="page-title">なぜ実践できないのか？</h2>
+            
+            <div class="text-block">
+                「時間不足68%」という回答。しかし、本当に時間がないのでしょうか？
+            </div>
+            
+            <div class="highlight-box warning">
+                <h3 style="font-size: 1.3em; margin-bottom: 15px;">問題の本質</h3>
+                <div class="text-block">
+                    時間がないのではなく、<strong class="saigai-red">無駄な努力で時間が奪われている</strong>
+                </div>
+            </div>
+            
+            <div class="section-title">無駄な努力とは何か？</div>
+            
+            <div class="example-box">
+                <div class="example-title">パターン1: 二重基準</div>
+                <div class="text-block">
+                    「60点で合格なのに、満点を目指せ」<br>
+                    → パレートの法則では、80%の努力が無駄
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">パターン2: 手段の目的化</div>
+                <div class="text-block">
+                    「エクセルを埋めることが目的」<br>
+                    → 情報分析ではなく、作業になっている
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">パターン3: 昭和的無目的根性主義</div>
+                <div class="text-block">
+                    「頑張れば何とかなる」<br>
+                    → システム改善ではなく、個人の努力に依存
+                </div>
+            </div>
+            
+            <div class="arrow-down">↓</div>
+            
+            <div class="highlight-box warning">
+                <div style="text-align: center; font-size: 1.3em;">
+                    <strong>結果: 本来の仕事に使える時間がない</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- P7: 無駄な努力の正体 -->
+        <div class="page content-page" id="page7">
+            <h2 class="page-title">昭和的無目的根性主義の三大症状</h2>
+            
+            <div class="section-title">症状1: 二重基準の蔓延</div>
+            
+            <div class="highlight-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 200px; padding: 10px;">
+                        <div style="font-size: 1.1em; margin-bottom: 10px;">建前:</div>
+                        <div style="font-size: 1.3em; color: #dc143c;">「満点を目指せ」</div>
+                    </div>
+                    <div style="font-size: 2em;">vs</div>
+                    <div style="flex: 1; min-width: 200px; padding: 10px;">
+                        <div style="font-size: 1.1em; margin-bottom: 10px;">現実:</div>
+                        <div style="font-size: 1.3em; color: #4caf50;">「60点で合格」</div>
+                    </div>
+                </div>
+                <div class="text-block" style="margin-top: 20px;">
+                    40点分の努力が、誰のためにもならない「無駄」になる
+                </div>
+            </div>
+            
+            <div class="section-title">症状2: 手段の目的化</div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th>本来の目的</th>
+                        <th>現実の行動</th>
+                        <th>結果</th>
+                    </tr>
+                    <tr>
+                        <td>情報を分析する</td>
+                        <td>エクセルを埋める</td>
+                        <td>作業で終わる</td>
+                    </tr>
+                    <tr>
+                        <td>計画を実行する</td>
+                        <td>計画書を完璧にする</td>
+                        <td>実行されない</td>
+                    </tr>
+                    <tr>
+                        <td><span class="saigai-red">災</span>害に備える</td>
+                        <td>マニュアルを整備する</td>
+                        <td>読まれない</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section-title">症状3: 個人努力への過度な依存</div>
+            
+            <div class="example-box">
+                <div class="text-block">
+                    <strong>「時間がないなら、早く来て残業すればいい」</strong>
+                </div>
+                <div class="arrow-down">↓</div>
+                <div class="text-block">
+                    システムの問題を、個人の根性で解決しようとする<br>
+                    → 持続不可能、燃え尽き症候群
+                </div>
+            </div>
+        </div>
+
+        <!-- P8: パレートの法則 -->
+        <div class="page content-page" id="page8">
+            <h2 class="page-title">第3部: 「減じる」減<span class="saigai-red">災</span>の実践</h2>
+            
+            <div class="section-title">パレートの法則（80/20）</div>
+            
+            <div class="highlight-box">
+                <div style="text-align: center; font-size: 1.3em; margin-bottom: 20px;">
+                    <strong>80%の成果は、20%の努力から生まれる</strong>
+                </div>
+                <div class="text-block">
+                    イタリアの経済学者ヴィルフレド・パレート（1848-1923）が発見した法則。ビジネス、生産性、時間管理など、あらゆる分野で実証されています。
+                </div>
+            </div>
+            
+            <div class="section-title"><span class="saigai-red">災</span>害対応への適用</div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>従来の発想</th>
+                        <th>パレート適用後</th>
+                    </tr>
+                    <tr>
+                        <td><strong>平時</strong></td>
+                        <td style="color: #dc143c;">100%の完璧を目指す<br>→ 時間がない</td>
+                        <td style="color: #4caf50;">60-80%で十分<br>→ 実践できる</td>
+                    </tr>
+                    <tr>
+                        <td><strong>有事</strong></td>
+                        <td style="color: #dc143c;">完璧な計画を求める<br>→ 混乱</td>
+                        <td style="color: #4caf50;">そこそこの準備で動く<br>→ 対応可能</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="highlight-box success">
+                <div style="text-align: center; font-size: 1.5em; margin: 20px 0;">
+                    <strong>「減じる」ことで、備える時間が生まれる</strong>
+                </div>
+            </div>
+            
+            <div class="text-block">
+                これが「減<span class="saigai-red">災</span>」の二重の意味です:
+            </div>
+            
+            <div class="example-box">
+                <div class="list-item">1. <span class="saigai-red">災</span>害の被害を減らす（従来の意味）</div>
+                <div class="list-item">2. 無駄な努力を減らす（新しい意味）</div>
+            </div>
+        </div>
+
+        <!-- P9: デカルト的方法序説 -->
+        <div class="page content-page" id="page9">
+            <h2 class="page-title">デカルト的方法序説の実践</h2>
+            
+            <div class="highlight-box">
+                <div style="font-style: italic; font-size: 1.2em; margin-bottom: 15px;">
+                    「複雑な問題は、最も単純な要素に分解せよ」
+                </div>
+                <div style="text-align: right;">
+                    ― ルネ・デカルト『方法序説』（1637）
+                </div>
+            </div>
+            
+            <div class="section-title"><span class="saigai-red">災</span>害対応への適用</div>
+            
+            <div class="example-box">
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div>
+                        <div style="background: #fafafa; padding: 15px; border-radius: 5px;">
+                            <strong>従来:</strong> <span class="saigai-red">災</span>害別の複雑な計画書
+                            <div style="font-size: 0.9em; color: #666; margin-top: 5px;">
+                                地震対応マニュアル、火<span class="saigai-red">災</span>対応マニュアル、水害対応マニュアル...
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow-down">↓ デカルト的分解</div>
+                    
+                    <div>
+                        <div style="background: #e8f5e9; padding: 15px; border-radius: 5px;">
+                            <strong>中島メソッド:</strong> 3つの不足への対応
+                            <div style="margin-top: 10px;">
+                                <div class="list-item">1. 人手の不足 → 業務仕分け</div>
+                                <div class="list-item">2. モノの不足 → 代替手段</div>
+                                <div class="list-item">3. 情報の不足 → アクションカード</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="arrow-down">↓</div>
+                    
+                    <div>
+                        <div style="background: #e3f2fd; padding: 15px; border-radius: 5px; text-align: center;">
+                            <strong>結果: シンプルにすることで、実践可能になる</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-block" style="margin-top: 30px;">
+                この「3つの不足」理論が、中島康が20年の実践から辿り着いたBCPの本質です。複雑な<span class="saigai-red">災</span>害も、本質は同じ。だから、複雑な計画書は不要なのです。
+            </div>
+        </div>
+
+        <!-- P10: 「減じる」の具体例 -->
+        <div class="page content-page" id="page10">
+            <h2 class="page-title">「減じる」の具体例</h2>
+            
+            <div class="section-title">事例1: <span class="saigai-red">災</span>害対策計画書</div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th style="width: 20%;">従来</th>
+                        <th style="width: 20%;">→</th>
+                        <th style="width: 30%;">中島メソッド</th>
+                        <th style="width: 30%;">結果</th>
+                    </tr>
+                    <tr>
+                        <td>500ページの<br>計画書</td>
+                        <td style="text-align: center;">減じる</td>
+                        <td>アクションカード<br>1枚</td>
+                        <td style="color: #4caf50;">誰でも使える</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section-title">事例2: 訓練企画</div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th style="width: 20%;">従来</th>
+                        <th style="width: 20%;">→</th>
+                        <th style="width: 30%;">中島メソッド</th>
+                        <th style="width: 30%;">結果</th>
+                    </tr>
+                    <tr>
+                        <td>半日かけて<br>全員集合の訓練</td>
+                        <td style="text-align: center;">減じる</td>
+                        <td>5分間、3人で<br>減<span class="saigai-red">災</span>カレンダー</td>
+                        <td style="color: #4caf50;">継続できる</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section-title">事例3: 情報管理</div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th style="width: 20%;">従来</th>
+                        <th style="width: 20%;">→</th>
+                        <th style="width: 30%;">中島メソッド</th>
+                        <th style="width: 30%;">結果</th>
+                    </tr>
+                    <tr>
+                        <td>エクセル50項目の<br>報告書</td>
+                        <td style="text-align: center;">減じる</td>
+                        <td>3段階評価<br>(◎○△)</td>
+                        <td style="color: #4caf50;">本質に集中できる</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="highlight-box success" style="margin-top: 40px;">
+                <div style="text-align: center; font-size: 1.3em;">
+                    <strong>結果: 時間が生まれる → 実践できる</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- P11: 60点合格主義 -->
+        <div class="page content-page" id="page11">
+            <h2 class="page-title">60点合格主義</h2>
+            
+            <div class="section-title">なぜ60点で十分なのか？</div>
+            
+            <div class="highlight-box">
+                <div style="text-align: center; font-size: 1.5em; margin-bottom: 20px;">
+                    <strong>「動ける60点」&gt;「動けない100点」</strong>
+                </div>
+                <div class="text-block">
+                    <span class="saigai-red">災</span>害対応の本質は、<strong>完璧な計画を立てること</strong>ではなく、<strong>実際に動けること</strong>です。
+                </div>
+            </div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th>100点を目指す</th>
+                        <th>60点で動く</th>
+                    </tr>
+                    <tr>
+                        <td style="color: #dc143c;">
+                            • 完璧な計画を求める<br>
+                            • 時間がかかりすぎる<br>
+                            • 実行に移せない<br>
+                            • いざという時に動けない
+                        </td>
+                        <td style="color: #4caf50;">
+                            • そこそこの準備で動く<br>
+                            • 短時間で実践できる<br>
+                            • 改善しながら進める<br>
+                            • いざという時に対応できる
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section-title">具体例</div>
+            
+            <div class="example-box">
+                <div class="example-title">アクションカード</div>
+                <div class="text-block">
+                    80%の完成度でOK → 使いながら改善する
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">訓練</div>
+                <div class="text-block">
+                    失敗してもOK（学びが目的）→ 訓練企画10原則 原則4
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">計画書</div>
+                <div class="text-block">
+                    6割できたら使ってみる → 訓練企画10原則 原則8
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 30px;">
+                <div style="font-style: italic; font-size: 1.1em;">
+                    「一度で完成させようとしない」<br>
+                    「つまずいた訓練は流さない。停止して改善し、繰り返す」
+                </div>
+                <div style="text-align: right; margin-top: 10px;">
+                    ― 訓練企画10原則より
+                </div>
+            </div>
+        </div>
+
+        <!-- P12: 2026年への挑戦 -->
+        <div class="page content-page" id="page12">
+            <h2 class="page-title">2026年への挑戦</h2>
+            
+            <div class="section-title">実践支援システム1.0</div>
+            
+            <div class="text-block">
+                70%の実践ギャップを埋めるために、2026年から新しい支援システムを開発します。
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">Phase 1: 無駄な努力の可視化</div>
+                <div class="list-item">現状の業務分析</div>
+                <div class="list-item">パレート分析（20%の重要業務を特定）</div>
+                <div class="list-item">80%の無駄な努力を「減じる」提案</div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">Phase 2: 実践時間の創出</div>
+                <div class="list-item">「やめること」リストの作成</div>
+                <div class="list-item">上司への説得シナリオ</div>
+                <div class="list-item">組織的支援の獲得</div>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">Phase 3: 60点実践の伴走</div>
+                <div class="list-item">完璧を目指さない勇気</div>
+                <div class="list-item">小さな成功の積み重ね</div>
+                <div class="list-item">卒業生コミュニティ</div>
+            </div>
+            
+            <div class="highlight-box success" style="margin-top: 30px;">
+                <div style="text-align: center; font-size: 1.3em;">
+                    <strong>「減じる」ことで、実践の時間が生まれる</strong>
+                </div>
+            </div>
+            
+            <div class="text-block" style="margin-top: 30px;">
+                これは研修2.0ではなく、「実践支援システム1.0」の開発です。研修で学ぶことと、職場で実践することの間にある断絶を、組織的に埋めていきます。
+            </div>
+        </div>
+
+        <!-- P13: ビジョン -->
+        <div class="page content-page" id="page13">
+            <h2 class="page-title">意識改革とデカルト</h2>
+            
+            <div class="section-title">このプロジェクトの真の目的</div>
+            
+            <div class="highlight-box">
+                <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.1em; margin-bottom: 10px;">表層</div>
+                        <div style="font-size: 1.3em;"><span class="saigai-red">災</span>害対応力の向上</div>
+                    </div>
+                    <div style="font-size: 2em;">↓</div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.1em; margin-bottom: 10px;">本質</div>
+                        <div style="font-size: 1.3em; color: #2a5298;"><strong>昭和的無目的根性主義からの解放</strong></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-title">ご縁を持った方への贈り物</div>
+            
+            <div class="example-box">
+                <div class="list-item">60点で合格する勇気</div>
+                <div class="list-item">無駄な努力を減じる知恵</div>
+                <div class="list-item">デカルト的方法序説の実践</div>
+                <div class="list-item">完璧主義からの解放</div>
+            </div>
+            
+            <div class="section-title">「減<span class="saigai-red">災</span>」の二重の意味</div>
+            
+            <div class="comparison-table">
+                <table>
+                    <tr>
+                        <th>従来の意味</th>
+                        <th>新しい意味</th>
+                    </tr>
+                    <tr>
+                        <td>1. <span class="saigai-red">災</span>害の被害を減らす</td>
+                        <td>2. 無駄な努力を減らす</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="text-block" style="margin-top: 30px;">
+                どちらも本質は同じです。「減じること」で、「備える」時間とエネルギーが生まれる。
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 40px; text-align: center;">
+                <div style="font-size: 1.8em; margin-bottom: 15px;">
+                    <strong>動ける60点 &gt; 動けない100点</strong>
+                </div>
+                <div style="font-size: 1.2em;">
+                    これが、次の10年の合言葉です
+                </div>
+            </div>
+        </div>
+
+        <!-- P14: 奥付 -->
+        <div class="page cover" id="page14">
+            <h2 style="font-size: 2em; margin-bottom: 30px;">関連資料</h2>
+            
+            <div style="text-align: left; max-width: 600px; margin: 0 auto 40px;">
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">理念編 (Why)</div>
+                    <a href="philosophy.html" style="color: #ffd700; text-decoration: none;">
+                        → <span class="saigai-red">災</span>害対応力向上研修 哲学五箇条
+                    </a>
+                </div>
+                
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">実践編 (How)</div>
+                    <a href="principles.html" style="color: #ffd700; text-decoration: none;">
+                        → 訓練企画10原則
+                    </a>
+                </div>
+                
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">体系全体</div>
+                    <a href="index.html" style="color: #ffd700; text-decoration: none;">
+                        → 東京医療減<span class="saigai-red">災</span>Labo 実践知の体系
+                    </a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 30px; margin-top: 40px;">
+                <div style="font-size: 1.5em; margin-bottom: 20px;">東京医療減<span class="saigai-red">災</span>Labo</div>
+                <div style="font-size: 1em; opacity: 0.9; margin: 10px 0;">
+                    「有事に備え、平時に鍛える<br>
+                    机上の空論から実践の知恵へ<br>
+                    五感で学ぶ減<span class="saigai-red">災</span>対策」
+                </div>
+                <div style="margin-top: 30px; font-size: 0.9em;">
+                    2025年版 理論+初期実証編<br>
+                    2026年版で「実践支援システム1.0」を追加予定
+                </div>
+                <div style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+                    ©HDMG2004 2025<br>
+                    CC BY-NC-SA 4.0
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="mailto:tbk_gensai_labo@tmhp.jp" style="color: #ffd700; text-decoration: none;">
+                        tbk_gensai_labo@tmhp.jp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ナビゲーション -->
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="changePage(-1)">◀ 前へ</button>
+        <span class="page-indicator"><span id="currentPage">1</span> / 14</span>
+        <button class="nav-button" id="nextBtn" onclick="changePage(1)">次へ ▶</button>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 14;
+
+        function showPage(pageNum) {
+            // すべてのページを非表示
+            for (let i = 1; i <= totalPages; i++) {
+                document.getElementById('page' + i).style.display = 'none';
+            }
+            
+            // 指定ページを表示
+            document.getElementById('page' + pageNum).style.display = 'flex';
+            
+            // ページ番号更新
+            document.getElementById('currentPage').textContent = pageNum;
+            
+            // ボタンの有効/無効
+            document.getElementById('prevBtn').disabled = (pageNum === 1);
+            document.getElementById('nextBtn').disabled = (pageNum === totalPages);
+            
+            // ページトップへスクロール
+            window.scrollTo(0, 0);
+        }
+
+        function changePage(direction) {
+            currentPage += direction;
+            if (currentPage < 1) currentPage = 1;
+            if (currentPage > totalPages) currentPage = totalPages;
+            showPage(currentPage);
+        }
+
+        // 初期表示
+        showPage(1);
+
+        // キーボード操作
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changePage(-1);
+            if (e.key === 'ArrowRight') changePage(1);
+        });
+    </script>
+</body>
+</html>
