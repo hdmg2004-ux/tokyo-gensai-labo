@@ -1279,7 +1279,8 @@
         }
         
         function jumpToPage(pageId) {
-            console.log('jumpToPage called with:', pageId);
+            console.log('=== jumpToPage Debug ===');
+            console.log('pageId:', pageId);
             
             // 目次を閉じる
             document.getElementById('tocMenu').classList.remove('show');
@@ -1289,11 +1290,23 @@
             console.log('Found element:', element);
             
             if (element) {
-                // エレメントの位置を取得
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - 20; // 20px上部余白
+                // デバッグ情報
+                const rect = element.getBoundingClientRect();
+                console.log('getBoundingClientRect():', {
+                    top: rect.top,
+                    bottom: rect.bottom,
+                    left: rect.left,
+                    right: rect.right,
+                    height: rect.height
+                });
+                console.log('window.pageYOffset:', window.pageYOffset);
+                console.log('document.documentElement.scrollTop:', document.documentElement.scrollTop);
                 
-                console.log('Scrolling to position:', offsetPosition);
+                // エレメントの絶対位置を取得
+                const elementPosition = rect.top;
+                const offsetPosition = elementPosition + window.pageYOffset - 20;
+                
+                console.log('Calculated offsetPosition:', offsetPosition);
                 
                 // スクロール実行
                 window.scrollTo({
@@ -1301,7 +1314,7 @@
                     behavior: 'smooth'
                 });
                 
-                console.log('Scroll executed for', pageId);
+                console.log('Scroll command sent');
             } else {
                 console.log('ERROR: Element not found:', pageId);
             }
