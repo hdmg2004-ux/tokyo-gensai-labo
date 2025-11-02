@@ -298,6 +298,86 @@
             font-size: 0.9em;
         }
         
+        .toc-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(42, 82, 152, 0.9);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 2000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        
+        .toc-button:hover {
+            background: rgba(42, 82, 152, 1);
+            transform: scale(1.05);
+        }
+        
+        .toc-menu {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            padding: 20px;
+            z-index: 1999;
+            max-width: 350px;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .toc-menu.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .toc-item {
+            padding: 12px 15px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-left: 4px solid #2a5298;
+        }
+        
+        .toc-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+        
+        .toc-title {
+            font-weight: bold;
+            color: #2a5298;
+            font-size: 0.95em;
+        }
+        
+        .toc-subtitle {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 3px;
+        }
+        
         @media print {
             body {
                 background: white;
@@ -348,6 +428,67 @@
     </style>
 </head>
 <body>
+    <!-- 目次ボタン -->
+    <button class="toc-button" onclick="toggleTOC()">📖 目次</button>
+    
+    <!-- 目次メニュー -->
+    <div class="toc-menu" id="tocMenu">
+        <div class="toc-item" onclick="scrollToPage('page1')">
+            <div class="toc-title">表紙</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page2')">
+            <div class="toc-title">第1部: 研修としての成功</div>
+            <div class="toc-subtitle">推奨度9.25/10のA評価</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page3')">
+            <div class="toc-title">成長の実証データ</div>
+            <div class="toc-subtitle">知識+69%、自信+89%</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page4')">
+            <div class="toc-title">第2部: 実践の壁</div>
+            <div class="toc-subtitle">実践率2.5/10のC評価</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page5')">
+            <div class="toc-title">なぜC評価なのか？</div>
+            <div class="toc-subtitle">70%ギャップの正体</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page6')">
+            <div class="toc-title">なぜ実践できないのか？</div>
+            <div class="toc-subtitle">問題の本質</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page7')">
+            <div class="toc-title">昭和的無目的根性主義</div>
+            <div class="toc-subtitle">三大症状</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page8')">
+            <div class="toc-title">第3部: 「減じる」減災の実践</div>
+            <div class="toc-subtitle">今の災害対策を減じる</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page9')">
+            <div class="toc-title">デカルト的方法序説の実践</div>
+            <div class="toc-subtitle">4つの規則</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page10')">
+            <div class="toc-title">「減じる」の具体例</div>
+            <div class="toc-subtitle">パレートの法則</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page11')">
+            <div class="toc-title">60点合格主義</div>
+            <div class="toc-subtitle">完璧主義からの解放</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page12')">
+            <div class="toc-title">2026年への挑戦</div>
+            <div class="toc-subtitle">実証と普及</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page13')">
+            <div class="toc-title">意識改革とデカルト</div>
+            <div class="toc-subtitle">まとめ</div>
+        </div>
+        <div class="toc-item" onclick="scrollToPage('page14')">
+            <div class="toc-title">関連資料</div>
+        </div>
+    </div>
+    
     <div class="book-container">
         <!-- P1: 表紙 -->
         <div class="page cover" id="page1">
@@ -1037,6 +1178,28 @@
                 </div>
             </div>
             
+            <!-- 実践相談 -->
+            <div style="margin: 40px auto; padding: 25px; background: rgba(255,215,0,0.15); border: 2px solid rgba(255,215,0,0.3); border-radius: 10px; max-width: 600px; text-align: left;">
+                <div style="font-weight: bold; margin-bottom: 15px; color: #ffd700; font-size: 1.2em;">💬 実践で困ったら</div>
+                <p style="margin: 15px 0; line-height: 1.7; opacity: 0.95;">
+                    理論を読んだ後、実際の現場で「どう進めればいいか分からない」「うちの施設では難しい」と悩んだら、<br>
+                    <strong style="color: #ffd700;">「減災対策支援の輪」のAIチャット</strong>で相談できます。
+                </p>
+                <p style="margin: 15px 0; font-size: 0.9em; opacity: 0.85;">
+                    2022年からの「よろず相談会」記録をNotebookLM AIが参照。職員の安全確保からインフラ障害対応、患者ケアの継続、訓練方法、備蓄管理まで、幅広い実践的助言を提供します。
+                </p>
+                <div style="text-align: center; margin: 25px 0;">
+                    <a href="https://astonishing-aardvark-1ba.notion.site/2155aa623f878074a8dade82fd467a1c" 
+                       target="_blank"
+                       style="display: inline-block; background: #ffd700; color: #1e3c72; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.05em; box-shadow: 0 4px 15px rgba(255,215,0,0.3);">
+                        よろず相談会へ →
+                    </a>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.85em; opacity: 0.8; text-align: center;">
+                    ※ アクセスにはGoogleアカウントが必要です（限定公開）
+                </p>
+            </div>
+            
             <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 30px; margin-top: 40px;">
                 <div style="font-size: 1.5em; margin-bottom: 20px;">東京医療減<span class="saigai-red">災</span>Labo</div>
                 <div style="font-size: 1em; opacity: 0.9; margin: 10px 0;">
@@ -1106,6 +1269,31 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowLeft') changePage(-1);
             if (e.key === 'ArrowRight') changePage(1);
+        });
+        
+        // 目次機能
+        function toggleTOC() {
+            const menu = document.getElementById('tocMenu');
+            menu.classList.toggle('show');
+        }
+        
+        function scrollToPage(pageId) {
+            const element = document.getElementById(pageId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                toggleTOC(); // 目次を閉じる
+            }
+        }
+        
+        // 目次外クリックで閉じる
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('tocMenu');
+            const button = document.querySelector('.toc-button');
+            if (menu.classList.contains('show') && 
+                !menu.contains(e.target) && 
+                !button.contains(e.target)) {
+                menu.classList.remove('show');
+            }
         });
     </script>
 </body>
