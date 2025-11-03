@@ -22,11 +22,17 @@
     <meta name="twitter:title" content="訓練企画10原則">
     <meta name="twitter:description" content="従来の常識を覆す10の原則。失敗から学ぶ訓練の作り方。">
     
+    <meta name="robots" content="index, follow">
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
@@ -37,8 +43,13 @@
             padding: 20px;
         }
         
+        .saigai-red {
+            color: #dc143c;
+            font-weight: bold;
+        }
+        
         .book-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: white;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
@@ -48,7 +59,7 @@
         
         .page {
             min-height: 100vh;
-            padding: 60px;
+            padding: 45px 60px 120px 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -60,6 +71,7 @@
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
             text-align: center;
+            align-items: center;
         }
         
         .cover h1 {
@@ -73,21 +85,47 @@
             font-size: 1.3em;
             margin-bottom: 40px;
             opacity: 0.9;
+            line-height: 1.6;
         }
         
         .cover .tagline {
             font-size: 1.1em;
             margin-top: 60px;
             opacity: 0.8;
+            line-height: 1.6;
         }
         
-        .principle-page {
+        .content-page {
             background: #fafafa;
         }
         
-        .principle-number {
-            font-size: 1.2em;
+        .page-title {
+            font-size: 2.2em;
             color: #2a5298;
+            margin-bottom: 30px;
+            font-weight: 300;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 15px;
+        }
+        
+        .principle-number {
+            font-size: 1.5em;
+            color: #2a5298;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(42, 82, 152, 0.1);
+            border-radius: 8px;
+        }
+        
+        .principle-tag {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -102,21 +140,13 @@
             border: 3px solid #2a5298;
             border-radius: 10px;
             text-align: center;
-            min-height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
-        .principle-tag {
-            display: inline-block;
-            background: #ffd700;
+        .text-block {
+            font-size: 1.1em;
             color: #333;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            line-height: 1.9;
         }
         
         .comparison-box {
@@ -165,11 +195,6 @@
             line-height: 1.6;
         }
         
-        .principle-content {
-            max-width: 650px;
-            margin: 0 auto;
-        }
-        
         .quote-box {
             background: #ffd700;
             padding: 25px;
@@ -205,84 +230,29 @@
             line-height: 1.8;
         }
         
-        .detail-box ul {
-            margin: 15px 0;
-            padding-left: 25px;
-        }
-        
-        .detail-box li {
-            color: #444;
-            margin: 10px 0;
-            line-height: 1.8;
-        }
-        
-        .page-number {
-            position: absolute;
-            bottom: 30px;
-            right: 40px;
-            color: #999;
-            font-size: 0.9em;
-        }
-        
-        .navigation {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(42, 82, 152, 0.9);
-            padding: 15px 30px;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            z-index: 1000;
-        }
-        
-        .nav-btn {
+        .highlight-box {
             background: white;
-            color: #2a5298;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.95em;
-            font-weight: bold;
-            transition: all 0.3s;
+            border-left: 6px solid #2a5298;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        .nav-btn:hover:not(:disabled) {
-            background: #ffd700;
-            transform: translateY(-2px);
-        }
-        
-        .nav-btn:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-        
-        .hidden {
-            display: none !important;
-        }
-        
-        .saigai-red {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        
+        /* 目次ボタン */
         .toc-button {
             position: fixed;
-            top: 30px;
+            bottom: 30px;
             right: 30px;
             background: rgba(42, 82, 152, 0.9);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
+            padding: 15px 25px;
+            border-radius: 50px;
             cursor: pointer;
-            font-size: 0.95em;
+            font-size: 1em;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             z-index: 1000;
             transition: all 0.3s;
         }
@@ -290,23 +260,24 @@
         .toc-button:hover {
             background: #ffd700;
             color: #333;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
         }
         
+        /* 目次メニュー */
         .toc-menu {
             position: fixed;
-            top: 80px;
+            bottom: 90px;
             right: 30px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
             max-width: 350px;
             max-height: 70vh;
             overflow-y: auto;
             z-index: 999;
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translateY(20px);
             pointer-events: none;
             transition: all 0.3s;
         }
@@ -314,118 +285,101 @@
         .toc-menu.show {
             opacity: 1;
             transform: translateY(0);
-            pointer-events: all;
+            pointer-events: auto;
+        }
+        
+        .toc-header {
+            background: #2a5298;
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 15px 15px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .toc-content {
+            padding: 10px;
         }
         
         .toc-item {
-            padding: 12px;
+            padding: 12px 15px;
             margin: 5px 0;
-            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
-            border-left: 3px solid #2a5298;
+            border-radius: 8px;
+            transition: all 0.2s;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            border-left: 3px solid transparent;
         }
         
         .toc-item:hover {
-            background: #e3f2fd;
+            background: #f0f4f8;
+            border-left-color: #2a5298;
             transform: translateX(5px);
         }
         
-        .toc-number {
-            color: #2a5298;
+        .toc-item.major {
             font-weight: bold;
-            font-size: 0.9em;
+            color: #2a5298;
+            margin-top: 10px;
         }
         
-        .toc-title {
-            color: #333;
-            margin-top: 5px;
-            font-size: 0.95em;
-        }
-        
+        /* レスポンシブ */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
             }
             
             .page {
-                padding: 30px;
-                min-height: 90vh;
+                padding: 30px 25px 100px 25px;
+                min-height: auto;
+            }
+            
+            .cover h1 {
+                font-size: 2em;
+            }
+            
+            .cover .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .page-title {
+                font-size: 1.6em;
             }
             
             .principle-title {
-                font-size: 1.8em;
+                font-size: 1.6em;
                 padding: 20px;
             }
             
+            .text-block {
+                font-size: 1em;
+            }
+            
             .toc-button {
-                top: 15px;
-                right: 15px;
-                padding: 10px 20px;
-                font-size: 0.85em;
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.9em;
             }
             
             .toc-menu {
-                top: 60px;
-                right: 15px;
-                left: 15px;
+                bottom: 70px;
+                right: 20px;
+                left: 20px;
                 max-width: none;
             }
         }
     </style>
 </head>
 <body>
-    <button class="toc-button" onclick="toggleTOC()">目次 ▼</button>
-    
-    <div class="toc-menu" id="tocMenu">
-        <div class="toc-item" onclick="goToPage(0)">
-            <div class="toc-title">表紙</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(1)">
-            <div class="toc-number">原則 1</div>
-            <div class="toc-title">失敗から学ぶ</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(3)">
-            <div class="toc-number">原則 2</div>
-            <div class="toc-title">6〜8割の完成度で使う</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(5)">
-            <div class="toc-number">原則 3</div>
-            <div class="toc-title">3ない訓練</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(7)">
-            <div class="toc-number">原則 4</div>
-            <div class="toc-title">目的の明確化</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(9)">
-            <div class="toc-number">原則 5</div>
-            <div class="toc-title">Doから始めるPDCAサイクル</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(11)">
-            <div class="toc-number">原則 6</div>
-            <div class="toc-title">訓練しながら計画を考える</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(13)">
-            <div class="toc-number">原則 7</div>
-            <div class="toc-title">3回の出だし訓練</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(15)">
-            <div class="toc-number">原則 8</div>
-            <div class="toc-title">アクション・カードで具体化</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(17)">
-            <div class="toc-number">原則 9</div>
-            <div class="toc-title">前向きに終わる訓練</div>
-        </div>
-        <div class="toc-item" onclick="goToPage(19)">
-            <div class="toc-number">原則 10</div>
-            <div class="toc-title">記録を残し、仲間を増やす</div>
-        </div>
-    </div>
-
     <div class="book-container">
-        <!-- 表紙 -->
-        <div class="page cover" data-page="0">
+        <!-- カバー -->
+        <div class="page cover" id="cover">
             <h1>訓練企画10原則</h1>
             <div class="subtitle">失敗から学び、現場で育てる<br>実効性ある訓練の作り方</div>
             <div style="margin: 60px 0;">
@@ -438,494 +392,434 @@
             </div>
         </div>
 
-        <!-- 原則1：失敗から学ぶ -->
-        <div class="page principle-page hidden" data-page="1">
+        <!-- 原則1 -->
+        <div class="page content-page" id="principle1">
             <div class="principle-number">原則 1</div>
             <div class="principle-tag">学習の本質</div>
-            <div class="principle-title">
-                失敗から学ぶ
-            </div>
-            <div class="page-number">原則1 | 1</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="2">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">訓練では成功を体験する</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">失敗から学び、組織のシステムを評価する</div>
-                    </div>
+            <div class="principle-title">失敗から学ぶ</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">訓練では成功を体験する</div>
                 </div>
-                
-                <div class="quote-box">
-                    成人は失敗からしか学べない。<br>
-                    うまく失敗させる、<br>
-                    嫌にならない程度の失敗を提供する
-                </div>
-                
-                <div class="detail-box">
-                    <h3>失敗体験の設計</h3>
-                    <p>失敗体験はできればしたくない。しかし、成人学習において、失敗は最も強力な学習機会となる。訓練企画者の役割は、「安全な環境で失敗できる場」を作ることだ。</p>
-                    <p>もう一つ重要なのは、訓練参加者の立ち位置を「訓練を受ける人」から「組織のシステムの評価者」に変化させることだ。失敗を通じて、組織の仕組みそのものを見直す視点を養う。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">失敗から学び、組織のシステムを評価する</div>
                 </div>
             </div>
-            <div class="page-number">原則1 | 2</div>
+            
+            <div class="quote-box">
+                成人は失敗からしか学べない。<br>
+                うまく失敗させる、<br>
+                嫌にならない程度の失敗を提供する
+            </div>
+            
+            <div class="detail-box">
+                <h3>失敗体験の設計</h3>
+                <p>失敗体験はできればしたくない。しかし、成人学習において、失敗は最も強力な学習機会となる。訓練企画者の役割は、「安全な環境で失敗できる場」を作ることだ。</p>
+                <p>もう一つ重要なのは、訓練参加者の立ち位置を「訓練を受ける人」から「組織のシステムの評価者」に変化させることだ。失敗を通じて、組織の仕組みそのものを見直す視点を養う。</p>
+            </div>
         </div>
 
-        <!-- 原則2：6〜8割の完成度で使う -->
-        <div class="page principle-page hidden" data-page="3">
+        <!-- 原則2 -->
+        <div class="page content-page" id="principle2">
             <div class="principle-number">原則 2</div>
             <div class="principle-tag">実用主義</div>
-            <div class="principle-title">
-                6〜8割の完成度で使う
-            </div>
-            <div class="page-number">原則2 | 3</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="4">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">完璧に作り込んでから使う</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">6〜8割の完成度で使い、現場で育てる</div>
-                    </div>
+            <div class="principle-title">6〜8割の完成度で使う</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">完璧に作り込んでから使う</div>
                 </div>
-                
-                <div class="quote-box">
-                    使ってみないとわからない。<br>
-                    早く使って、早く直す
-                </div>
-                
-                <div class="detail-box">
-                    <h3>完璧主義からの脱却</h3>
-                    <p>完璧を目指すと、使う前に力尽きる。6〜8割の完成度で使い始めることで、実際の課題が見えてくる。理論上の完璧さより、現場で使える実用性を優先する。</p>
-                    <p>「使いながら改善する」という文化が、組織の適応力を高める。最初から完璧を求めないことで、心理的ハードルが下がり、多くの人が参加しやすくなる。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">6〜8割の完成度で使い、現場で育てる</div>
                 </div>
             </div>
-            <div class="page-number">原則2 | 4</div>
+            
+            <div class="quote-box">
+                使ってみないとわからない。<br>
+                早く使って、早く直す
+            </div>
+            
+            <div class="detail-box">
+                <h3>完璧主義からの脱却</h3>
+                <p>完璧を目指すと、使う前に力尽きる。6〜8割の完成度で使い始めることで、実際の課題が見えてくる。理論上の完璧さより、現場で使える実用性を優先する。</p>
+                <p>「使いながら改善する」という文化が、組織の適応力を高める。最初から完璧を求めないことで、心理的ハードルが下がり、多くの人が参加しやすくなる。</p>
+            </div>
         </div>
 
-        <!-- 原則3：3ない訓練 -->
-        <div class="page principle-page hidden" data-page="5">
+        <!-- 原則3 -->
+        <div class="page content-page" id="principle3">
             <div class="principle-number">原則 3</div>
             <div class="principle-tag">ハードルを下げる</div>
-            <div class="principle-title">
-                3ない訓練
-            </div>
-            <div class="page-number">原則3 | 5</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="6">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">多くの人を集め、長時間かけて、評価する</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">人を集めない、時間をかけない、評価しない</div>
-                    </div>
+            <div class="principle-title">3ない訓練</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">多くの人を集め、長時間かけて、評価する</div>
                 </div>
-                
-                <div class="quote-box">
-                    訓練のハードルを下げることで、<br>
-                    継続的な改善サイクルが回る
-                </div>
-                
-                <div class="detail-box">
-                    <h3>3ない訓練の具体的な実践</h3>
-                    <p><strong>人を集めない：</strong>大規模な参加者を集める必要はない。数人から始められる訓練設計を心がける。</p>
-                    <p><strong>時間をかけない：</strong>長時間の拘束は継続の敵。30分〜1時間で完結する訓練を繰り返す。</p>
-                    <p><strong>評価しない：</strong>他者評価で優劣を開示しない。個人の点数化や順位付けをしないことで、心理的安全性を確保する。一方で、自己評価による「まだできていない」「もっとできる」という気づきは、改善や協力への主体的な行動を促す。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">人を集めない、時間をかけない、評価しない</div>
                 </div>
             </div>
-            <div class="page-number">原則3 | 6</div>
+            
+            <div class="quote-box">
+                訓練のハードルを下げることで、<br>
+                継続的な改善サイクルが回る
+            </div>
+            
+            <div class="detail-box">
+                <h3>3ない訓練の具体的な実践</h3>
+                <p><strong>人を集めない：</strong>大規模な参加者を集める必要はない。数人から始められる訓練設計を心がける。</p>
+                <p><strong>時間をかけない：</strong>長時間の拘束は継続の敵。30分〜1時間で完結する訓練を繰り返す。</p>
+                <p><strong>評価しない：</strong>他者評価で優劣を開示しない。個人の点数化や順位付けをしないことで、心理的安全性を確保する。一方で、自己評価による「まだできていない」「もっとできる」という気づきは、改善や協力への主体的な行動を促す。</p>
+            </div>
         </div>
 
-        <!-- 原則4：目的の明確化 -->
-        <div class="page principle-page hidden" data-page="7">
+        <!-- 原則4 -->
+        <div class="page content-page" id="principle4">
             <div class="principle-number">原則 4</div>
             <div class="principle-tag">方向性</div>
-            <div class="principle-title">
-                目的の明確化
-            </div>
-            <div class="page-number">原則4 | 7</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="8">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">「訓練をすること」が目的化</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">「何のための訓練か」を明確にする</div>
-                    </div>
+            <div class="principle-title">目的の明確化</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">「訓練をすること」が目的化</div>
                 </div>
-                
-                <div class="quote-box">
-                    目的が明確でない訓練は、<br>
-                    ただの儀式になる
-                </div>
-                
-                <div class="detail-box">
-                    <h3>目的設定の重要性</h3>
-                    <p>訓練の目的は多様だ。「初動対応の習熟」「役割分担の確認」「課題の発見」「チームビルディング」など、何を目指すかで訓練の設計は変わる。</p>
-                    <p>目的を明確にすることで、何を測定し、何を改善するかが見えてくる。参加者にも目的を共有することで、主体的な参加を促せる。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">「何のための訓練か」を明確にする</div>
                 </div>
             </div>
-            <div class="page-number">原則4 | 8</div>
+            
+            <div class="quote-box">
+                目的が明確でない訓練は、<br>
+                ただの儀式になる
+            </div>
+            
+            <div class="detail-box">
+                <h3>目的設定の重要性</h3>
+                <p>訓練の目的は多様だ。「初動対応の習熟」「役割分担の確認」「課題の発見」「チームビルディング」など、何を目指すかで訓練の設計は変わる。</p>
+                <p>目的を明確にすることで、何を測定し、何を改善するかが見えてくる。参加者にも目的を共有することで、主体的な参加を促せる。</p>
+            </div>
         </div>
 
-        <!-- 原則5：Doから始めるPDCAサイクル -->
-        <div class="page principle-page hidden" data-page="9">
+        <!-- 原則5 -->
+        <div class="page content-page" id="principle5">
             <div class="principle-number">原則 5</div>
             <div class="principle-tag">行動優先</div>
-            <div class="principle-title">
-                Doから始める<br>PDCAサイクル
-            </div>
-            <div class="page-number">原則5 | 9</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="10">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">計画を練ってから実行</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">まず始めて課題認識から改善</div>
-                    </div>
+            <div class="principle-title">Doから始める<br>PDCAサイクル</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">計画を練ってから実行</div>
                 </div>
-                
-                <div class="quote-box">
-                    完璧な計画を待つより、<br>
-                    小さく始めて改善する
-                </div>
-                
-                <div class="detail-box">
-                    <h3>年間を通じた改善サイクル</h3>
-                    <p><strong>Do：</strong>まず小規模訓練を実施する。完璧でなくていい。</p>
-                    <p><strong>Check：</strong>課題をリスト化する。何ができて、何ができなかったか。</p>
-                    <p><strong>Act：</strong>できることを一つでも多く解決して達成感を得る。すべて解決しようとしない。</p>
-                    <p><strong>Plan：</strong>来年度に残った課題とその優先順位を申し送る。</p>
-                    <p>被災した時には「残った課題リスト」を短時間で潰していく。究極のon-the-job-trainingで組織変革する。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">まず始めて課題認識から改善</div>
                 </div>
             </div>
-            <div class="page-number">原則5 | 10</div>
+            
+            <div class="quote-box">
+                完璧な計画を待つより、<br>
+                小さく始めて改善する
+            </div>
+            
+            <div class="detail-box">
+                <h3>年間を通じた改善サイクル</h3>
+                <p><strong>Do：</strong>まず小規模訓練を実施する。完璧でなくていい。</p>
+                <p><strong>Check：</strong>課題をリスト化する。何ができて、何ができなかったか。</p>
+                <p><strong>Act：</strong>できることを一つでも多く解決して達成感を得る。すべて解決しようとしない。</p>
+                <p><strong>Plan：</strong>来年度に残った課題とその優先順位を申し送る。</p>
+                <p>被災した時には「残った課題リスト」を短時間で潰していく。究極のon-the-job-trainingで組織変革する。</p>
+            </div>
         </div>
 
-        <!-- 原則6：訓練しながら計画を考える -->
-        <div class="page principle-page hidden" data-page="11">
+        <!-- 原則6 -->
+        <div class="page content-page" id="principle6">
             <div class="principle-number">原則 6</div>
             <div class="principle-tag">柔軟性</div>
-            <div class="principle-title">
-                訓練しながら計画を考える
-            </div>
-            <div class="page-number">原則6 | 11</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="12">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">事前に詳細な計画を立てる</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">やりながら次の一手を考える</div>
-                    </div>
+            <div class="principle-title">訓練しながら計画を考える</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">事前に詳細な計画を立てる</div>
                 </div>
-                
-                <div class="quote-box">
-                    机上で考えた計画より、<br>
-                    現場で見つけた課題が重要
-                </div>
-                
-                <div class="detail-box">
-                    <h3>適応的な計画</h3>
-                    <p>訓練を実施すると、事前には想像できなかった課題が見えてくる。計画に固執せず、現場の気づきを次の訓練に反映させる。</p>
-                    <p>年間訓練計画は「ガチガチに固めるもの」ではなく、「方向性を示すもの」。実施しながら調整していく柔軟性が、実効性を高める。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">やりながら次の一手を考える</div>
                 </div>
             </div>
-            <div class="page-number">原則6 | 12</div>
+            
+            <div class="quote-box">
+                机上で考えた計画より、<br>
+                現場で見つけた課題が重要
+            </div>
+            
+            <div class="detail-box">
+                <h3>適応的な計画</h3>
+                <p>訓練を実施すると、事前には想像できなかった課題が見えてくる。計画に固執せず、現場の気づきを次の訓練に反映させる。</p>
+                <p>年間訓練計画は「ガチガチに固めるもの」ではなく、「方向性を示すもの」。実施しながら調整していく柔軟性が、実効性を高める。</p>
+            </div>
         </div>
 
-        <!-- 原則7：3回の出だし訓練 -->
-        <div class="page principle-page hidden" data-page="13">
+        <!-- 原則7 -->
+        <div class="page content-page" id="principle7">
             <div class="principle-number">原則 7</div>
             <div class="principle-tag">反復学習</div>
-            <div class="principle-title">
-                1回の通し訓練より<br>3回の出だし訓練
-            </div>
-            <div class="page-number">原則7 | 13</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="14">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">全体を1回流して、理解したつもりを体験する</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">対応の出だしを3回訓練して、スタートダッシュを身に付ける</div>
-                    </div>
+            <div class="principle-title">1回の通し訓練より<br>3回の出だし訓練</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">全体を1回流して、理解したつもりを体験する</div>
                 </div>
-                
-                <div class="quote-box">
-                    人が成長するためには<br>
-                    何回も繰り返すことが大切。<br>
-                    3回で訓練効果が高まる
-                </div>
-                
-                <div class="detail-box">
-                    <h3>3回繰り返しの意味</h3>
-                    <p><strong>1回目：</strong>失敗の体験、課題の発見</p>
-                    <p><strong>2回目：</strong>手順の確認、チームビルディング</p>
-                    <p><strong>3回目：</strong>手順の習得、相対的な自己評価</p>
-                    <p>同じ訓練を繰り返すことで、参加者は「できる」実感を得る。さらに、役割をローテーションすることで、多面的な理解が深まる。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">対応の出だしを3回訓練して、スタートダッシュを身に付ける</div>
                 </div>
             </div>
-            <div class="page-number">原則7 | 14</div>
+            
+            <div class="quote-box">
+                人が成長するためには<br>
+                何回も繰り返すことが大切。<br>
+                3回で訓練効果が高まる
+            </div>
+            
+            <div class="detail-box">
+                <h3>3回繰り返しの意味</h3>
+                <p><strong>1回目：</strong>失敗の体験、課題の発見</p>
+                <p><strong>2回目：</strong>手順の確認、チームビルディング</p>
+                <p><strong>3回目：</strong>精度の向上、自信の獲得</p>
+                <p>「つまずいたら、ストップして、その場で改善し、もう一度」——この即座の改善サイクルが、本当の習熟を生む。</p>
+            </div>
         </div>
 
-        <!-- 原則8：アクション・カードによる具体化 -->
-        <div class="page principle-page hidden" data-page="15">
+        <!-- 原則8 -->
+        <div class="page content-page" id="principle8">
             <div class="principle-number">原則 8</div>
-            <div class="principle-tag">ツール駆動</div>
-            <div class="principle-title">
-                アクション・カードで<br>具体化
-            </div>
-            <div class="page-number">原則8 | 15</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="16">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">訓練台本を作る</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">実際に使うアクション・カードで訓練</div>
-                    </div>
+            <div class="principle-tag">具体化ツール</div>
+            <div class="principle-title">アクション・カードで具体化</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">分厚いマニュアルを作る</div>
                 </div>
-                
-                <div class="quote-box">
-                    6〜8割の完成度で使ってみる。<br>
-                    批判されるダメージを減らし、<br>
-                    改善につなげる
-                </div>
-                
-                <div class="detail-box">
-                    <h3>アクション・カードの利点</h3>
-                    <p>訓練のための台本ではなく、本番で使う実際のツールで訓練する。これにより、訓練と本番のギャップがなくなる。</p>
-                    <p>完璧を目指さず、6〜8割で使い始めることで、早期の課題発見と改善サイクルが回る。批判を恐れず、小さな失敗を積み重ねることで、心理的ダメージを最小化しながら改善を進められる。「使ってみないとわからない」を実践する。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">1枚のカードに、今すぐやることを書く</div>
                 </div>
             </div>
-            <div class="page-number">原則8 | 16</div>
+            
+            <div class="quote-box">
+                長いマニュアルは読まれない。<br>
+                1枚のカードなら、使える
+            </div>
+            
+            <div class="detail-box">
+                <h3>アクション・カードの力</h3>
+                <p>アクション・カードは「初期行動の事前指示書」。役割ごとに「最初の3〜5分でやること」を具体的に書く。</p>
+                <p>カードがあることで、「何をすればいいか分からない」状態から脱却できる。訓練でカードを使い、改善し、実用レベルに高めていく。</p>
+                <p>完璧を目指さない。6割できたら使い始め、現場で育てる。これが、実践につながる秘訣だ。</p>
+            </div>
         </div>
 
-        <!-- 原則9：前向きに終わる訓練 -->
-        <div class="page principle-page hidden" data-page="17">
+        <!-- 原則9 -->
+        <div class="page content-page" id="principle9">
             <div class="principle-number">原則 9</div>
             <div class="principle-tag">心理的安全性</div>
-            <div class="principle-title">
-                前向きに終わる訓練
-            </div>
-            <div class="page-number">原則9 | 17</div>
-        </div>
-
-        <div class="page principle-page hidden" data-page="18">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">失敗を指摘し、「がんばりましょう」で終わる</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">失敗から学び、「これはすぐ変えよう」で続く</div>
-                    </div>
+            <div class="principle-title">前向きに終わる訓練</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">できなかったことを指摘して終わる</div>
                 </div>
-                
-                <div class="quote-box">
-                    準備や訓練の上での失敗からは<br>
-                    多くの日常業務に役立つ課題が見つかる
-                </div>
-                
-                <div class="detail-box">
-                    <h3>前向きに終わる工夫</h3>
-                    <p><strong>振り返りの3ステップ：</strong></p>
-                    <p>1. できたこと（成功体験の共有）<br>
-                    2. できなかったこと（課題の発見）<br>
-                    3. 次にやること（改善の方向性）</p>
-                    <p>失敗を責めるのではなく、失敗から学ぶ。訓練後に「またやってみよう」と思える雰囲気づくりが、継続的な改善を生む。</p>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">「次はもっとできる」と思える振り返りで終わる</div>
                 </div>
             </div>
-            <div class="page-number">原則9 | 18</div>
+            
+            <div class="quote-box">
+                訓練後の気持ちが、<br>
+                次の訓練への意欲を決める
+            </div>
+            
+            <div class="detail-box">
+                <h3>前向きな振り返り</h3>
+                <p>訓練は、参加者が「やってよかった」「次もやりたい」と思えることが大切。</p>
+                <p>できなかったことを責めるのではなく、「今日の気づき」「次に試したいこと」を共有する。小さな成功を認め合うことで、次への意欲が生まれる。</p>
+                <p>「失敗は学びのチャンス」という文化を、訓練の振り返りから作っていく。</p>
+            </div>
         </div>
 
-        <!-- 原則10：記録を残し、仲間を増やす -->
-        <div class="page principle-page hidden" data-page="19">
+        <!-- 原則10 -->
+        <div class="page content-page" id="principle10">
             <div class="principle-number">原則 10</div>
-            <div class="principle-tag">継続性</div>
-            <div class="principle-title">
-                記録を残し、仲間を増やす
+            <div class="principle-tag">継続と拡大</div>
+            <div class="principle-title">記録を残し、仲間を増やす</div>
+            
+            <div class="comparison-box">
+                <div class="comparison-item old">
+                    <div class="comparison-label">従来</div>
+                    <div class="comparison-text">訓練して終わり</div>
+                </div>
+                <div class="comparison-item new">
+                    <div class="comparison-label">中島メソッド</div>
+                    <div class="comparison-text">記録を残し、次に活かし、仲間を増やす</div>
+                </div>
             </div>
-            <div class="page-number">原則10 | 19</div>
+            
+            <div class="quote-box">
+                記録がなければ、<br>
+                訓練の学びは消えてゆく
+            </div>
+            
+            <div class="detail-box">
+                <h3>記録と共有</h3>
+                <p>訓練で得た気づきや改善点を記録に残す。写真、メモ、振り返りシート——形式は問わない。</p>
+                <p>記録があることで、次回の訓練がより良くなる。そして、その記録を他の部署や施設と共有することで、「一緒に学ぶ仲間」が増えていく。</p>
+                <p>一人で頑張るのではなく、チームで、組織で、地域で育てる。これが、持続可能な<span class="saigai-red">災</span>害対応力向上の鍵だ。</p>
+            </div>
         </div>
 
-        <div class="page principle-page hidden" data-page="20">
-            <div class="principle-content">
-                <div class="comparison-box">
-                    <div class="comparison-item old">
-                        <div class="comparison-label">従来</div>
-                        <div class="comparison-text">個人の熱意で頑張る</div>
-                    </div>
-                    <div class="comparison-item new">
-                        <div class="comparison-label">中島メソッド</div>
-                        <div class="comparison-text">小さく記録し、共有し、仲間を増やす</div>
-                    </div>
-                </div>
-                
-                <div class="quote-box">
-                    経験を記録に残し、<br>
-                    仲間と共有することで、<br>
-                    活動は個人から組織へと育つ
-                </div>
-                
-                <div class="detail-box">
-                    <h3>小さく始めて、大きく育てる</h3>
-                    <p>個人の熱意だけでは、長期的な活動は続かない。まずは「記録」から始める。訓練で発見した課題、改善した内容を簡単にでも記録に残す。</p>
-                    <p>次に「共有」。記録を同僚や他部署に見せることで、活動の見える化が進む。そして「仲間」。非公式でも構わない、協力者を少しずつ増やしていく。</p>
-                    <p>これらが積み重なることで、組織が認知し始める。やがて委員会や専門部署といった正式な体制につながっていく。志はあるが組織の中で浮いた存在だと感じている人こそ、まず記録と共有から始めてほしい。</p>
+        <!-- まとめ -->
+        <div class="page content-page" id="summary">
+            <h2 class="page-title">10原則のまとめ</h2>
+            
+            <div class="detail-box">
+                <div class="text-block">
+                    <strong>1. 失敗から学ぶ</strong> — 安全な環境で失敗し、学ぶ<br>
+                    <strong>2. 6〜8割の完成度で使う</strong> — 完璧を待たず、使いながら改善<br>
+                    <strong>3. 3ない訓練</strong> — 人を集めない、時間をかけない、評価しない<br>
+                    <strong>4. 目的の明確化</strong> — 何のための訓練かを明確に<br>
+                    <strong>5. Doから始めるPDCAサイクル</strong> — まず始めて、改善する<br>
+                    <strong>6. 訓練しながら計画を考える</strong> — 柔軟に調整していく<br>
+                    <strong>7. 3回の出だし訓練</strong> — 繰り返しでスタートダッシュを身につける<br>
+                    <strong>8. アクション・カードで具体化</strong> — 1枚のカードに初期行動を<br>
+                    <strong>9. 前向きに終わる訓練</strong> — 次への意欲を生む振り返り<br>
+                    <strong>10. 記録を残し、仲間を増やす</strong> — 学びを共有し、仲間を増やす
                 </div>
             </div>
-            <div class="page-number">原則10 | 20</div>
+            
+            <div class="highlight-box">
+                <div class="text-block" style="text-align: center; font-size: 1.2em; font-weight: bold;">
+                    これらの原則は、単独では機能しない。<br>
+                    全てが揃って、初めて実効性ある訓練になる。
+                </div>
+            </div>
+            
+            <div class="text-block">
+                訓練は、完璧を目指すものではない。<br>
+                「今できることから始める」「失敗から学ぶ」「使いながら育てる」——この姿勢が、<span class="saigai-red">災</span>害対応力を本当に高める。
+            </div>
         </div>
 
         <!-- 奥付 -->
-        <div class="page cover hidden" data-page="21">
-            <div style="text-align: center;">
-                <h2 style="font-size: 1.5em; margin-bottom: 30px;">訓練企画10原則</h2>
-                <p style="margin: 15px 0;">2025年版</p>
-                <p style="margin: 15px 0;">著者: 中島 康</p>
-                <p style="margin: 15px 0;">東京医療減<span class="saigai-red">災</span>Labo</p>
-                <p style="margin: 40px 0; font-size: 0.9em; opacity: 0.8;">©HDMG2004 2025</p>
-                
-                <div style="margin: 40px auto; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; max-width: 500px; text-align: left;">
-                    <p style="font-weight: bold; margin-bottom: 10px;">関連資料</p>
-                    <p style="margin: 5px 0; font-size: 0.9em;">• <a href="philosophy.html" style="color: white;">理念編：<span class="saigai-red">災</span>害対応力向上研修 哲学五箇条</a></p>
-                    <p style="margin: 5px 0; font-size: 0.9em;">• <a href="movable-60-vs-perfect-100.html" style="color: white;">戦略編：動ける60点 &gt; 動けない100点</a></p>
-                    <p style="margin: 5px 0; font-size: 0.9em;">• <a href="index.html" style="color: white;">HOMEに戻る</a></p>
+        <div class="page cover" id="colophon">
+            <h2 style="font-size: 2em; margin-bottom: 30px;">関連資料</h2>
+            
+            <div style="text-align: left; max-width: 600px; margin: 0 auto 40px;">
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">理念編 (Why)</div>
+                    <a href="philosophy.html" style="color: #ffd700; text-decoration: none;">
+                        → <span class="saigai-red">災</span>害対応力向上研修 哲学五箇条
+                    </a>
                 </div>
                 
-                <!-- 実践相談 -->
-                <div style="margin: 40px auto; padding: 25px; background: rgba(255,215,0,0.15); border: 2px solid rgba(255,215,0,0.3); border-radius: 10px; font-size: 0.9em; text-align: left; max-width: 500px;">
-                    <p style="font-weight: bold; margin-bottom: 15px; color: #ffd700; font-size: 1.1em;">💬 実践で困ったら</p>
-                    <p style="margin: 10px 0; line-height: 1.7;">理論を読んだ後、実際の現場で悩んだら<br>
-                    <strong style="color: #ffd700;">「減災対策支援の輪」のAIチャット</strong>で相談できます。</p>
-                    <p style="margin: 15px 0; font-size: 0.85em; opacity: 0.9;">2022年からの「よろず相談会」記録をAIが参照して実践的助言を提供します。</p>
-                    <p style="margin: 15px 0; text-align: center;">
-                        <a href="https://astonishing-aardvark-1ba.notion.site/2155aa623f878074a8dade82fd467a1c" 
-                           target="_blank"
-                           style="display: inline-block; background: #ffd700; color: #1e3c72; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 0.95em;">
-                            よろず相談会へ →
-                        </a>
-                    </p>
-                    <p style="margin-top: 10px; font-size: 0.8em; opacity: 0.8;">※ Googleアカウント必要（限定公開）</p>
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">戦略編 (What & Evidence)</div>
+                    <a href="movable-60-vs-perfect-100.html" style="color: #ffd700; text-decoration: none;">
+                        → 動ける60点 &gt; 動けない100点
+                    </a>
                 </div>
                 
-                <p style="margin: 40px 0; font-size: 0.9em;">お問い合わせ:<br>tbk_gensai_labo@tmhp.jp</p>
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">体系全体</div>
+                    <a href="index.html" style="color: #ffd700; text-decoration: none;">
+                        → 東京医療減<span class="saigai-red">災</span>Labo 実践知の体系
+                    </a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 30px; margin-top: 40px;">
+                <div style="font-size: 1.5em; margin-bottom: 20px;">訓練企画10原則</div>
+                <div style="font-size: 1em; opacity: 0.9; margin: 10px 0;">
+                    2025年版<br>
+                    著者: 中島 康<br>
+                    東京医療減<span class="saigai-red">災</span>Labo
+                </div>
+                <div style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+                    ©HDMG2004 2025<br>
+                    CC BY-NC-SA 4.0
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="mailto:tbk_gensai_labo@tmhp.jp" style="color: #ffd700; text-decoration: none;">
+                        tbk_gensai_labo@tmhp.jp
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ナビゲーション -->
-    <div class="navigation">
-        <button class="nav-btn" id="prevBtn" onclick="changePage(-1)">← 前へ</button>
-        <span style="color: white; display: flex; align-items: center;" id="pageIndicator">1 / 22</span>
-        <button class="nav-btn" id="nextBtn" onclick="changePage(1)">次へ →</button>
+    <!-- 目次ボタン -->
+    <button class="toc-button" onclick="toggleTOC()">📑 目次</button>
+
+    <!-- 目次メニュー -->
+    <div class="toc-menu" id="tocMenu">
+        <div class="toc-header">目次</div>
+        <div class="toc-content">
+            <a href="#cover" class="toc-item" onclick="closeTOC()">表紙</a>
+            <a href="#principle1" class="toc-item major" onclick="closeTOC()">原則1: 失敗から学ぶ</a>
+            <a href="#principle2" class="toc-item major" onclick="closeTOC()">原則2: 6〜8割の完成度で使う</a>
+            <a href="#principle3" class="toc-item major" onclick="closeTOC()">原則3: 3ない訓練</a>
+            <a href="#principle4" class="toc-item major" onclick="closeTOC()">原則4: 目的の明確化</a>
+            <a href="#principle5" class="toc-item major" onclick="closeTOC()">原則5: Doから始めるPDCAサイクル</a>
+            <a href="#principle6" class="toc-item major" onclick="closeTOC()">原則6: 訓練しながら計画を考える</a>
+            <a href="#principle7" class="toc-item major" onclick="closeTOC()">原則7: 3回の出だし訓練</a>
+            <a href="#principle8" class="toc-item major" onclick="closeTOC()">原則8: アクション・カードで具体化</a>
+            <a href="#principle9" class="toc-item major" onclick="closeTOC()">原則9: 前向きに終わる訓練</a>
+            <a href="#principle10" class="toc-item major" onclick="closeTOC()">原則10: 記録を残し、仲間を増やす</a>
+            <a href="#summary" class="toc-item" onclick="closeTOC()">10原則のまとめ</a>
+            <a href="#colophon" class="toc-item" onclick="closeTOC()">奥付・関連資料</a>
+        </div>
     </div>
 
     <script>
-        let currentPage = 0;
-        const totalPages = 21;
-
-        function showPage(pageNum) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.add('hidden');
-            });
-            
-            const page = document.querySelector(`[data-page="${pageNum}"]`);
-            if (page) {
-                page.classList.remove('hidden');
-            }
-            
-            document.getElementById('prevBtn').disabled = (pageNum === 0);
-            document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-            document.getElementById('pageIndicator').textContent = `${pageNum + 1} / ${totalPages + 1}`;
-        }
-
-        function changePage(direction) {
-            const newPage = currentPage + direction;
-            if (newPage >= 0 && newPage <= totalPages) {
-                currentPage = newPage;
-                showPage(currentPage);
-                window.scrollTo(0, 0);
-            }
-        }
-        
-        function goToPage(pageNum) {
-            if (pageNum >= 0 && pageNum <= totalPages) {
-                currentPage = pageNum;
-                showPage(currentPage);
-                window.scrollTo(0, 0);
-                document.getElementById('tocMenu').classList.remove('show');
-            }
-        }
-        
+        // 目次機能
         function toggleTOC() {
             const menu = document.getElementById('tocMenu');
             menu.classList.toggle('show');
         }
         
-        document.addEventListener('click', (e) => {
+        function closeTOC() {
+            const menu = document.getElementById('tocMenu');
+            menu.classList.remove('show');
+        }
+        
+        // 目次外クリックで閉じる
+        document.addEventListener('click', function(e) {
             const menu = document.getElementById('tocMenu');
             const button = document.querySelector('.toc-button');
-            if (!menu.contains(e.target) && !button.contains(e.target)) {
+            
+            if (!menu || !button) return;
+            
+            if (menu.classList.contains('show') && 
+                !menu.contains(e.target) && 
+                e.target !== button) {
                 menu.classList.remove('show');
             }
         });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                changePage(-1);
-            } else if (e.key === 'ArrowRight' || e.key === ' ') {
-                e.preventDefault();
-                changePage(1);
-            }
-        });
-
-        showPage(0);
     </script>
 </body>
 </html>
