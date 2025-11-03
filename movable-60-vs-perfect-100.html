@@ -31,6 +31,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
             line-height: 1.8;
@@ -320,6 +324,30 @@
             transform: scale(1.05);
         }
         
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(42, 82, 152, 0.9);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        .back-to-top:hover {
+            background: rgba(42, 82, 152, 1);
+            transform: translateY(-5px);
+        }
+        
         .toc-menu {
             position: fixed;
             top: 70px;
@@ -352,6 +380,7 @@
         }
         
         .toc-item {
+            display: block;
             padding: 12px 15px;
             margin: 5px 0;
             background: #f8f9fa;
@@ -359,6 +388,8 @@
             cursor: pointer;
             transition: all 0.2s;
             border-left: 4px solid #2a5298;
+            text-decoration: none;
+            color: inherit;
         }
         
         .toc-item:hover {
@@ -379,6 +410,12 @@
         }
         
         @media print {
+            .toc-button,
+            .toc-menu,
+            .back-to-top {
+                display: none !important;
+            }
+
             body {
                 background: white;
                 padding: 0;
@@ -431,62 +468,65 @@
     <!-- 目次ボタン -->
     <button class="toc-button" onclick="toggleTOC()">📖 目次</button>
     
+    <!-- トップに戻るボタン -->
+    <a href="#page1" class="back-to-top" title="トップに戻る">↑</a>
+    
     <!-- 目次メニュー -->
     <div class="toc-menu" id="tocMenu">
-        <div class="toc-item" onclick="jumpToPage('page1')">
+        <a href="#page1" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">表紙</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page2')">
+        </a>
+        <a href="#page2" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">第1部: 研修としての成功</div>
             <div class="toc-subtitle">推奨度9.25/10のA評価</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page3')">
+        </a>
+        <a href="#page3" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">成長の実証データ</div>
             <div class="toc-subtitle">知識+69%、自信+89%</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page4')">
+        </a>
+        <a href="#page4" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">第2部: 実践の壁</div>
             <div class="toc-subtitle">実践率2.5/10のC評価</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page5')">
+        </a>
+        <a href="#page5" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">なぜC評価なのか？</div>
             <div class="toc-subtitle">70%ギャップの正体</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page6')">
+        </a>
+        <a href="#page6" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">なぜ実践できないのか？</div>
             <div class="toc-subtitle">問題の本質</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page7')">
+        </a>
+        <a href="#page7" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">昭和的無目的根性主義</div>
             <div class="toc-subtitle">三大症状</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page8')">
+        </a>
+        <a href="#page8" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">第3部: 「減じる」減災の実践</div>
             <div class="toc-subtitle">今の災害対策を減じる</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page9')">
+        </a>
+        <a href="#page9" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">デカルト的方法序説の実践</div>
             <div class="toc-subtitle">4つの規則</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page10')">
+        </a>
+        <a href="#page10" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">「減じる」の具体例</div>
             <div class="toc-subtitle">パレートの法則</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page11')">
+        </a>
+        <a href="#page11" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">60点合格主義</div>
             <div class="toc-subtitle">完璧主義からの解放</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page12')">
+        </a>
+        <a href="#page12" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">2026年への挑戦</div>
             <div class="toc-subtitle">実証と普及</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page13')">
+        </a>
+        <a href="#page13" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">意識改革とデカルト</div>
             <div class="toc-subtitle">まとめ</div>
-        </div>
-        <div class="toc-item" onclick="jumpToPage('page14')">
+        </a>
+        <a href="#page14" class="toc-item" onclick="closeTOC()">
             <div class="toc-title">関連資料</div>
-        </div>
+        </a>
     </div>
     
     <div class="book-container">
@@ -1224,107 +1264,16 @@
         </div>
     </div>
 
-    <!-- ナビゲーション -->
-    <div class="navigation">
-        <button class="nav-button" id="prevBtn" onclick="changePage(-1)">◀ 前へ</button>
-        <span class="page-indicator"><span id="currentPage">1</span> / 14</span>
-        <button class="nav-button" id="nextBtn" onclick="changePage(1)">次へ ▶</button>
-    </div>
-
     <script>
-        let currentPage = 1;
-        const totalPages = 14;
-
-        function showPage(pageNum) {
-            // すべてのページを非表示
-            for (let i = 1; i <= totalPages; i++) {
-                document.getElementById('page' + i).style.display = 'none';
-            }
-            
-            // 指定ページを表示
-            document.getElementById('page' + pageNum).style.display = 'flex';
-            
-            // ページ番号更新
-            document.getElementById('currentPage').textContent = pageNum;
-            
-            // ボタンの有効/無効
-            document.getElementById('prevBtn').disabled = (pageNum === 1);
-            document.getElementById('nextBtn').disabled = (pageNum === totalPages);
-            
-            // ページトップへスクロール
-            window.scrollTo(0, 0);
-        }
-
-        function changePage(direction) {
-            currentPage += direction;
-            if (currentPage < 1) currentPage = 1;
-            if (currentPage > totalPages) currentPage = totalPages;
-            showPage(currentPage);
-        }
-
-        // 初期表示
-        showPage(1);
-
-        // キーボード操作
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') changePage(-1);
-            if (e.key === 'ArrowRight') changePage(1);
-        });
-        
-        // 目次機能（シンプル版）
+        // 目次機能（アンカーリンク方式）
         function toggleTOC() {
             const menu = document.getElementById('tocMenu');
             menu.classList.toggle('show');
-            console.log('TOC toggled, show:', menu.classList.contains('show'));
         }
         
-        function jumpToPage(pageId) {
-            console.log('=== jumpToPage Debug ===');
-            console.log('pageId:', pageId);
-            
-            // 目次を閉じる
-            document.getElementById('tocMenu').classList.remove('show');
-            
-            // ページに移動
-            const element = document.getElementById(pageId);
-            console.log('Found element:', element);
-            
-            if (element) {
-                // デバッグ情報
-                const rect = element.getBoundingClientRect();
-                console.log('getBoundingClientRect():', {
-                    top: rect.top,
-                    bottom: rect.bottom,
-                    left: rect.left,
-                    right: rect.right,
-                    height: rect.height
-                });
-                console.log('window.pageYOffset:', window.pageYOffset);
-                console.log('document.documentElement.scrollTop:', document.documentElement.scrollTop);
-                
-                // エレメントの絶対位置を取得
-                const elementPosition = rect.top;
-                const offsetPosition = elementPosition + window.pageYOffset - 20;
-                
-                console.log('Calculated offsetPosition:', offsetPosition);
-                
-                // スクロール実行
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-                
-                console.log('Scroll command sent');
-            } else {
-                console.log('ERROR: Element not found:', pageId);
-            }
-            
-            // イベント伝播を停止
-            if (typeof event !== 'undefined') {
-                event.stopPropagation();
-            }
-            
-            return false;
+        function closeTOC() {
+            const menu = document.getElementById('tocMenu');
+            menu.classList.remove('show');
         }
         
         // 目次外クリックで閉じる
