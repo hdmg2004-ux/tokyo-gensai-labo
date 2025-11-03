@@ -101,9 +101,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 40px 0;
+            margin: 40px auto;
             position: relative;
-            height: 300px;
+            height: 350px;
+            max-width: 600px;
         }
         
         .triangle-item {
@@ -120,6 +121,7 @@
             color: #2a5298;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: 3px solid #2a5298;
+            flex-direction: column;
         }
         
         .triangle-item.top {
@@ -130,12 +132,12 @@
         
         .triangle-item.left {
             bottom: 0;
-            left: 10%;
+            left: 0;
         }
         
         .triangle-item.right {
             bottom: 0;
-            right: 10%;
+            right: 0;
         }
         
         .cards-section {
@@ -299,12 +301,28 @@
                 height: auto;
                 flex-direction: column;
                 gap: 20px;
+                max-width: 100%;
+                align-items: center;
+                padding: 20px 0;
             }
             
             .triangle-item {
-                position: static;
-                transform: none;
-                margin: 10px 0;
+                position: static !important;
+                transform: none !important;
+                margin: 10px auto;
+                width: 180px;
+                height: 180px;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                bottom: auto !important;
+            }
+            
+            .triangle-item.top,
+            .triangle-item.left,
+            .triangle-item.right {
+                position: static !important;
+                transform: none !important;
             }
         }
     </style>
@@ -374,35 +392,6 @@
             <p>理念・実践・戦略。3つの視点から体系的に学ぶことで、<br><span class="saigai-red">災</span>害対応力向上の全体像が見えてきます。</p>
             <p style="font-size: 0.9em; margin-bottom: 40px;">推奨学習時間：約20分</p>
             <a href="#" class="all-in-one-link" onclick="alert('3つの資料を順番に開きます'); window.open('philosophy.html'); setTimeout(() => window.open('principles.html'), 500); setTimeout(() => window.open('movable-60-vs-perfect-100.html'), 1000); return false;">3つまとめて開く</a>
-        </div>
-        
-        <!-- 実践相談セクション -->
-        <div style="background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%); padding: 50px 40px; text-align: center;">
-            <h2 style="color: #2a5298; font-size: 2em; margin-bottom: 20px;">💬 実践で困ったら</h2>
-            <p style="color: #555; font-size: 1.1em; line-height: 1.8; max-width: 700px; margin: 0 auto 30px;">
-                理論を読んだ後、実際の現場で「どう進めればいいか分からない」「うちの施設では難しい」と悩んだら、<br>
-                <strong style="color: #2a5298;">AIチャットで相談できます。</strong>
-            </p>
-            <div style="background: white; padding: 30px; border-radius: 15px; max-width: 600px; margin: 0 auto 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                <h3 style="color: #2a5298; margin-bottom: 15px; font-size: 1.3em;">「減災対策支援の輪」よろず相談会</h3>
-                <p style="color: #666; line-height: 1.8; margin-bottom: 15px;">
-                    2022年から開催されている病院の災害対策Web相談会の記録を、NotebookLM AIが参照して回答します。
-                </p>
-                <ul style="text-align: left; color: #666; line-height: 1.8; margin: 20px 0; padding-left: 40px;">
-                    <li>職員の安全確保からインフラ障害対応</li>
-                    <li>患者ケアの継続、訓練方法</li>
-                    <li>備蓄管理など、幅広い実践的助言</li>
-                </ul>
-            </div>
-            <a href="https://astonishing-aardvark-1ba.notion.site/2155aa623f878074a8dade82fd467a1c" 
-               target="_blank"
-               style="display: inline-block; background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%); color: white; padding: 18px 40px; text-decoration: none; border-radius: 30px; font-size: 1.1em; font-weight: bold; box-shadow: 0 4px 15px rgba(42,82,152,0.3); transition: all 0.3s;">
-                よろず相談会へ →
-            </a>
-            <p style="font-size: 0.9em; color: #888; margin-top: 20px; line-height: 1.6;">
-                ※ アクセスにはGoogleアカウントが必要です（限定公開）<br>
-                ※ 判然としない場合は、中島康（<a href="mailto:tbk_gensai_labo@tmhp.jp" style="color: #2a5298;">tbk_gensai_labo@tmhp.jp</a>）までお気軽にメールしてください
-            </p>
         </div>
         
         <!-- フッター -->
