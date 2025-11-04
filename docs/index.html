@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京医療減災Labo 実践知の体系 | 20年の実践から生まれた3つの知恵</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="災害対応力向上研修の理念（哲学五箇条）、実践（訓練企画10原則）、組織戦略（段階派遣効果）。20年の実践から生まれた体系的な知識を公開。">
+    <meta name="keywords" content="災害対応,減災,研修,訓練企画,組織学習,中島康,東京医療減災Labo,BCP,業務継続">
+    <meta name="author" content="中島康">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="東京医療減災Labo 実践知の体系">
+    <meta property="og:description" content="理念・実践・戦略。20年の実践から生まれた災害対応力向上の完全体系。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="東京医療減災Labo">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="東京医療減災Labo 実践知の体系">
+    <meta name="twitter:description" content="理念・実践・戦略。20年の実践から生まれた災害対応力向上の完全体系。">
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .header .tagline {
+            font-size: 1.1em;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+        
+        .saigai-red {
+            color: #dc143c;
+            font-weight: bold;
+        }
+        
+        .intro {
+            padding: 50px 40px;
+            background: #fafafa;
+            text-align: center;
+        }
+        
+        .intro h2 {
+            font-size: 2em;
+            color: #2a5298;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .intro p {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .triangle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+            height: 300px;
+        }
+        
+        .triangle-item {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2a5298;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 3px solid #2a5298;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .triangle-item:hover {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            color: #1e3c72;
+            box-shadow: 0 8px 25px rgba(42, 82, 152, 0.4);
+            border-color: #ffd700;
+        }
+        
+        .triangle-item.top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .triangle-item.left {
+            bottom: 0;
+            left: 10%;
+        }
+        
+        .triangle-item.right {
+            bottom: 0;
+            right: 10%;
+        }
+        
+        .cards-section {
+            padding: 50px 40px;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #2a5298;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 300;
+        }
+        
+        .card {
+            background: #fafafa;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 6px solid #2a5298;
+            transition: all 0.3s;
+            scroll-margin-top: 30px;
+        }
+        
+        .card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .card-label {
+            font-size: 0.9em;
+            color: #2a5298;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+        }
+        
+        .card-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .card-question {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .card-description {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .card-link {
+            display: inline-block;
+            background: #2a5298;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+        }
+        
+        .card-link:hover {
+            background: #1e3c72;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 82, 152, 0.4);
+        }
+        
+        .all-in-one {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+        }
+        
+        .all-in-one h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .all-in-one p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .all-in-one-link {
+            display: inline-block;
+            background: white;
+            color: #2a5298;
+            padding: 20px 40px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(255,255,255,0.3);
+        }
+        
+        .all-in-one-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(255,255,255,0.5);
+        }
+        
+        .footer {
+            background: #2a5298;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+        
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .intro, .cards-section, .all-in-one {
+                padding: 30px 20px;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            .triangle {
+                height: auto;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .triangle-item {
+                position: static !important;
+                transform: none !important;
+                margin: 10px 0;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                bottom: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <div class="header">
+            <h1>東京医療減<span class="saigai-red">災</span>Labo<br>実践知の体系</h1>
+            <div class="subtitle">20年の実践から生まれた3つの知恵</div>
+            <div class="tagline">理念・実践・戦略の完全体系</div>
+        </div>
+        
+        <!-- イントロダクション -->
+        <div class="intro">
+            <h2>あなたの課題は何ですか？</h2>
+            <p>災害対応力向上研修を20年以上実践してきた東京医療減災Laboが、3つの視点から体系的な知識を公開します。</p>
+            
+            <div class="triangle">
+                <a href="#philosophy-card" class="triangle-item top">理念<br>Why</a>
+                <a href="#principles-card" class="triangle-item left">実践<br>How</a>
+                <a href="#strategy-card" class="triangle-item right">戦略<br>What</a>
+            </div>
+        </div>
+        
+        <!-- カードセクション -->
+        <div class="cards-section">
+            <h2 class="section-title">課題別ガイド</h2>
+            
+            <!-- カード1：哲学五箇条 -->
+            <div class="card" id="philosophy-card">
+                <div class="card-label">理念編 - Why</div>
+                <div class="card-title"><span class="saigai-red">災</span>害対応力向上研修 哲学五箇条</div>
+                <div class="card-question">□ なぜ減災研修は形骸化するのか？<br>□ 研修の本質的な価値とは何か？</div>
+                <div class="card-description">
+                    「すべての反応に価値がある」「知っていることと、できることは違う」――研修の背後にある5つの原則を明らかにします。多様性尊重、体験重視、現場適用、協働創造、継続成長。20年の実践が辿り着いた理念の核心。
+                </div>
+                <a href="philosophy.html" class="card-link">哲学五箇条を読む →</a>
+            </div>
+            
+            <!-- カード2：訓練企画10原則 -->
+            <div class="card" id="principles-card">
+                <div class="card-label">実践編 - How</div>
+                <div class="card-title">訓練企画10原則</div>
+                <div class="card-question">□ 実効性のある訓練をどう作るか？<br>□ 失敗から学ぶ文化をどう醸成するか？</div>
+                <div class="card-description">
+                    「訓練は失敗の事前体験である」「6割の完成度で使ってみる」――従来の訓練の常識を覆す10の原則。身の丈に合った訓練、3ない訓練、自己評価による課題抽出。明日から使える実践的な方法論。
+                </div>
+                <a href="principles.html" class="card-link">10原則を読む →</a>
+            </div>
+            
+            <!-- カード3：動ける60点 > 動けない100点 -->
+            <div class="card" id="strategy-card">
+                <div class="card-label">戦略編 - What & Evidence</div>
+                <div class="card-title">動ける60点 &gt; 動けない100点</div>
+                <div class="card-question">□ なぜ推奨度9.25が実践率2.5になるのか？<br>□ 70%ギャップをどう埋めるのか？</div>
+                <div class="card-description">
+                    「時間がない」の本質は、昭和的無目的根性主義による無駄な努力。パレートの法則とデカルト的方法序説で「減じる」ことで、実践の時間が生まれる。研修A評価、教育システムC評価―74点の誠実な開示と、2026年への挑戦。
+                </div>
+                <a href="movable-60-vs-perfect-100.html" class="card-link">実証データと解決策を見る →</a>
+            </div>
+        </div>
+        
+        <!-- 全部読むセクション -->
+        <div class="all-in-one">
+            <h2>または、3つまとめて理解する</h2>
+            <p>理念・実践・戦略。3つの視点から体系的に学ぶことで、<br>災害対応力向上の全体像が見えてきます。</p>
+            <p style="font-size: 0.9em; margin-bottom: 40px;">推奨学習時間：約20分</p>
+            <a href="#" class="all-in-one-link" onclick="alert('3つの資料を順番に開きます'); window.open('philosophy.html'); setTimeout(() => window.open('principles.html'), 500); setTimeout(() => window.open('movable-60-vs-perfect-100.html'), 1000); return false;">3つまとめて開く</a>
+        </div>
+        
+        <!-- フッター -->
+        <div class="footer">
+            <div class="footer-content">
+                <h3>東京医療減<span class="saigai-red">災</span>Labo</h3>
+                <p>「有事に備え、平時に鍛える。<br>机上の空論から実践の知恵へ。<br>五感で学ぶ減災対策」</p>
+                <p style="margin-top: 30px;">©HDMG2004 2025</p>
+                <p style="margin-top: 20px;">お問い合わせ: <a href="mailto:tbk_gensai_labo@tmhp.jp">tbk_gensai_labo@tmhp.jp</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
