@@ -15,7 +15,7 @@
 
 ## 🌐 アクセス
 
-**公開サイト**: [https://[ユーザー名].github.io/[リポジトリ名]/](https://[ユーザー名].github.io/[リポジトリ名]/)
+**公開サイト**: [https://hdmg2004-ux.github.io/tokyo-gensai-labo/](https://hdmg2004-ux.github.io/tokyo-gensai-labo/)
 
 > GitHub Pagesで公開されています。`docs/index.html`からアクセスできます。
 
