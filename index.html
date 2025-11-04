@@ -23,6 +23,10 @@
     <meta name="twitter:description" content="理念・実践・戦略。20年の実践から生まれた災害対応力向上の完全体系。">
     
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -101,10 +105,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 40px auto;
+            margin: 40px 0;
             position: relative;
-            height: 350px;
-            max-width: 600px;
+            height: 300px;
         }
         
         .triangle-item {
@@ -121,7 +124,16 @@
             color: #2a5298;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: 3px solid #2a5298;
-            flex-direction: column;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .triangle-item:hover {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            color: #1e3c72;
+            box-shadow: 0 8px 25px rgba(42, 82, 152, 0.4);
+            border-color: #ffd700;
         }
         
         .triangle-item.top {
@@ -132,12 +144,12 @@
         
         .triangle-item.left {
             bottom: 0;
-            left: 0;
+            left: 10%;
         }
         
         .triangle-item.right {
             bottom: 0;
-            right: 0;
+            right: 10%;
         }
         
         .cards-section {
@@ -160,6 +172,7 @@
             margin-bottom: 30px;
             border-left: 6px solid #2a5298;
             transition: all 0.3s;
+            scroll-margin-top: 30px;
         }
         
         .card:hover {
@@ -301,28 +314,18 @@
                 height: auto;
                 flex-direction: column;
                 gap: 20px;
-                max-width: 100%;
                 align-items: center;
-                padding: 20px 0;
+                justify-content: center;
             }
             
             .triangle-item {
                 position: static !important;
                 transform: none !important;
-                margin: 10px auto;
-                width: 180px;
-                height: 180px;
+                margin: 10px 0;
                 left: auto !important;
                 right: auto !important;
                 top: auto !important;
                 bottom: auto !important;
-            }
-            
-            .triangle-item.top,
-            .triangle-item.left,
-            .triangle-item.right {
-                position: static !important;
-                transform: none !important;
             }
         }
     </style>
@@ -339,12 +342,12 @@
         <!-- イントロダクション -->
         <div class="intro">
             <h2>あなたの課題は何ですか？</h2>
-            <p><span class="saigai-red">災</span>害対応力向上研修を20年以上実践してきた東京医療減<span class="saigai-red">災</span>Laboが、3つの視点から体系的な知識を公開します。あなたの課題に合わせて、必要な知識にアクセスしてください。</p>
+            <p>災害対応力向上研修を20年以上実践してきた東京医療減災Laboが、3つの視点から体系的な知識を公開します。</p>
             
             <div class="triangle">
-                <div class="triangle-item top">理念<br>Why</div>
-                <div class="triangle-item left">実践<br>How</div>
-                <div class="triangle-item right">戦略<br>What</div>
+                <a href="#philosophy-card" class="triangle-item top">理念<br>Why</a>
+                <a href="#principles-card" class="triangle-item left">実践<br>How</a>
+                <a href="#strategy-card" class="triangle-item right">戦略<br>What</a>
             </div>
         </div>
         
@@ -353,7 +356,7 @@
             <h2 class="section-title">課題別ガイド</h2>
             
             <!-- カード1：哲学五箇条 -->
-            <div class="card">
+            <div class="card" id="philosophy-card">
                 <div class="card-label">理念編 - Why</div>
                 <div class="card-title"><span class="saigai-red">災</span>害対応力向上研修 哲学五箇条</div>
                 <div class="card-question">□ なぜ減災研修は形骸化するのか？<br>□ 研修の本質的な価値とは何か？</div>
@@ -364,7 +367,7 @@
             </div>
             
             <!-- カード2：訓練企画10原則 -->
-            <div class="card">
+            <div class="card" id="principles-card">
                 <div class="card-label">実践編 - How</div>
                 <div class="card-title">訓練企画10原則</div>
                 <div class="card-question">□ 実効性のある訓練をどう作るか？<br>□ 失敗から学ぶ文化をどう醸成するか？</div>
@@ -375,7 +378,7 @@
             </div>
             
             <!-- カード3：動ける60点 > 動けない100点 -->
-            <div class="card">
+            <div class="card" id="strategy-card">
                 <div class="card-label">戦略編 - What & Evidence</div>
                 <div class="card-title">動ける60点 &gt; 動けない100点</div>
                 <div class="card-question">□ なぜ推奨度9.25が実践率2.5になるのか？<br>□ 70%ギャップをどう埋めるのか？</div>
@@ -389,7 +392,7 @@
         <!-- 全部読むセクション -->
         <div class="all-in-one">
             <h2>または、3つまとめて理解する</h2>
-            <p>理念・実践・戦略。3つの視点から体系的に学ぶことで、<br><span class="saigai-red">災</span>害対応力向上の全体像が見えてきます。</p>
+            <p>理念・実践・戦略。3つの視点から体系的に学ぶことで、<br>災害対応力向上の全体像が見えてきます。</p>
             <p style="font-size: 0.9em; margin-bottom: 40px;">推奨学習時間：約20分</p>
             <a href="#" class="all-in-one-link" onclick="alert('3つの資料を順番に開きます'); window.open('philosophy.html'); setTimeout(() => window.open('principles.html'), 500); setTimeout(() => window.open('movable-60-vs-perfect-100.html'), 1000); return false;">3つまとめて開く</a>
         </div>
