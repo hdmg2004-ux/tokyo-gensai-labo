@@ -204,6 +204,93 @@
             line-height: 1.6;
         }
         
+        /* 展開ボタン */
+        .expand-button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+        }
+        
+        .expand-button:hover {
+            background: #1e3c72;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 82, 152, 0.4);
+        }
+        
+        .intro-summary {
+            background: #fff9e6;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #ffd700;
+        }
+        
+        .intro-detail {
+            margin-top: 30px;
+        }
+        
+        /* 五箇条カードグリッド */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .principle-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            border: 2px solid #2a5298;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(42, 82, 152, 0.2);
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            border-color: #ffd700;
+        }
+        
+        .principle-card-number {
+            font-size: 1.1em;
+            color: #2a5298;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .principle-card-title {
+            font-size: 1.4em;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .principle-card-keyword {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
         .relationship-box {
             background: white;
             padding: 30px;
@@ -352,6 +439,24 @@
                 font-size: 1em;
             }
             
+            .principles-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .principle-card {
+                min-height: 180px;
+            }
+            
+            .principle-card-title {
+                font-size: 1.2em;
+            }
+            
+            .expand-button {
+                padding: 12px 30px;
+                font-size: 0.95em;
+            }
+            
             .toc-button {
                 bottom: 20px;
                 right: 20px;
@@ -375,39 +480,97 @@
             <h1><span class="saigai-red">災</span>害対応力向上研修<br>哲学五箇条</h1>
             <div class="subtitle">20年の実践から生まれた<br>研修設計の原則</div>
             <div class="tagline">多様性尊重・体験重視・現場適用<br>協働創造・継続成長</div>
-            <div class="version">2025年版 (Version 1.0)</div>
+            <div class="version">2025年版 (Version 2.0)</div>
         </div>
 
         <!-- はじめに -->
         <div class="page content-page" id="intro">
             <h2 class="page-title">はじめに</h2>
             
-            <div class="text-block">
-                <span class="saigai-red">災</span>害対応力向上研修は、なぜ形骸化するのか？<br>
-                「やらされ感」「机上の空論」「現場で使えない」——これらの批判は、なぜ繰り返されるのか？
-            </div>
-            
-            <div class="highlight-box">
+            <!-- 要約版（常に表示） -->
+            <div class="intro-summary">
                 <div class="text-block">
-                    それは、研修の「形」だけを真似て、「理念」を欠いているからだ。
+                    研修が形骸化するのは、「形」だけを真似て「理念」を欠いているから。20年の実践から辿り着いた「哲学五箇条」は、研修の背後にある不変の原則である。
                 </div>
             </div>
             
-            <div class="text-block">
-                東京医療減<span class="saigai-red">災</span>Laboは、2004年から20年以上、医療機関の<span class="saigai-red">災</span>害対応力向上研修を実践してきた。その過程で、「なぜこの研修は効果があるのか」「なぜ参加者は主体的に学ぶのか」という問いに向き合い続けた。
+            <!-- 展開ボタン -->
+            <div style="text-align: center; margin: 30px 0;">
+                <button class="expand-button" onclick="toggleIntro()">
+                    <span id="intro-button-text">序文全文を読む ▼</span>
+                </button>
             </div>
             
-            <div class="text-block">
-                そして、辿り着いた答えが、この「哲学五箇条」である。
+            <!-- 詳細版（折りたたみ） -->
+            <div class="intro-detail" id="intro-detail" style="display: none;">
+                <div class="text-block">
+                    <span class="saigai-red">災</span>害対応力向上研修は、なぜ形骸化するのか？<br>
+                    「やらされ感」「机上の空論」「現場で使えない」——これらの批判は、なぜ繰り返されるのか？
+                </div>
+                
+                <div class="highlight-box">
+                    <div class="text-block">
+                        それは、研修の「形」だけを真似て、「理念」を欠いているからだ。
+                    </div>
+                </div>
+                
+                <div class="text-block">
+                    東京医療減<span class="saigai-red">災</span>Laboは、2004年から20年以上、医療機関の<span class="saigai-red">災</span>害対応力向上研修を実践してきた。その過程で、「なぜこの研修は効果があるのか」「なぜ参加者は主体的に学ぶのか」という問いに向き合い続けた。
+                </div>
+                
+                <div class="text-block">
+                    そして、辿り着いた答えが、この「哲学五箇条」である。
+                </div>
+                
+                <div class="text-block">
+                    これは、単なる「研修テクニック」の羅列ではない。<br>
+                    研修の背後にある、不変の原則——「Why」である。
+                </div>
+                
+                <div class="yellow-emphasis">
+                    研修の「形」は変わっても、この「理念」は変わらない。
+                </div>
+            </div>
+        </div>
+
+        <!-- 五箇条の一覧 -->
+        <div class="page content-page" id="principles-overview" style="background: white;">
+            <h2 class="page-title" style="text-align: center; margin-bottom: 50px;">哲学五箇条</h2>
+            
+            <div class="principles-grid">
+                <a href="#principle1" class="principle-card" onclick="closeTOC()">
+                    <div class="principle-card-number">第一条</div>
+                    <div class="principle-card-title">すべての反応に、<br>価値がある</div>
+                    <div class="principle-card-keyword">多様性尊重</div>
+                </a>
+                
+                <a href="#principle2" class="principle-card" onclick="closeTOC()">
+                    <div class="principle-card-number">第二条</div>
+                    <div class="principle-card-title">知っていることと、<br>できることは違う</div>
+                    <div class="principle-card-keyword">体験重視</div>
+                </a>
+                
+                <a href="#principle3" class="principle-card" onclick="closeTOC()">
+                    <div class="principle-card-number">第三条</div>
+                    <div class="principle-card-title">現場で使えなければ、<br>意味がない</div>
+                    <div class="principle-card-keyword">現場適用</div>
+                </a>
+                
+                <a href="#principle4" class="principle-card" onclick="closeTOC()">
+                    <div class="principle-card-number">第四条</div>
+                    <div class="principle-card-title">一緒に作る方が、<br>うまくいく</div>
+                    <div class="principle-card-keyword">協働創造</div>
+                </a>
+                
+                <a href="#principle5" class="principle-card" onclick="closeTOC()">
+                    <div class="principle-card-number">第五条</div>
+                    <div class="principle-card-title">研修は、<br>終わりではなく始まり</div>
+                    <div class="principle-card-keyword">継続成長</div>
+                </a>
             </div>
             
-            <div class="text-block">
-                これは、単なる「研修テクニック」の羅列ではない。<br>
-                研修の背後にある、不変の原則——「Why」である。
-            </div>
-            
-            <div class="yellow-emphasis">
-                研修の「形」は変わっても、この「理念」は変わらない。
+            <div style="text-align: center; margin-top: 40px; color: #666; font-size: 0.95em;">
+                各条をクリックすると詳細ページに移動します
             </div>
         </div>
 
@@ -774,7 +937,7 @@
             <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 30px; margin-top: 40px;">
                 <div style="font-size: 1.5em; margin-bottom: 20px;"><span class="saigai-red">災</span>害対応力向上研修 哲学五箇条</div>
                 <div style="font-size: 1em; opacity: 0.9; margin: 10px 0;">
-                    2025年版 (Version 1.0)<br>
+                    2025年版 (Version 2.0)<br>
                     初版公開: 2025年11月1日
                 </div>
                 <div style="margin: 20px 0;">
@@ -803,6 +966,7 @@
         <div class="toc-content">
             <a href="#cover" class="toc-item" onclick="closeTOC()">表紙</a>
             <a href="#intro" class="toc-item" onclick="closeTOC()">はじめに</a>
+            <a href="#principles-overview" class="toc-item major" onclick="closeTOC()">五箇条の一覧</a>
             <a href="#principle1" class="toc-item major" onclick="closeTOC()">第一条: すべての反応に、価値がある</a>
             <a href="#principle2" class="toc-item major" onclick="closeTOC()">第二条: 知っていることと、できることは違う</a>
             <a href="#principle3" class="toc-item major" onclick="closeTOC()">第三条: 現場で使えなければ、意味がない</a>
@@ -815,6 +979,20 @@
     </div>
 
     <script>
+        // はじめにの展開/折りたたみ
+        function toggleIntro() {
+            const detail = document.getElementById('intro-detail');
+            const buttonText = document.getElementById('intro-button-text');
+            
+            if (detail.style.display === 'none') {
+                detail.style.display = 'block';
+                buttonText.textContent = '序文を閉じる ▲';
+            } else {
+                detail.style.display = 'none';
+                buttonText.textContent = '序文全文を読む ▼';
+            }
+        }
+        
         // 目次機能
         function toggleTOC() {
             const menu = document.getElementById('tocMenu');
