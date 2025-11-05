@@ -302,111 +302,124 @@
             font-size: 0.9em;
         }
         
+        /* 目次ボタン */
         .toc-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(42, 82, 152, 0.9);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: bold;
-            z-index: 2000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            transition: all 0.3s;
-        }
-        
-        .toc-button:hover {
-            background: rgba(42, 82, 152, 1);
-            transform: scale(1.05);
-        }
-        
-        .back-to-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: rgba(42, 82, 152, 0.9);
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             z-index: 1000;
             transition: all 0.3s;
         }
         
-        .back-to-top:hover {
-            background: rgba(42, 82, 152, 1);
-            transform: translateY(-5px);
+        .toc-button:hover {
+            background: #ffd700;
+            color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
         }
         
+        /* トップに戻るボタン */
+        .top-button {
+            position: fixed;
+            bottom: 95px;
+            right: 30px;
+            background: rgba(255, 215, 0, 0.9);
+            color: #333;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .top-button.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .top-button:hover {
+            background: #ffd700;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+        
+        /* 目次メニュー */
         .toc-menu {
             position: fixed;
-            top: 70px;
-            right: 20px;
+            bottom: 90px;
+            right: 30px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            padding: 20px;
-            z-index: 1999;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
             max-width: 350px;
-            max-height: 80vh;
+            max-height: 70vh;
             overflow-y: auto;
-            display: none;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.3s;
         }
         
         .toc-menu.show {
-            display: block;
-            animation: fadeIn 0.3s;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
         
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .toc-header {
+            background: #2a5298;
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 15px 15px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .toc-content {
+            padding: 10px;
         }
         
         .toc-item {
-            display: block;
             padding: 12px 15px;
             margin: 5px 0;
-            background: #f8f9fa;
-            border-radius: 8px;
             cursor: pointer;
+            border-radius: 8px;
             transition: all 0.2s;
-            border-left: 4px solid #2a5298;
+            color: #333;
             text-decoration: none;
-            color: inherit;
+            display: block;
+            border-left: 3px solid transparent;
         }
         
         .toc-item:hover {
-            background: #e3f2fd;
+            background: #f0f4f8;
+            border-left-color: #2a5298;
             transform: translateX(5px);
         }
         
-        .toc-title {
+        .toc-item.major {
             font-weight: bold;
             color: #2a5298;
-            font-size: 0.95em;
-        }
-        
-        .toc-subtitle {
-            font-size: 0.85em;
-            color: #666;
-            margin-top: 3px;
+            margin-top: 10px;
         }
         
         @media print {
@@ -466,67 +479,30 @@
 </head>
 <body>
     <!-- 目次ボタン -->
-    <button class="toc-button" onclick="toggleTOC()">📖 目次</button>
+    <button class="toc-button" onclick="toggleTOC()">📑 目次</button>
     
     <!-- トップに戻るボタン -->
-    <a href="#page1" class="back-to-top" title="トップに戻る">↑</a>
+    <button class="top-button" id="topButton" onclick="scrollToTop()">↑ TOP</button>
     
     <!-- 目次メニュー -->
     <div class="toc-menu" id="tocMenu">
-        <a href="#page1" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">表紙</div>
-        </a>
-        <a href="#page2" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">第1部: 研修としての成功</div>
-            <div class="toc-subtitle">推奨度9.25/10のA評価</div>
-        </a>
-        <a href="#page3" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">成長の実証データ</div>
-            <div class="toc-subtitle">知識+69%、自信+89%</div>
-        </a>
-        <a href="#page4" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">第2部: 実践の壁</div>
-            <div class="toc-subtitle">実践率2.5/10のC評価</div>
-        </a>
-        <a href="#page5" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">なぜC評価なのか？</div>
-            <div class="toc-subtitle">70%ギャップの正体</div>
-        </a>
-        <a href="#page6" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">なぜ実践できないのか？</div>
-            <div class="toc-subtitle">問題の本質</div>
-        </a>
-        <a href="#page7" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">昭和的無目的根性主義</div>
-            <div class="toc-subtitle">三大症状</div>
-        </a>
-        <a href="#page8" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">第3部: 「減じる」減災の実践</div>
-            <div class="toc-subtitle">今の災害対策を減じる</div>
-        </a>
-        <a href="#page9" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">デカルト的方法序説の実践</div>
-            <div class="toc-subtitle">4つの規則</div>
-        </a>
-        <a href="#page10" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">「減じる」の具体例</div>
-            <div class="toc-subtitle">パレートの法則</div>
-        </a>
-        <a href="#page11" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">60点合格主義</div>
-            <div class="toc-subtitle">完璧主義からの解放</div>
-        </a>
-        <a href="#page12" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">2026年への挑戦</div>
-            <div class="toc-subtitle">実証と普及</div>
-        </a>
-        <a href="#page13" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">意識改革とデカルト</div>
-            <div class="toc-subtitle">まとめ</div>
-        </a>
-        <a href="#page14" class="toc-item" onclick="closeTOC()">
-            <div class="toc-title">関連資料</div>
-        </a>
+        <div class="toc-header">目次</div>
+        <div class="toc-content">
+            <a href="#page1" class="toc-item" onclick="closeTOC()">表紙</a>
+            <a href="#page2" class="toc-item major" onclick="closeTOC()">第1部: 研修としての成功（推奨度9.25）</a>
+            <a href="#page3" class="toc-item" onclick="closeTOC()">成長の実証データ</a>
+            <a href="#page4" class="toc-item major" onclick="closeTOC()">第2部: 実践の壁（実践率2.5）</a>
+            <a href="#page5" class="toc-item" onclick="closeTOC()">なぜC評価なのか？</a>
+            <a href="#page6" class="toc-item" onclick="closeTOC()">なぜ実践できないのか？</a>
+            <a href="#page7" class="toc-item" onclick="closeTOC()">昭和的無目的根性主義の三大症状</a>
+            <a href="#page8" class="toc-item major" onclick="closeTOC()">第3部: 「減じる」減<span class="saigai-red">災</span>の実践</a>
+            <a href="#page9" class="toc-item" onclick="closeTOC()">デカルト的方法序説の実践</a>
+            <a href="#page10" class="toc-item" onclick="closeTOC()">「減じる」の具体例</a>
+            <a href="#page11" class="toc-item" onclick="closeTOC()">60点合格主義</a>
+            <a href="#page12" class="toc-item" onclick="closeTOC()">2026年への挑戦</a>
+            <a href="#page13" class="toc-item" onclick="closeTOC()">意識改革とデカルト</a>
+            <a href="#page14" class="toc-item" onclick="closeTOC()">奥付・関連資料</a>
+        </div>
     </div>
     
     <div class="book-container">
@@ -1265,7 +1241,7 @@
     </div>
 
     <script>
-        // 目次機能（アンカーリンク方式）
+        // 目次機能
         function toggleTOC() {
             const menu = document.getElementById('tocMenu');
             menu.classList.toggle('show');
@@ -1287,6 +1263,24 @@
                 !menu.contains(e.target) && 
                 e.target !== button) {
                 menu.classList.remove('show');
+            }
+        });
+        
+        // トップに戻る機能
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // スクロール時にトップボタンを表示/非表示
+        window.addEventListener('scroll', function() {
+            const topButton = document.getElementById('topButton');
+            if (window.pageYOffset > 300) {
+                topButton.classList.add('show');
+            } else {
+                topButton.classList.remove('show');
             }
         });
     </script>
