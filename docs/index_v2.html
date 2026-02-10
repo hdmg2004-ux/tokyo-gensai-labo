@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京医療減災Labo 実践知の体系 | 20年の実践から生まれた3つの知恵</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="災害対応力向上研修の理念（哲学五箇条）、実践（訓練企画10原則）、組織戦略（段階派遣効果）。20年の実践から生まれた体系的な知識を公開。">
+    <meta name="keywords" content="災害対応,減災,研修,訓練企画,組織学習,中島康,東京医療減災Labo,BCP,業務継続">
+    <meta name="author" content="中島康">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="東京医療減災Labo 実践知の体系">
+    <meta property="og:description" content="理念・実践・戦略。20年の実践から生まれた災害対応力向上の完全体系。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="東京医療減災Labo">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="東京医療減災Labo 実践知の体系">
+    <meta name="twitter:description" content="理念・実践・戦略。20年の実践から生まれた災害対応力向上の完全体系。">
+    
+    <style>
+        /* ========================================
+           HDMG Design System Variables (C案)
+           ======================================== */
+        :root {
+            /* Primary Colors - HDMG標準 */
+            --primary: #3e62ad;
+            --primary-hover: #2d4a8c;
+            --primary-light: #5c7fc4;
+            --primary-lighter: #e8edf7;
+            
+            /* Semantic Colors */
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            
+            /* Neutral Colors */
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            /* Text Colors */
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --text-tertiary: #9ca3af;
+            --text-inverse: #ffffff;
+            
+            /* Background */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-tertiary: #f3f4f6;
+            --bg-gradient: linear-gradient(135deg, #5c7fc4 0%, #3e62ad 100%);
+            
+            /* Border */
+            --border-default: #e5e7eb;
+            --border-focus: #3e62ad;
+            
+            /* Accent */
+            --accent-red: #dc143c;
+            --accent-gold: #ffd700;
+            
+            /* Spacing (rem based, 4px基準) */
+            --space-1: 0.25rem;   /* 4px */
+            --space-2: 0.5rem;    /* 8px */
+            --space-3: 0.75rem;   /* 12px */
+            --space-4: 1rem;      /* 16px */
+            --space-5: 1.25rem;   /* 20px */
+            --space-6: 1.5rem;    /* 24px */
+            --space-8: 2rem;      /* 32px */
+            --space-10: 2.5rem;   /* 40px */
+            --space-12: 3rem;     /* 48px */
+            --space-16: 4rem;     /* 64px */
+            
+            /* Typography (rem based) */
+            --text-xs: 0.75rem;    /* 12px */
+            --text-sm: 0.875rem;   /* 14px */
+            --text-base: 1rem;     /* 16px */
+            --text-lg: 1.125rem;   /* 18px */
+            --text-xl: 1.25rem;    /* 20px */
+            --text-2xl: 1.5rem;    /* 24px */
+            --text-3xl: 1.875rem;  /* 30px */
+            --text-4xl: 2.25rem;   /* 36px */
+            
+            /* Font Weights */
+            --font-normal: 400;
+            --font-medium: 500;
+            --font-semibold: 600;
+            --font-bold: 700;
+            
+            /* Line Heights */
+            --leading-tight: 1.25;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.75;
+            
+            /* Border Radius */
+            --radius-sm: 0.25rem;  /* 4px */
+            --radius-md: 0.5rem;   /* 8px */
+            --radius-lg: 1rem;     /* 16px */
+            --radius-xl: 1.25rem;  /* 20px */
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* ========================================
+           Base Styles
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px; /* 1rem = 16px */
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                         'Noto Sans JP', 'Yu Gothic UI', 'Hiragino Sans', sans-serif;
+            line-height: var(--leading-relaxed);
+            color: var(--text-primary);
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            padding: var(--space-10) var(--space-5);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* ========================================
+           Typography Scale
+           ======================================== */
+        h1 {
+            font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+            font-weight: var(--font-normal);
+            line-height: var(--leading-tight);
+            letter-spacing: 0.05em;
+        }
+        
+        h2 {
+            font-size: clamp(var(--text-xl), 3.5vw, var(--text-3xl));
+            font-weight: var(--font-normal);
+            line-height: var(--leading-tight);
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: clamp(var(--text-lg), 3vw, var(--text-2xl));
+            font-weight: var(--font-semibold);
+            line-height: var(--leading-normal);
+        }
+        
+        p {
+            font-size: var(--text-base);
+            line-height: var(--leading-relaxed);
+        }
+        
+        /* ========================================
+           Semantic HTML Elements
+           ======================================== */
+        .saigai-red {
+            color: var(--accent-red);
+            font-weight: var(--font-bold);
+        }
+        
+        /* ========================================
+           Layout Components
+           ======================================== */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-2xl);
+            overflow: hidden;
+        }
+        
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
+            color: var(--text-inverse);
+            padding: var(--space-12) var(--space-10);
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin-bottom: var(--space-5);
+            color: var(--text-inverse);
+        }
+        
+        .header .subtitle {
+            font-size: clamp(var(--text-base), 2.5vw, var(--text-xl));
+            opacity: 0.9;
+            margin-bottom: var(--space-6);
+        }
+        
+        .header .tagline {
+            font-size: clamp(var(--text-sm), 2vw, var(--text-lg));
+            opacity: 0.8;
+            font-weight: var(--font-normal);
+        }
+        
+        /* Intro Section */
+        .intro {
+            padding: var(--space-12) var(--space-10);
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+        
+        .intro h2 {
+            margin-bottom: var(--space-6);
+        }
+        
+        .intro p {
+            font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto var(--space-10);
+        }
+        
+        /* Triangle Navigation */
+        .triangle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: var(--space-10) 0;
+            position: relative;
+            height: 300px;
+        }
+        
+        .triangle-item {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-lg);
+            font-weight: var(--font-bold);
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+            border: 3px solid var(--primary);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .triangle-item:hover {
+            background: var(--primary-lighter);
+            color: var(--primary-hover);
+            box-shadow: 0 8px 25px rgba(62, 98, 173, 0.4);
+            border-color: var(--accent-gold);
+            transform: scale(1.05);
+        }
+        
+        .triangle-item:focus {
+            outline: 2px solid var(--border-focus);
+            outline-offset: 2px;
+        }
+        
+        .triangle-item.top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .triangle-item.left {
+            bottom: 0;
+            left: 10%;
+        }
+        
+        .triangle-item.right {
+            bottom: 0;
+            right: 10%;
+        }
+        
+        /* Cards Section */
+        .cards-section {
+            padding: var(--space-12) var(--space-10);
+            background: var(--bg-primary);
+        }
+        
+        .section-title {
+            font-size: clamp(var(--text-xl), 3.5vw, var(--text-3xl));
+            color: var(--primary);
+            margin-bottom: var(--space-10);
+            text-align: center;
+            font-weight: var(--font-normal);
+        }
+        
+        /* Card Component */
+        .card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-10);
+            margin-bottom: var(--space-6);
+            border-left: 6px solid var(--primary);
+            transition: all 0.3s ease;
+            scroll-margin-top: var(--space-6);
+        }
+        
+        .card:hover {
+            transform: translateX(var(--space-2));
+            box-shadow: var(--shadow-lg);
+            border-left-color: var(--primary-hover);
+        }
+        
+        .card:focus-within {
+            outline: 2px solid var(--border-focus);
+            outline-offset: 2px;
+        }
+        
+        .card-label {
+            font-size: var(--text-sm);
+            color: var(--primary);
+            font-weight: var(--font-bold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-2);
+        }
+        
+        .card-title {
+            font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+            color: var(--text-primary);
+            margin-bottom: var(--space-5);
+            font-weight: var(--font-bold);
+            line-height: var(--leading-tight);
+        }
+        
+        .card-question {
+            font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+            color: var(--text-secondary);
+            margin-bottom: var(--space-5);
+            font-style: italic;
+            line-height: var(--leading-relaxed);
+        }
+        
+        .card-description {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-6);
+            line-height: var(--leading-relaxed);
+        }
+        
+        /* Button Component */
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: var(--text-inverse);
+            padding: var(--space-4) var(--space-6);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: var(--font-semibold);
+            font-size: var(--text-base);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(62, 98, 173, 0.3);
+        }
+        
+        .card-link:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(62, 98, 173, 0.4);
+        }
+        
+        .card-link:focus {
+            outline: 2px solid var(--border-focus);
+            outline-offset: 2px;
+        }
+        
+        /* All-in-One Section */
+        .all-in-one {
+            background: var(--bg-gradient);
+            color: var(--text-inverse);
+            padding: var(--space-12) var(--space-10);
+            text-align: center;
+        }
+        
+        .all-in-one h2 {
+            font-size: clamp(var(--text-xl), 3.5vw, var(--text-3xl));
+            margin-bottom: var(--space-5);
+            font-weight: var(--font-normal);
+            color: var(--text-inverse);
+        }
+        
+        .all-in-one p {
+            font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+            margin-bottom: var(--space-6);
+            opacity: 0.9;
+        }
+        
+        .all-in-one-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-primary);
+            color: var(--primary);
+            padding: var(--space-5) var(--space-10);
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: var(--font-bold);
+            font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .all-in-one-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(255, 255, 255, 0.5);
+        }
+        
+        .all-in-one-link:focus {
+            outline: 2px solid var(--text-inverse);
+            outline-offset: 2px;
+        }
+        
+        /* Footer Section */
+        .footer {
+            background: var(--primary);
+            color: var(--text-inverse);
+            padding: var(--space-10);
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer h3 {
+            font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
+            margin-bottom: var(--space-5);
+            font-weight: var(--font-normal);
+        }
+        
+        .footer p {
+            margin: var(--space-2) 0;
+            opacity: 0.9;
+            line-height: var(--leading-relaxed);
+        }
+        
+        .footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        .footer a:focus {
+            outline: 2px solid var(--text-inverse);
+            outline-offset: 2px;
+        }
+        
+        /* ========================================
+           Responsive Design (Mobile First)
+           ======================================== */
+        @media (max-width: 768px) {
+            body {
+                padding: var(--space-4);
+            }
+            
+            .header {
+                padding: var(--space-8) var(--space-5);
+            }
+            
+            .intro,
+            .cards-section,
+            .all-in-one,
+            .footer {
+                padding: var(--space-8) var(--space-5);
+            }
+            
+            .card {
+                padding: var(--space-6);
+            }
+            
+            /* Triangle to Vertical Stack on Mobile */
+            .triangle {
+                height: auto;
+                flex-direction: column;
+                gap: var(--space-5);
+            }
+            
+            .triangle-item {
+                position: static !important;
+                transform: none !important;
+                margin: var(--space-2) 0;
+                width: 180px;
+                height: 180px;
+            }
+            
+            .triangle-item:hover {
+                transform: scale(1.05) !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: var(--space-2);
+            }
+            
+            .container {
+                border-radius: var(--radius-lg);
+            }
+            
+            .triangle-item {
+                width: 160px;
+                height: 160px;
+                font-size: var(--text-base);
+            }
+        }
+        
+        /* ========================================
+           Print Styles
+           ======================================== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .card-link,
+            .all-in-one-link,
+            .triangle-item {
+                border: 1px solid var(--primary);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <h1>東京医療減<span class="saigai-red">災</span>Labo<br>実践知の体系</h1>
+            <p class="subtitle">20年の実践から生まれた3つの知恵</p>
+            <p class="tagline">理念・実践・戦略の完全体系</p>
+        </header>
+        
+        <!-- Main Content -->
+        <main role="main">
+            <!-- Introduction Section -->
+            <section class="intro" aria-labelledby="intro-heading">
+                <h2 id="intro-heading">あなたの課題は何ですか？</h2>
+                <p>災害対応力向上研修を20年以上実践してきた東京医療減災Laboが、3つの視点から体系的な知識を公開します。</p>
+                
+                <nav class="triangle" aria-label="3つの視点へのナビゲーション">
+                    <a href="#philosophy-card" class="triangle-item top" aria-label="理念編へ移動">理念<br>Why</a>
+                    <a href="#principles-card" class="triangle-item left" aria-label="実践編へ移動">実践<br>How</a>
+                    <a href="#strategy-card" class="triangle-item right" aria-label="戦略編へ移動">戦略<br>What</a>
+                </nav>
+            </section>
+            
+            <!-- Cards Section -->
+            <section class="cards-section" aria-labelledby="cards-heading">
+                <h2 id="cards-heading" class="section-title">課題別ガイド</h2>
+                
+                <!-- Card 1: Philosophy -->
+                <article class="card" id="philosophy-card" aria-labelledby="philosophy-title">
+                    <div class="card-label" aria-label="理念編">理念編 - Why</div>
+                    <h3 id="philosophy-title" class="card-title">
+                        <span class="saigai-red">災</span>害対応力向上研修 哲学五箇条
+                    </h3>
+                    <p class="card-question">
+                        □ なぜ減災研修は形骸化するのか？<br>
+                        □ 研修の本質的な価値とは何か？
+                    </p>
+                    <p class="card-description">
+                        「すべての反応に価値がある」「知っていることと、できることは違う」――研修の背後にある5つの原則を明らかにします。多様性尊重、体験重視、現場適用、協働創造、継続成長。20年の実践が辿り着いた理念の核心。
+                    </p>
+                    <a href="philosophy.html" class="card-link" aria-label="哲学五箇条の詳細ページへ">
+                        哲学五箇条を読む →
+                    </a>
+                </article>
+                
+                <!-- Card 2: Principles -->
+                <article class="card" id="principles-card" aria-labelledby="principles-title">
+                    <div class="card-label" aria-label="実践編">実践編 - How</div>
+                    <h3 id="principles-title" class="card-title">訓練企画10原則</h3>
+                    <p class="card-question">
+                        □ 実効性のある訓練をどう作るか？<br>
+                        □ 失敗から学ぶ文化をどう醸成するか？
+                    </p>
+                    <p class="card-description">
+                        「訓練は失敗の事前体験である」「6割の完成度で使ってみる」――従来の訓練の常識を覆す10の原則。身の丈に合った訓練、3ない訓練、自己評価による課題抽出。明日から使える実践的な方法論。
+                    </p>
+                    <a href="principles.html" class="card-link" aria-label="訓練企画10原則の詳細ページへ">
+                        10原則を読む →
+                    </a>
+                </article>
+                
+                <!-- Card 3: Strategy -->
+                <article class="card" id="strategy-card" aria-labelledby="strategy-title">
+                    <div class="card-label" aria-label="戦略編">戦略編 - What & Evidence</div>
+                    <h3 id="strategy-title" class="card-title">動ける60点 &gt; 動けない100点</h3>
+                    <p class="card-question">
+                        □ なぜ推奨度9.25が実践率2.5になるのか？<br>
+                        □ 70%ギャップをどう埋めるのか？
+                    </p>
+                    <p class="card-description">
+                        「時間がない」の本質は、昭和的無目的根性主義による無駄な努力。パレートの法則とデカルト的方法序説で「減じる」ことで、実践の時間が生まれる。研修A評価、教育システムC評価―74点の誠実な開示と、2026年への挑戦。
+                    </p>
+                    <a href="movable-60-vs-perfect-100.html" class="card-link" aria-label="動ける60点の詳細ページへ">
+                        実証データと解決策を見る →
+                    </a>
+                </article>
+            </section>
+            
+            <!-- All-in-One Section -->
+            <section class="all-in-one" aria-labelledby="all-in-one-heading">
+                <h2 id="all-in-one-heading">または、3つまとめて理解する</h2>
+                <p>
+                    理念・実践・戦略。3つの視点から体系的に学ぶことで、<br>
+                    災害対応力向上の全体像が見えてきます。
+                </p>
+                <p style="font-size: var(--text-sm); margin-bottom: var(--space-10);">
+                    推奨学習時間：約20分
+                </p>
+                <a href="#" 
+                   class="all-in-one-link" 
+                   onclick="alert('3つの資料を順番に開きます'); window.open('philosophy.html'); setTimeout(() => window.open('principles.html'), 500); setTimeout(() => window.open('movable-60-vs-perfect-100.html'), 1000); return false;"
+                   aria-label="3つの資料をまとめて開く">
+                    3つまとめて開く
+                </a>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <h3>東京医療減<span class="saigai-red">災</span>Labo</h3>
+                <p>
+                    「有事に備え、平時に鍛える。<br>
+                    机上の空論から実践の知恵へ。<br>
+                    五感で学ぶ減災対策」
+                </p>
+                <p style="margin-top: var(--space-6);">©HDMG2004 2025</p>
+                <p style="margin-top: var(--space-5);">
+                    お問い合わせ: 
+                    <a href="mailto:tbk_gensai_labo@tmhp.jp">tbk_gensai_labo@tmhp.jp</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
