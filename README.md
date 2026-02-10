@@ -15,7 +15,7 @@
 
 ## 🌐 アクセス
 
-**公開サイト**: [https://hdmg2004-ux.github.io/tokyo-gensai-labo/](https://hdmg2004-ux.github.io/tokyo-gensai-labo/)
+**公開サイト**: [https://hdmg2004-ux.github.io/tokyo-gensai-labo/v2](https://hdmg2004-ux.github.io/tokyo-gensai-labo/v2)
 
 > GitHub Pagesで公開されています。`docs/index.html`からアクセスできます。
 
@@ -36,7 +36,7 @@
 ## 📖 コンテンツ詳細
 
 ### 1. 災害対応力向上研修 哲学五箇条
-**ファイル**: [`docs/philosophy.html`](docs/philosophy.html)  
+**ファイル**: [`docs/v2/philosophy.html`](docs/philosophy.html)  
 **テーマ**: 理念（Why）
 
 研修の背後にある5つの原則：
@@ -47,7 +47,7 @@
 5. 研修は、終わりではなく、始まりである（継続成長）
 
 ### 2. 訓練企画10原則
-**ファイル**: [`docs/principles.html`](docs/principles.html)  
+**ファイル**: [`docs/v2/principles.html`](docs/principles.html)  
 **テーマ**: 実践（How）
 
 実効性のある訓練を作る10の原則：
@@ -63,7 +63,7 @@
 - 3回の出だし訓練
 
 ### 3. 動ける60点 > 動けない100点
-**ファイル**: [`docs/movable-60-vs-perfect-100.html`](docs/movable-60-vs-perfect-100.html)  
+**ファイル**: [`docs/v2/movable-60-vs-perfect-100.html`](docs/movable-60-vs-perfect-100.html)  
 **テーマ**: 戦略とエビデンス（What & Evidence）
 
 推奨度9.25が実践率2.5になる「70%ギャップ」の原因と解決策：
@@ -130,7 +130,7 @@ start index.html # Windows
 
 **中島 康（Yasushi Nakajima）**  
 東京医療減災Labo  
-©HDMG2004 2025
+©HDMG2004 2026
 
 ## 📧 お問い合わせ
 
@@ -138,7 +138,7 @@ start index.html # Windows
 
 ## 🔄 更新履歴
 
-### Version 2.0 (2025-11-05)
+### Version 2.0 (2026-02-10)
 - プロジェクト構造を`docs/`フォルダに整理
 - ファイル名を英語表記に統一（GitHub対応）
 - GitHub Pages対応
