@@ -15,7 +15,7 @@
 
 ## 🌐 アクセス
 
-**公開サイト**: [https://hdmg2004-ux.github.io/tokyo-gensai-labo/v2](https://hdmg2004-ux.github.io/tokyo-gensai-labo/v2)
+**公開サイト**: [https://hdmg2004-ux.github.io/tokyo-gensai-labo](https://hdmg2004-ux.github.io/tokyo-gensai-labo)
 
 > GitHub Pagesで公開されています。`docs/index.html`からアクセスできます。
 
