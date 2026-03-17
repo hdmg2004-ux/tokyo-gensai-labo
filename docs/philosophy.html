@@ -9,7 +9,6 @@
     <meta name="description" content="災害対応力向上研修の理念を5つの原則にまとめた哲学五箇条。東京医療減災Laboが20年の実践から導き出した研修設計の核心。多様性尊重・体験重視・現場適用・協働創造・継続成長。">
     <meta name="keywords" content="災害対応,研修,医療,減災,BCP,訓練,中島康,東京医療減災Labo,病院,防災,業務継続,アクションカード">
     <meta name="author" content="中島康">
-    <meta name="robots" content="index, follow">
     
     <!-- OGP -->
     <meta property="og:title" content="災害対応力向上研修 哲学五箇条">
@@ -23,102 +22,9 @@
     <meta name="twitter:title" content="災害対応力向上研修 哲学五箇条">
     <meta name="twitter:description" content="多様性尊重・体験重視・現場適用・協働創造・継続成長。20年の実践から生まれた研修設計の原則。">
     
+    <meta name="robots" content="index, follow">
+    
     <style>
-        /* ========================================
-           HDMG Design System Variables (C案)
-           ======================================== */
-        :root {
-            /* Primary Colors */
-            --primary: #3e62ad;
-            --primary-hover: #2d4a8c;
-            --primary-light: #5c7fc4;
-            --primary-lighter: #e8edf7;
-            
-            /* Semantic Colors */
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --info: #3b82f6;
-            
-            /* Neutral Colors */
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-500: #6b7280;
-            --gray-700: #374151;
-            --gray-900: #111827;
-            
-            /* Text Colors */
-            --text-primary: #111827;
-            --text-secondary: #6b7280;
-            --text-inverse: #ffffff;
-            
-            /* Background */
-            --bg-primary: #ffffff;
-            --bg-secondary: #f9fafb;
-            --bg-gradient: linear-gradient(135deg, #5c7fc4 0%, #3e62ad 100%);
-            
-            /* Border */
-            --border-default: #e5e7eb;
-            --border-focus: #3e62ad;
-            
-            /* Accent */
-            --accent-red: #dc143c;
-            --accent-gold: #ffd700;
-            --accent-yellow: #fef3c7;
-            
-            /* Spacing */
-            --space-1: 0.25rem;
-            --space-2: 0.5rem;
-            --space-3: 0.75rem;
-            --space-4: 1rem;
-            --space-5: 1.25rem;
-            --space-6: 1.5rem;
-            --space-8: 2rem;
-            --space-10: 2.5rem;
-            --space-12: 3rem;
-            --space-15: 3.75rem;
-            --space-20: 5rem;
-            
-            /* Typography */
-            --text-xs: 0.75rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem;
-            --text-4xl: 2.25rem;
-            
-            /* Font Weights */
-            --font-normal: 400;
-            --font-medium: 500;
-            --font-semibold: 600;
-            --font-bold: 700;
-            
-            /* Line Heights */
-            --leading-tight: 1.25;
-            --leading-normal: 1.5;
-            --leading-relaxed: 1.75;
-            --leading-loose: 1.9;
-            
-            /* Border Radius */
-            --radius-sm: 0.25rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 1rem;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        /* ========================================
-           Base Styles
-           ======================================== */
         * {
             margin: 0;
             padding: 0;
@@ -127,1003 +33,1008 @@
         
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-                         'Noto Sans JP', 'Yu Gothic UI', 'Hiragino Sans', sans-serif;
-            line-height: var(--leading-relaxed);
-            color: var(--text-primary);
-            background: var(--bg-gradient);
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: var(--space-5);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        /* ========================================
-           Typography
-           ======================================== */
-        h1 {
-            font-size: clamp(var(--text-2xl), 5vw, 2.5rem);
-            font-weight: var(--font-normal);
-            line-height: var(--leading-tight);
-            letter-spacing: 0.05em;
-        }
-        
-        h2 {
-            font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
-            font-weight: var(--font-normal);
-            line-height: var(--leading-tight);
-        }
-        
-        h3 {
-            font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
-            font-weight: var(--font-semibold);
-            line-height: var(--leading-normal);
-            color: var(--primary);
-        }
-        
-        p {
-            font-size: var(--text-base);
-            line-height: var(--leading-loose);
-        }
-        
-        strong {
-            font-weight: var(--font-semibold);
-            color: var(--primary);
+            padding: 20px;
         }
         
         .serif {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'MS Mincho', serif;
         }
         
-        /* ========================================
-           Utility Classes
-           ======================================== */
         .saigai-red {
-            color: var(--accent-red);
-            font-weight: var(--font-bold);
+            color: #dc143c;
+            font-weight: bold;
         }
         
-        /* ========================================
-           Layout Components
-           ======================================== */
         .book-container {
             max-width: 900px;
             margin: 0 auto;
-            background: var(--bg-primary);
-            box-shadow: var(--shadow-2xl);
-            border-radius: var(--radius-lg);
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 10px;
             overflow: hidden;
         }
         
         .page {
             min-height: 100vh;
-            padding: var(--space-12) var(--space-15) var(--space-20);
+            padding: 45px 60px 120px 60px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
-            background: var(--bg-primary);
+            background: white;
         }
         
-        /* Cover Page */
         .cover {
-            background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
-            color: var(--text-inverse);
+            background: linear-gradient(135deg, #1e3c72 0%, #3e62ad 100%);
+            color: white;
             text-align: center;
             align-items: center;
         }
         
         .cover h1 {
-            margin-bottom: var(--space-6);
-            color: var(--text-inverse);
-            line-height: var(--leading-tight);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
         }
         
         .cover .subtitle {
-            font-size: clamp(var(--text-base), 2.5vw, var(--text-xl));
-            margin: var(--space-6) 0;
+            font-size: 1.3em;
+            margin: 30px 0;
             opacity: 0.9;
         }
         
         .cover .tagline {
-            font-size: clamp(var(--text-sm), 2vw, var(--text-lg));
-            margin: var(--space-5) 0;
+            font-size: 1.1em;
+            margin: 20px 0;
             opacity: 0.8;
         }
         
-        /* Content Pages */
+        .cover .version {
+            font-size: 0.9em;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+        
         .content-page {
-            background: var(--bg-secondary);
+            background: #fafafa;
         }
         
         .page-title {
-            font-size: clamp(var(--text-xl), 4vw, var(--text-3xl));
-            color: var(--primary);
-            margin-bottom: var(--space-8);
-            font-weight: var(--font-normal);
-            border-bottom: 3px solid var(--primary);
-            padding-bottom: var(--space-4);
-        }
-        
-        /* Principle Components */
-        .principle-number {
-            font-size: clamp(var(--text-lg), 3vw, var(--text-2xl));
-            color: var(--primary);
-            font-weight: var(--font-bold);
-            margin-bottom: var(--space-6);
-            display: inline-block;
-            padding: var(--space-2) var(--space-6);
-            background: var(--primary-lighter);
-            border-radius: var(--radius-md);
-        }
-        
-        .principle-title {
-            font-size: clamp(var(--text-2xl), 5vw, 2.5rem);
-            color: var(--primary);
-            margin-bottom: var(--space-10);
-            font-weight: var(--font-normal);
-            line-height: var(--leading-tight);
-            text-align: center;
-            padding: var(--space-8);
-            border: 3px solid var(--primary);
-            border-radius: var(--radius-lg);
+            font-size: 2.2em;
+            color: #3e62ad;
+            margin-bottom: 30px;
+            font-weight: 300;
+            border-bottom: 3px solid #3e62ad;
+            padding-bottom: 15px;
         }
         
         .section-title {
-            font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
-            color: var(--primary);
-            font-weight: var(--font-semibold);
-            margin: var(--space-8) 0 var(--space-6);
-            padding-bottom: var(--space-3);
-            border-bottom: 2px solid var(--primary-lighter);
+            font-size: 1.8em;
+            color: #3e62ad;
+            margin: 30px 0 20px 0;
+            font-weight: bold;
         }
         
-        /* Text Blocks */
-        .text-block {
-            font-size: clamp(var(--text-base), 2vw, var(--text-lg));
-            color: var(--text-primary);
-            margin-bottom: var(--space-6);
-            line-height: var(--leading-loose);
+        .principle-number {
+            font-size: 1.5em;
+            color: #3e62ad;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(42, 82, 152, 0.1);
+            border-radius: 8px;
         }
         
-        /* Yellow Emphasis Box */
-        .yellow-emphasis {
-            background: var(--accent-yellow);
-            color: var(--text-primary);
-            padding: var(--space-8);
-            border-radius: var(--radius-lg);
-            margin: var(--space-8) 0;
-            font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl));
-            font-weight: var(--font-medium);
-            line-height: var(--leading-normal);
+        .principle-title {
+            font-size: 2.5em;
+            color: #3e62ad;
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.4;
+            padding: 30px;
+            border: 3px solid #3e62ad;
+            border-radius: 10px;
             text-align: center;
-            border-left: 4px solid var(--warning);
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'MS Mincho', serif;
         }
         
-        /* Highlight Box */
+        .text-block {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.9;
+        }
+        
         .highlight-box {
-            background: var(--primary-lighter);
-            color: var(--text-primary);
-            padding: var(--space-8);
-            border-radius: var(--radius-lg);
-            margin: var(--space-8) 0;
-            border-left: 4px solid var(--primary);
+            background: white;
+            border-left: 6px solid #3e62ad;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
-        .highlight-box .text-block:last-child {
-            margin-bottom: 0;
+        .highlight-box.warning {
+            border-left-color: #dc143c;
         }
         
-        /* Action Box */
+        .highlight-box.success {
+            border-left-color: #4caf50;
+        }
+        
+        .yellow-emphasis {
+            background: #ffd700;
+            padding: 20px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.15em;
+            color: #333;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+        }
+        
         .action-box {
-            background: var(--primary);
-            color: var(--text-inverse);
-            padding: var(--space-8);
-            border-radius: var(--radius-lg);
-            margin: var(--space-8) 0;
-            box-shadow: var(--shadow-lg);
+            background: #3e62ad;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
         }
         
         .action-box h3 {
-            color: var(--text-inverse);
-            font-size: clamp(var(--text-lg), 3vw, var(--text-xl));
-            margin-bottom: var(--space-4);
-            border-bottom: none;
+            font-size: 1.3em;
+            margin-bottom: 15px;
         }
         
         .action-box p {
-            font-size: clamp(var(--text-base), 2vw, var(--text-lg));
-            font-weight: var(--font-medium);
-            margin: 0;
+            font-size: 1.4em;
+            font-weight: bold;
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'MS Mincho', serif;
+            line-height: 1.6;
         }
         
-        /* Five Principles Cards */
+        /* 展開ボタン */
+        .expand-button {
+            background: #3e62ad;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.3);
+        }
+        
+        .expand-button:hover {
+            background: #1e3c72;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(42, 82, 152, 0.4);
+        }
+        
+        .intro-summary {
+            background: #fff9e6;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #ffd700;
+        }
+        
+        .intro-detail {
+            margin-top: 30px;
+        }
+        
+        /* 五箇条カードグリッド */
         .principles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-6);
-            margin: var(--space-10) 0;
+            gap: 25px;
+            margin: 30px 0;
         }
         
         .principle-card {
-            background: var(--bg-primary);
-            border: 2px solid var(--primary);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6);
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            border: 2px solid #3e62ad;
+            border-radius: 15px;
+            padding: 30px;
             text-align: center;
-            transition: all 0.3s ease;
+            text-decoration: none;
+            transition: all 0.3s;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
         }
         
         .principle-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            background: var(--primary-lighter);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(42, 82, 152, 0.2);
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            border-color: #ffd700;
         }
         
         .principle-card-number {
-            font-size: var(--text-lg);
-            color: var(--primary);
-            font-weight: var(--font-bold);
-            margin-bottom: var(--space-3);
+            font-size: 1.1em;
+            color: #3e62ad;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
         
         .principle-card-title {
-            font-size: clamp(var(--text-base), 2.5vw, var(--text-lg));
-            color: var(--primary-hover);
-            font-weight: var(--font-semibold);
-            line-height: var(--leading-tight);
+            font-size: 1.4em;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
         
-        /* Colophon */
-        .colophon {
-            background: var(--primary);
-            color: var(--text-inverse);
+        .principle-card-keyword {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .relationship-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .relationship-item {
+            margin: 10px 0;
+            padding: 15px;
+            background: #e3f2fd;
+            border-left: 4px solid #3e62ad;
+            border-radius: 5px;
+        }
+        
+        .relationship-arrow {
             text-align: center;
+            font-size: 1.5em;
+            color: #3e62ad;
+            margin: 5px 0;
         }
         
-        .colophon h2 {
-            color: var(--text-inverse);
-            margin-bottom: var(--space-6);
-        }
-        
-        .colophon a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-        
-        .colophon a:hover {
-            opacity: 0.8;
-            text-decoration: underline;
-        }
-        
-        /* ========================================
-           Navigation Components
-           ======================================== */
-        
-        /* TOC Button */
+        /* 目次ボタン */
         .toc-button {
             position: fixed;
-            bottom: var(--space-5);
-            right: var(--space-5);
-            background: var(--primary);
-            color: var(--text-inverse);
+            bottom: 30px;
+            right: 30px;
+            background: rgba(42, 82, 152, 0.9);
+            color: white;
             border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: var(--text-lg);
+            padding: 15px 25px;
+            border-radius: 50px;
             cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            z-index: 1001;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s;
         }
         
         .toc-button:hover {
-            background: var(--primary-hover);
+            background: #ffd700;
+            color: #333;
             transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
         }
         
-        .toc-button:focus {
-            outline: 2px solid var(--border-focus);
-            outline-offset: 2px;
-        }
-        
-        /* Top Button */
+        /* トップに戻るボタン */
         .top-button {
             position: fixed;
-            bottom: 85px;
-            right: var(--space-5);
-            background: var(--bg-primary);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 30px;
-            padding: var(--space-3) var(--space-5);
-            font-size: var(--text-base);
-            font-weight: var(--font-semibold);
+            bottom: 95px;
+            right: 30px;
+            background: rgba(255, 215, 0, 0.9);
+            color: #333;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
             cursor: pointer;
-            box-shadow: var(--shadow-md);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             z-index: 1000;
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
         }
         
         .top-button.show {
             opacity: 1;
-            visibility: visible;
+            pointer-events: auto;
         }
         
         .top-button:hover {
-            background: var(--primary);
-            color: var(--text-inverse);
-            transform: translateY(-2px);
+            background: #ffd700;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
         }
         
-        .top-button:focus {
-            outline: 2px solid var(--border-focus);
-            outline-offset: 2px;
-        }
-        
-        /* TOC Menu */
+        /* 目次メニュー */
         .toc-menu {
             position: fixed;
-            bottom: 80px;
-            right: var(--space-5);
-            width: 350px;
+            bottom: 90px;
+            right: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            max-width: 350px;
             max-height: 70vh;
-            background: var(--bg-primary);
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(var(--space-5));
-            transition: all 0.3s ease;
+            overflow-y: auto;
             z-index: 999;
-            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.3s;
         }
         
         .toc-menu.show {
             opacity: 1;
-            visibility: visible;
             transform: translateY(0);
+            pointer-events: auto;
         }
         
         .toc-header {
-            background: var(--primary);
-            color: var(--text-inverse);
-            padding: var(--space-4);
-            font-size: var(--text-lg);
-            font-weight: var(--font-semibold);
-            text-align: center;
+            background: #3e62ad;
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 15px 15px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 1;
         }
         
         .toc-content {
-            max-height: calc(70vh - 60px);
-            overflow-y: auto;
-            padding: var(--space-2);
+            padding: 10px;
         }
         
         .toc-item {
-            display: block;
-            padding: var(--space-3) var(--space-4);
-            color: var(--text-primary);
+            padding: 12px 15px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s;
+            color: #333;
             text-decoration: none;
-            border-radius: var(--radius-sm);
-            font-size: var(--text-sm);
-            transition: all 0.2s ease;
+            display: block;
+            border-left: 3px solid transparent;
         }
         
         .toc-item:hover {
-            background: var(--primary-lighter);
-            color: var(--primary-hover);
+            background: #f0f4f8;
+            border-left-color: #3e62ad;
+            transform: translateX(5px);
         }
         
         .toc-item.major {
-            font-weight: var(--font-semibold);
-            margin-top: var(--space-2);
+            font-weight: bold;
+            color: #3e62ad;
+            margin-top: 10px;
         }
         
-        /* ========================================
-           Responsive Design
-           ======================================== */
+        /* レスポンシブ */
         @media (max-width: 768px) {
             body {
-                padding: var(--space-3);
+                padding: 10px;
             }
             
             .page {
-                padding: var(--space-8) var(--space-5) var(--space-15);
+                padding: 30px 25px 100px 25px;
+                min-height: auto;
+            }
+            
+            .cover h1 {
+                font-size: 1.8em;
+            }
+            
+            .cover .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .page-title {
+                font-size: 1.6em;
+            }
+            
+            .section-title {
+                font-size: 1.4em;
+            }
+            
+            .principle-title {
+                font-size: 1.8em;
+                padding: 20px;
+            }
+            
+            .text-block {
+                font-size: 1em;
             }
             
             .principles-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .principle-card {
+                min-height: 180px;
+            }
+            
+            .principle-card-title {
+                font-size: 1.2em;
+            }
+            
+            .expand-button {
+                padding: 12px 30px;
+                font-size: 0.95em;
             }
             
             .toc-button {
-                width: 50px;
-                height: 50px;
-                font-size: var(--text-base);
-                bottom: var(--space-4);
-                right: var(--space-4);
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.9em;
             }
             
             .top-button {
-                bottom: 70px;
-                right: var(--space-4);
-                padding: var(--space-2) var(--space-4);
-                font-size: var(--text-sm);
+                bottom: 75px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.9em;
             }
             
             .toc-menu {
                 bottom: 70px;
-                right: var(--space-4);
-                left: var(--space-4);
-                width: auto;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            body {
-                padding: var(--space-2);
-            }
-            
-            .page {
-                padding: var(--space-6) var(--space-4) var(--space-12);
-            }
-            
-            .book-container {
-                border-radius: var(--radius-md);
-            }
-        }
-        
-        /* ========================================
-           Print Styles
-           ======================================== */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            
-            .book-container {
-                box-shadow: none;
-            }
-            
-            .toc-button,
-            .top-button,
-            .toc-menu {
-                display: none;
-            }
-            
-            .page {
-                page-break-after: always;
+                right: 20px;
+                left: 20px;
+                max-width: none;
             }
         }
     </style>
 </head>
 <body>
     <div class="book-container">
-        <!-- Cover -->
-        <section class="page cover" id="cover" aria-label="表紙">
-            <h1>
-                <span class="saigai-red">災</span>害対応力向上研修<br>
-                哲学五箇条
-            </h1>
-            <p class="subtitle">
-                20年の実践から生まれた<br>
-                研修設計の原則
-            </p>
-            <div style="margin: var(--space-15) 0;">
-                <p style="font-size: var(--text-xl); margin: var(--space-2) 0;">中島康</p>
-                <p style="font-size: var(--text-lg); margin: var(--space-2) 0;">
-                    東京医療減<span class="saigai-red">災</span>Labo
-                </p>
-            </div>
-            <p class="tagline">
-                多様性尊重・体験重視・現場適用<br>
-                協働創造・継続成長<br>
-                <span style="font-size: var(--text-sm); margin-top: var(--space-5); display: block;">
-                    2026年版 (Version 2.0)
-                </span>
-            </p>
-        </section>
+        <!-- カバー -->
+        <div class="page cover" id="cover">
+            <h1><span class="saigai-red">災</span>害対応力向上研修<br>哲学五箇条</h1>
+            <div class="subtitle">20年の実践から生まれた<br>研修設計の原則</div>
+            <div class="tagline">多様性尊重・体験重視・現場適用<br>協働創造・継続成長</div>
+            <div class="version">2025年版 (Version 2.0)</div>
+        </div>
 
-        <!-- Introduction -->
-        <section class="page content-page" id="intro" aria-labelledby="intro-title">
-            <h2 id="intro-title" class="page-title">はじめに</h2>
+        <!-- はじめに -->
+        <div class="page content-page" id="intro">
+            <h2 class="page-title">はじめに</h2>
             
-            <p class="text-block">
-                研修とは何か。
-            </p>
-            
-            <p class="text-block">
-                それは、知識を伝える場ではない。<br>
-                体験を通じて、行動を変える場だ。
-            </p>
-            
-            <p class="text-block">
-                <span class="saigai-red">災</span>害対応力向上研修も同じだ。<br>
-                マニュアルを覚えることが目的ではない。<br>
-                いざというとき、自分で判断し、動ける人を育てることが目的だ。
-            </p>
-            
-            <p class="text-block">
-                では、どうすればそんな研修が作れるのか。
-            </p>
-            
-            <div class="highlight-box">
-                <p class="text-block">
-                    20年の実践の中で、私は5つの原則に辿り着いた。<br>
-                    これが、「哲学五箇条」だ。
-                </p>
+            <!-- 要約版（常に表示） -->
+            <div class="intro-summary">
+                <div class="text-block">
+                    研修が形骸化するのは、「形」だけを真似て「理念」を欠いているから。20年の実践から辿り着いた「哲学五箇条」は、研修の背後にある不変の原則である。
+                </div>
             </div>
             
-            <p class="text-block">
-                この五箇条は、研修の「やり方」ではなく、「あり方」を示している。<br>
-                テクニックではなく、根底にある考え方だ。
-            </p>
+            <!-- 展開ボタン -->
+            <div style="text-align: center; margin: 30px 0;">
+                <button class="expand-button" onclick="toggleIntro()">
+                    <span id="intro-button-text">序文全文を読む ▼</span>
+                </button>
+            </div>
             
-            <p class="text-block">
-                この五箇条があれば、どんな研修でも設計できる。<br>
-                逆に、この五箇条がなければ、どんなに立派な研修計画も、形骸化する。
-            </p>
-            
-            <p class="text-block" style="margin-top: var(--space-10); text-align: center; font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl)); font-weight: var(--font-semibold);">
-                それでは、五箇条を見ていこう。
-            </p>
-        </section>
+            <!-- 詳細版（折りたたみ） -->
+            <div class="intro-detail" id="intro-detail" style="display: none;">
+                <div class="text-block">
+                    <span class="saigai-red">災</span>害対応力向上研修は、なぜ形骸化するのか？<br>
+                    「やらされ感」「机上の空論」「現場で使えない」——これらの批判は、なぜ繰り返されるのか？
+                </div>
+                
+                <div class="highlight-box">
+                    <div class="text-block">
+                        それは、研修の「形」だけを真似て、「理念」を欠いているからだ。
+                    </div>
+                </div>
+                
+                <div class="text-block">
+                    東京医療減<span class="saigai-red">災</span>Laboは、2004年から20年以上、医療機関の<span class="saigai-red">災</span>害対応力向上研修を実践してきた。その過程で、「なぜこの研修は効果があるのか」「なぜ参加者は主体的に学ぶのか」という問いに向き合い続けた。
+                </div>
+                
+                <div class="text-block">
+                    そして、辿り着いた答えが、この「哲学五箇条」である。
+                </div>
+                
+                <div class="text-block">
+                    これは、単なる「研修テクニック」の羅列ではない。<br>
+                    研修の背後にある、不変の原則——「Why」である。
+                </div>
+                
+                <div class="yellow-emphasis">
+                    研修の「形」は変わっても、この「理念」は変わらない。
+                </div>
+            </div>
+        </div>
 
-        <!-- Five Principles Overview -->
-        <section class="page content-page" id="principles-overview" style="background: var(--bg-primary);" aria-labelledby="overview-title">
-            <h2 id="overview-title" class="page-title" style="text-align: center; margin-bottom: var(--space-12);">哲学五箇条</h2>
+        <!-- 五箇条の一覧 -->
+        <div class="page content-page" id="principles-overview" style="background: white;">
+            <h2 class="page-title" style="text-align: center; margin-bottom: 50px;">哲学五箇条</h2>
             
             <div class="principles-grid">
-                <a href="#principle1" class="principle-card" style="text-decoration: none;">
+                <a href="#principle1" class="principle-card" onclick="closeTOC()">
                     <div class="principle-card-number">第一条</div>
                     <div class="principle-card-title">すべての反応に、<br>価値がある</div>
+                    <div class="principle-card-keyword">多様性尊重</div>
                 </a>
                 
-                <a href="#principle2" class="principle-card" style="text-decoration: none;">
+                <a href="#principle2" class="principle-card" onclick="closeTOC()">
                     <div class="principle-card-number">第二条</div>
                     <div class="principle-card-title">知っていることと、<br>できることは違う</div>
+                    <div class="principle-card-keyword">体験重視</div>
                 </a>
                 
-                <a href="#principle3" class="principle-card" style="text-decoration: none;">
+                <a href="#principle3" class="principle-card" onclick="closeTOC()">
                     <div class="principle-card-number">第三条</div>
                     <div class="principle-card-title">現場で使えなければ、<br>意味がない</div>
+                    <div class="principle-card-keyword">現場適用</div>
                 </a>
                 
-                <a href="#principle4" class="principle-card" style="text-decoration: none;">
+                <a href="#principle4" class="principle-card" onclick="closeTOC()">
                     <div class="principle-card-number">第四条</div>
-                    <div class="principle-card-title">一人の天才より、<br>普通のチーム</div>
+                    <div class="principle-card-title">一緒に作る方が、<br>うまくいく</div>
+                    <div class="principle-card-keyword">協働創造</div>
                 </a>
                 
-                <a href="#principle5" class="principle-card" style="text-decoration: none;">
+                <a href="#principle5" class="principle-card" onclick="closeTOC()">
                     <div class="principle-card-number">第五条</div>
-                    <div class="principle-card-title">研修は、終わりではなく、<br>始まりである</div>
+                    <div class="principle-card-title">研修は、<br>終わりではなく始まり</div>
+                    <div class="principle-card-keyword">継続成長</div>
                 </a>
             </div>
-        </section>
+            
+            <div style="text-align: center; margin-top: 40px; color: #666; font-size: 0.95em;">
+                各条をクリックすると詳細ページに移動します
+            </div>
+        </div>
 
-        <!-- Principle 1 -->
-        <article class="page content-page" id="principle1" aria-labelledby="principle1-title">
+        <!-- 第一条 -->
+        <div class="page content-page" id="principle1">
             <div class="principle-number">第一条</div>
-            <h2 id="principle1-title" class="principle-title">
+            <div class="principle-title">
                 すべての反応に、<br>価値がある
-            </h2>
+            </div>
             
-            <h3 class="section-title">なぜか</h3>
+            <div class="section-title">なぜか</div>
             
-            <p class="text-block">
+            <div class="text-block">
                 人は、それぞれ異なる背景、経験、価値観を持っている。
-            </p>
+            </div>
             
-            <p class="text-block">
+            <div class="text-block">
                 だから、同じ<span class="saigai-red">災</span>害シナリオを見ても、「怖い」と感じる人もいれば、「対処できそう」と思う人もいる。<br>
                 「備えが足りない」と焦る人もいれば、「今のままで大丈夫」と安心する人もいる。
-            </p>
+            </div>
             
             <div class="yellow-emphasis">
                 どの反応も、「間違い」ではない。<br>
                 すべて、その人の「今の状態」を映す、正直な鏡だ。
             </div>
             
-            <p class="text-block">
+            <div class="text-block">
                 研修の役割は、「正解」を押し付けることではない。<br>
                 多様な反応を引き出し、それぞれの価値を認め、互いに学び合う場を作ることだ。
-            </p>
+            </div>
             
-            <p class="text-block">
+            <div class="text-block">
                 なぜなら、<span class="saigai-red">災</span>害対応に「唯一の正解」は存在しないからだ。<br>
                 施設ごと、部署ごと、役職ごとに、最適解は異なる。
-            </p>
+            </div>
             
             <div class="highlight-box">
-                <p class="text-block">
+                <div class="text-block">
                     だから、「あなたはどう思いますか？」と問い、<br>
                     「なるほど、そういう見方もあるんですね」と受け止める。
-                </p>
-                <p class="text-block">
+                </div>
+                <div class="text-block">
                     これが、学びの第一歩だ。
-                </p>
+                </div>
             </div>
             
             <div class="action-box">
                 <h3>次の研修設計で、<br>こう自問しよう:</h3>
                 <p>「この研修は、多様な反応を<br>引き出せる設計になっているか？」</p>
             </div>
-        </article>
+        </div>
 
-        <!-- Principle 2 -->
-        <article class="page content-page" id="principle2" aria-labelledby="principle2-title">
+        <!-- 第二条 -->
+        <div class="page content-page" id="principle2">
             <div class="principle-number">第二条</div>
-            <h2 id="principle2-title" class="principle-title">
+            <div class="principle-title">
                 知っていることと、<br>できることは違う
-            </h2>
+            </div>
             
-            <h3 class="section-title">なぜか</h3>
+            <div class="section-title">なぜか</div>
             
-            <p class="text-block">
-                知識は、頭の中にある。<br>
-                しかし、行動は、体の中から生まれる。
-            </p>
+            <div class="text-block">
+                座学で「緊急時の行動手順」を学んでも、実際の混乱の中で体が動くとは限らない。
+            </div>
             
-            <p class="text-block">
-                「CPRのやり方を知っている」ことと、「緊急時にCPRができる」ことは、まったく別のことだ。<br>
-                知識だけでは、体は動かない。
-            </p>
+            <div class="text-block">
+                「トリアージの原則」を暗記しても、目の前で苦しむ患者を前に、冷静に判断できるとは限らない。
+            </div>
             
             <div class="yellow-emphasis">
-                体験なき知識は、使えない。<br>
-                研修は、「知る場」ではなく、「試す場」でなければならない。
+                人は、「頭で理解したこと」を、「体で実行できる」わけではない。
             </div>
             
-            <p class="text-block">
-                だから、研修では「失敗」を体験させる。<br>
-                安全な環境で失敗することで、本番での失敗を防ぐ。
-            </p>
-            
-            <p class="text-block">
-                「こうすればいいんだ」と頭で理解するだけでなく、<br>
-                「やってみたら、こんな壁があった」と体で知ることが大切だ。
-            </p>
-            
-            <div class="highlight-box">
-                <p class="text-block">
-                    講義だけで終わらせない。<br>
-                    必ず、実技・演習・シミュレーションを組み込む。
-                </p>
-                <p class="text-block">
-                    これが、「できる人」を育てる近道だ。
-                </p>
+            <div class="text-block">
+                だから、体験が必要だ。<br>
+                シミュレーション、ロールプレイ、図上演習——<br>
+                「もし今、<span class="saigai-red">災</span>害が起きたら」という疑似体験を通じて、初めて「できる」に近づく。
             </div>
             
-            <div class="action-box">
-                <h3>次の研修設計で、<br>こう自問しよう:</h3>
-                <p>「この研修は、参加者が<br>『試す機会』を持てているか？」</p>
-            </div>
-        </article>
-
-        <!-- Principle 3 -->
-        <article class="page content-page" id="principle3" aria-labelledby="principle3-title">
-            <div class="principle-number">第三条</div>
-            <h2 id="principle3-title" class="principle-title">
-                現場で使えなければ、<br>意味がない
-            </h2>
-            
-            <h3 class="section-title">なぜか</h3>
-            
-            <p class="text-block">
-                研修で学んだことが、現場で活かせなければ、それは「無駄な時間」だ。
-            </p>
-            
-            <p class="text-block">
-                どんなに素晴らしい理論も、どんなに完璧なマニュアルも、<br>
-                現場で使えなければ、何の価値もない。
-            </p>
-            
-            <div class="yellow-emphasis">
-                研修の成果は、研修室の中ではなく、<br>
-                現場での行動の変化で測られる。
+            <div class="text-block">
+                体験の中で、迷い、失敗し、修正する。<br>
+                この試行錯誤こそが、本当の学びだ。
             </div>
             
-            <p class="text-block">
-                だから、研修で扱う内容は、参加者の「リアルな現場」に即したものでなければならない。<br>
-                「こんなシチュエーション、うちでは起こらない」と思われた瞬間、学びは止まる。
-            </p>
-            
-            <p class="text-block">
-                現場で使えるものだけを扱う。<br>
-                現場で使えない理論は、捨てる。
-            </p>
-            
-            <div class="highlight-box">
-                <p class="text-block">
-                    研修の最後に、こう問いかける：<br>
-                    「明日から、何を変えますか？」
-                </p>
-                <p class="text-block">
-                    その答えが具体的であれば、研修は成功だ。
-                </p>
-            </div>
-            
-            <div class="action-box">
-                <h3>次の研修設計で、<br>こう自問しよう:</h3>
-                <p>「この研修の内容は、参加者の<br>現場で本当に使えるものか？」</p>
-            </div>
-        </article>
-
-        <!-- Principle 4 -->
-        <article class="page content-page" id="principle4" aria-labelledby="principle4-title">
-            <div class="principle-number">第四条</div>
-            <h2 id="principle4-title" class="principle-title">
-                一人の天才より、<br>普通のチーム
-            </h2>
-            
-            <h3 class="section-title">なぜか</h3>
-            
-            <p class="text-block">
-                <span class="saigai-red">災</span>害対応は、一人ではできない。<br>
-                どんなに優秀な人がいても、一人では限界がある。
-            </p>
-            
-            <p class="text-block">
-                むしろ、「普通の人たち」がチームとして機能することの方が、はるかに強い。
-            </p>
-            
-            <div class="yellow-emphasis">
-                研修の目的は、<br>
-                スーパーマンを育てることではない。<br>
-                チームとして動ける組織を作ることだ。
-            </div>
-            
-            <p class="text-block">
-                だから、研修では「個人の能力向上」だけでなく、「チームの連携」を重視する。<br>
-                グループワーク、役割分担、コミュニケーション——これらすべてが、チーム力を育てる。
-            </p>
-            
-            <p class="text-block">
-                一人の「できる人」に頼る組織は脆い。<br>
-                その人がいなくなったら、組織は崩れる。
-            </p>
-            
-            <div class="highlight-box">
-                <p class="text-block">
-                    研修では、「誰が」ではなく「どう協力するか」を学ぶ。
-                </p>
-                <p class="text-block">
-                    これが、持続可能な<span class="saigai-red">災</span>害対応力の土台だ。
-                </p>
-            </div>
-            
-            <div class="action-box">
-                <h3>次の研修設計で、<br>こう自問しよう:</h3>
-                <p>「この研修は、チームとしての<br>連携を育てる設計になっているか？」</p>
-            </div>
-        </article>
-
-        <!-- Principle 5 -->
-        <article class="page content-page" id="principle5" aria-labelledby="principle5-title">
-            <div class="principle-number">第五条</div>
-            <h2 id="principle5-title" class="principle-title">
-                研修は、終わりではなく、<br>始まりである
-            </h2>
-            
-            <h3 class="section-title">なぜか</h3>
-            
-            <p class="text-block">
-                研修が終わった瞬間、学びが止まる——これが、最もありがちな失敗だ。
-            </p>
-            
-            <p class="text-block">
-                研修は、「ゴール」ではない。<br>
-                学びの「スタート地点」だ。
-            </p>
-            
-            <div class="yellow-emphasis">
-                研修後の行動が変わらなければ、<br>
-                研修は無意味だ。
-            </div>
-            
-            <p class="text-block">
-                だから、研修では「次のアクション」を必ず決める。<br>
-                「学んだことを、明日からどう使うか」を具体的に考える時間を作る。
-            </p>
-            
-            <p class="text-block">
-                さらに、研修後のフォローアップも重要だ。<br>
-                「やってみてどうだったか」を振り返る場を設ける。<br>
-                継続的に学び続ける文化を作る。
-            </p>
-            
-            <div class="highlight-box">
-                <p class="text-block">
-                    研修は、「やって終わり」ではなく、<br>
-                    「やり続ける」ための仕掛けだ。
-                </p>
-                <p class="text-block">
-                    継続的な成長こそが、真の目標である。
-                </p>
-            </div>
-            
-            <div class="action-box">
-                <h3>次の研修設計で、<br>こう自問しよう:</h3>
-                <p>「この研修は、参加者が研修後も<br>学び続ける仕掛けを持っているか？」</p>
-            </div>
-        </article>
-
-        <!-- Relationship -->
-        <section class="page content-page" id="relationship" aria-labelledby="relationship-title">
-            <h2 id="relationship-title" class="page-title">五箇条の関係性</h2>
-            
-            <p class="text-block">
-                この五箇条は、バラバラに存在するのではない。<br>
-                すべてが、互いに支え合っている。
-            </p>
-            
-            <div class="highlight-box">
-                <p class="text-block" style="font-weight: var(--font-semibold);">
-                    第一条（多様性尊重）があるから、<br>
-                    第四条（チーム重視）が機能する。
-                </p>
-                <p class="text-block">
-                    多様な意見を受け入れることが、チームの力を高める。
-                </p>
-            </div>
-            
-            <div class="highlight-box">
-                <p class="text-block" style="font-weight: var(--font-semibold);">
-                    第二条（体験重視）があるから、<br>
-                    第三条（現場適用）が可能になる。
-                </p>
-                <p class="text-block">
-                    体験を通じて学ぶことで、現場で使える力が育つ。
-                </p>
-            </div>
-            
-            <div class="highlight-box">
-                <p class="text-block" style="font-weight: var(--font-semibold);">
-                    第五条（継続成長）があるから、<br>
-                    他の四箇条がすべて活きる。
-                </p>
-                <p class="text-block">
-                    継続的に学び続けることで、組織全体が進化する。
-                </p>
-            </div>
-            
-            <p class="text-block" style="margin-top: var(--space-10); text-align: center; font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl)); font-weight: var(--font-semibold);">
-                五箇条は、単なる「原則」ではない。<br>
-                研修設計の「思想」であり、<br>
-                組織文化を変える「哲学」だ。
-            </p>
-        </section>
-
-        <!-- Ending -->
-        <section class="page content-page" id="ending" aria-labelledby="ending-title">
-            <h2 id="ending-title" class="page-title">おわりに</h2>
-            
-            <p class="text-block">
-                この五箇条は、20年の実践から生まれた。<br>
-                数え切れないほどの研修を企画し、実施し、振り返る中で、<br>
-                「これが本質だ」と確信したものだけを、ここに残した。
-            </p>
-            
-            <p class="text-block">
-                この五箇条は、完璧ではない。<br>
-                あなたの現場で使ってみて、修正してほしい。<br>
-                そして、より良い形に育ててほしい。
-            </p>
-            
-            <div class="highlight-box">
-                <p class="text-block">
-                    研修は、「型」ではなく、「心」だ。
-                </p>
-                <p class="text-block">
-                    この五箇条を使って、<br>
-                    あなたの現場に合った研修を作ってほしい。
-                </p>
-            </div>
-            
-            <p class="text-block">
-                最後に、一つだけ伝えたい。
-            </p>
-            
-            <div class="yellow-emphasis">
-                完璧な研修を目指さなくていい。<br>
-                60点で始めて、使いながら育てればいい。
-            </div>
-            
-            <p class="text-block">
-                それが、「動ける60点 > 動けない100点」の精神だ。
-            </p>
-            
-            <p class="text-block" style="margin-top: var(--space-10); text-align: center; font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl)); font-weight: var(--font-semibold);">
-                さあ、次の研修から、<br>
-                この五箇条を使ってみよう。
-            </p>
-        </section>
-
-        <!-- Colophon -->
-        <section class="page colophon" id="colophon" aria-label="奥付・関連資料">
-            <div style="max-width: 600px; margin: 0 auto;">
-                <h2>
-                    <span class="saigai-red">災</span>害対応力向上研修<br>
-                    哲学五箇条
-                </h2>
-                <div style="font-size: var(--text-base); opacity: 0.9; margin: var(--space-2) 0; line-height: var(--leading-relaxed);">
-                    20年の実践から生まれた<br>
-                    研修設計の原則
+            <div class="highlight-box success">
+                <div class="text-block">
+                    研修で失敗することは、恥ではない。<br>
+                    むしろ、本番で失敗しないための、最高の学びだ。
                 </div>
-                <div style="font-size: var(--text-base); opacity: 0.9; margin: var(--space-2) 0; margin-top: var(--space-8);">
-                    2026年版 (Version 2.0)<br>
+            </div>
+            
+            <div class="text-block">
+                だから、研修は「知識の伝達」だけでなく、「体験の場」でなければならない。
+            </div>
+            
+            <div class="action-box">
+                <h3>次の研修企画で、<br>こう設計しよう:</h3>
+                <p>「参加者が手を動かし、<br>声を出し、判断する場面を<br>どれだけ作れるか？」</p>
+            </div>
+        </div>
+
+        <!-- 第三条 -->
+        <div class="page content-page" id="principle3">
+            <div class="principle-number">第三条</div>
+            <div class="principle-title">
+                現場で使えなければ、<br>意味がない
+            </div>
+            
+            <div class="section-title">なぜか</div>
+            
+            <div class="text-block">
+                研修で学んだことが、職場に戻った瞬間に「使えない」と感じられたら、それは研修の失敗だ。
+            </div>
+            
+            <div class="text-block">
+                「うちの施設では無理」<br>
+                「理想論すぎる」<br>
+                「人手が足りないから実践できない」
+            </div>
+            
+            <div class="yellow-emphasis">
+                こうした言葉が出る研修は、現場との距離が遠すぎる。
+            </div>
+            
+            <div class="text-block">
+                だから、研修は「理想」を語るだけでなく、「現実」から出発しなければならない。
+            </div>
+            
+            <div class="text-block">
+                あなたの施設の構造は？ スタッフの人数は？ 備蓄の状況は？<br>
+                この「現実」を前提に、「明日からできること」を一緒に考える。
+            </div>
+            
+            <div class="highlight-box">
+                <div class="text-block">
+                    完璧を目指さない。<br>
+                    「6割できたら、まず使ってみる」。
+                </div>
+                <div class="text-block">
+                    これが、現場に根付く研修の条件だ。
+                </div>
+            </div>
+            
+            <div class="action-box">
+                <h3>次の研修で、<br>こう問いかけよう:</h3>
+                <p>「あなたの施設で、<br>明日からできることは何ですか？」</p>
+            </div>
+        </div>
+
+        <!-- 第四条 -->
+        <div class="page content-page" id="principle4">
+            <div class="principle-number">第四条</div>
+            <div class="principle-title">
+                一人の天才より、<br>チームの凡人
+            </div>
+            
+            <div class="section-title">なぜか</div>
+            
+            <div class="text-block">
+                <span class="saigai-red">災</span>害対応を「できる人」に依存する組織は、脆い。
+            </div>
+            
+            <div class="text-block">
+                その人が被<span class="saigai-red">災</span>したら？ 休暇中だったら？ 退職したら？
+            </div>
+            
+            <div class="yellow-emphasis">
+                属人化は、組織を弱くする。
+            </div>
+            
+            <div class="text-block">
+                <span class="saigai-red">災</span>害対応は、個人の力量ではなく、チーム全体の協働で実現される。
+            </div>
+            
+            <div class="text-block">
+                一人の英雄的判断ではなく、複数の普通の人が、役割を分担し、情報を共有し、互いを補完することで成り立つ。
+            </div>
+            
+            <div class="text-block">
+                研修もまた、協働の場だ。<br>
+                ファシリテーターも参加者も、全員が教え合い、学び合う。
+            </div>
+            
+            <div class="text-block">
+                「教える→教わる」の固定された関係ではなく、双方向の知恵の交換。
+            </div>
+            
+            <div class="highlight-box success">
+                <div class="text-block">
+                    これが、<span class="saigai-red">災</span>害に強い組織を作る。
+                </div>
+            </div>
+            
+            <div class="action-box">
+                <h3>次の研修設計で、<br>こう考えよう:</h3>
+                <p>「ファシリテーターがいなくても、<br>参加者同士で学べるか？」</p>
+            </div>
+        </div>
+
+        <!-- 第五条 -->
+        <div class="page content-page" id="principle5">
+            <div class="principle-number">第五条</div>
+            <div class="principle-title">
+                研修は、終わりではなく、<br>始まりである
+            </div>
+            
+            <div class="section-title">なぜか</div>
+            
+            <div class="text-block">
+                2日間の研修で、<span class="saigai-red">災</span>害対応力は身につかない。
+            </div>
+            
+            <div class="text-block">
+                研修で得た気づきを、日常業務の中で試し、失敗し、改善し、習慣化する——このプロセスに、3ヶ月から1年かかる。
+            </div>
+            
+            <div class="yellow-emphasis">
+                研修で「わかった」人が、現場で「できる」ようになるには、継続的な支援が必要だ。
+            </div>
+            
+            <div class="text-block">
+                研修を「イベント」として終わらせる組織は、成長しない。
+            </div>
+            
+            <div class="text-block">
+                なぜなら、人は忘れる生き物だからだ。<br>
+                研修で学んだことの80%は、3週間後には忘れられる。
+            </div>
+            
+            <div class="text-block">
+                だから、フォローアップが必要だ。
+            </div>
+            
+            <div class="text-block">
+                3ヶ月後に「あれから何をやりましたか？」と問う。<br>
+                半年後に「どんな失敗をしましたか？」と聴く。<br>
+                1年後に「あなたの施設は、どう変わりましたか？」と確認する。
+            </div>
+            
+            <div class="highlight-box">
+                <div class="text-block">
+                    この継続的な関わりが、研修の価値を10倍にする。
+                </div>
+            </div>
+            
+            <div class="action-box">
+                <h3>次の研修計画に、<br>こう加えよう:</h3>
+                <p>「3ヶ月後、半年後、1年後の<br>フォローアップ日程」</p>
+            </div>
+        </div>
+
+        <!-- 五箇条の関係性 -->
+        <div class="page content-page" id="relationship">
+            <h2 class="page-title">五箇条の関係性</h2>
+            
+            <div class="text-block">
+                五箇条は、単独では機能しない。<br>
+                全てが揃って、初めて<span class="saigai-red">災</span>害対応力向上研修となる。
+            </div>
+            
+            <div class="relationship-box">
+                <div class="relationship-item">
+                    <strong>第一条【多様性尊重】</strong><br>
+                    <small>前提: 人は違う</small>
+                </div>
+                <div class="relationship-arrow">↓</div>
+                
+                <div class="relationship-item">
+                    <strong>第二条【体験重視】</strong><br>
+                    <small>方法: 体で学ぶ</small>
+                </div>
+                <div class="relationship-arrow">↓</div>
+                
+                <div class="relationship-item">
+                    <strong>第三条【現場適用】</strong><br>
+                    <small>基準: 使えるか</small>
+                </div>
+                <div class="relationship-arrow">↓</div>
+                
+                <div class="relationship-item">
+                    <strong>第四条【協働創造】</strong><br>
+                    <small>主体: チームで</small>
+                </div>
+                <div class="relationship-arrow">↓</div>
+                
+                <div class="relationship-item">
+                    <strong>第五条【継続成長】</strong><br>
+                    <small>時間: 終わらない</small>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="text-block" style="text-align: center; font-size: 1.2em; font-weight: bold;">
+                    これらは、研修の「理念」であり、<br>
+                    すべての研修設計の根底にある原則である。
+                </div>
+            </div>
+        </div>
+
+        <!-- おわりに -->
+        <div class="page content-page" id="ending">
+            <h2 class="page-title">おわりに</h2>
+            
+            <div class="text-block">
+                この哲学五箇条は、20年以上の実践から生まれた。
+            </div>
+            
+            <div class="text-block">
+                最初から、これらの原則が明確だったわけではない。<br>
+                無数の試行錯誤、失敗、改善を経て、ようやく言語化できた。
+            </div>
+            
+            <div class="highlight-box">
+                <div class="text-block">
+                    研修の「形」は、時代とともに変わる。<br>
+                    しかし、この「理念」は変わらない。
+                </div>
+            </div>
+            
+            <div class="text-block">
+                あなたが研修を企画するとき、この五箇条を思い出してほしい。
+            </div>
+            
+            <div class="text-block">
+                すべての反応に価値がある。<br>
+                知っていることと、できることは違う。<br>
+                現場で使えなければ、意味がない。<br>
+                一人の天才より、チームの凡人。<br>
+                研修は、終わりではなく、始まりである。
+            </div>
+            
+            <div class="yellow-emphasis">
+                これが、<span class="saigai-red">災</span>害対応力向上研修の本質だ。
+            </div>
+        </div>
+
+        <!-- 奥付 -->
+        <div class="page cover" id="colophon">
+            <h2 style="font-size: 2em; margin-bottom: 30px;">関連資料</h2>
+            
+            <div style="text-align: left; max-width: 600px; margin: 0 auto 40px;">
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">実践編 (How)</div>
+                    <a href="principles.html" style="color: #ffd700; text-decoration: none;">
+                        → 訓練企画10原則
+                    </a>
+                </div>
+                
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">戦略編 (What & Evidence)</div>
+                    <a href="movable-60-vs-perfect-100.html" style="color: #ffd700; text-decoration: none;">
+                        → 動ける60点 &gt; 動けない100点
+                    </a>
+                </div>
+                
+                <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                    <div style="font-weight: bold; margin-bottom: 5px;">体系全体</div>
+                    <a href="index.html" style="color: #ffd700; text-decoration: none;">
+                        → 東京医療減<span class="saigai-red">災</span>Labo 実践知の体系
+                    </a>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.3); padding-top: 30px; margin-top: 40px;">
+                <div style="font-size: 1.5em; margin-bottom: 20px;"><span class="saigai-red">災</span>害対応力向上研修 哲学五箇条</div>
+                <div style="font-size: 1em; opacity: 0.9; margin: 10px 0;">
+                    2025年版 (Version 2.0)<br>
+                    初版公開: 2025年11月1日
+                </div>
+                <div style="margin: 20px 0;">
                     著者: 中島 康<br>
                     東京医療減<span class="saigai-red">災</span>Labo
                 </div>
-                <div style="margin-top: var(--space-8); font-size: var(--text-sm); opacity: 0.8;">
-                    ©HDMG2004 2026<br>
+                <div style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+                    ©HDMG2004 2025<br>
                     CC BY-NC-SA 4.0
                 </div>
-                <div style="margin-top: var(--space-6);">
-                    <a href="mailto:tbk_gensai_labo@tmhp.jp">
+                <div style="margin-top: 20px;">
+                    <a href="mailto:tbk_gensai_labo@tmhp.jp" style="color: #ffd700; text-decoration: none;">
                         tbk_gensai_labo@tmhp.jp
                     </a>
                 </div>
-                <div style="margin-top: var(--space-10); padding-top: var(--space-8); border-top: 1px solid rgba(255,255,255,0.3);">
-                    <p style="font-size: var(--text-base); margin-bottom: var(--space-4); font-weight: var(--font-semibold);">
-                        関連資料
-                    </p>
-                    <p style="font-size: var(--text-sm); margin: var(--space-2) 0;">
-                        <a href="principles.html">訓練企画10原則</a>
-                    </p>
-                    <p style="font-size: var(--text-sm); margin: var(--space-2) 0;">
-                        <a href="movable-60-vs-perfect-100.html">動ける60点 > 動けない100点</a>
-                    </p>
-                    <p style="font-size: var(--text-sm); margin: var(--space-2) 0;">
-                        <a href="index.html">実践知の体系（トップページ）</a>
-                    </p>
-                </div>
             </div>
-        </section>
+        </div>
     </div>
 
-    <!-- Top Button -->
-    <button class="top-button" id="topButton" onclick="scrollToTop()" aria-label="ページトップに戻る">
-        ↑ TOP
-    </button>
+    <!-- トップに戻るボタン -->
+    <button class="top-button" id="topButton" onclick="scrollToTop()">↑ TOP</button>
 
-    <!-- TOC Button -->
-    <button class="toc-button" onclick="toggleTOC()" aria-label="目次を開く">
-        📑
-    </button>
+    <!-- 目次ボタン -->
+    <button class="toc-button" onclick="toggleTOC()">📑 目次</button>
 
-    <!-- TOC Menu -->
-    <nav class="toc-menu" id="tocMenu" aria-label="目次ナビゲーション">
+    <!-- 目次メニュー -->
+    <div class="toc-menu" id="tocMenu">
         <div class="toc-header">目次</div>
         <div class="toc-content">
             <a href="#cover" class="toc-item" onclick="closeTOC()">表紙</a>
-            <a href="#intro" class="toc-item major" onclick="closeTOC()">はじめに</a>
-            <a href="#principles-overview" class="toc-item" onclick="closeTOC()">哲学五箇条</a>
+            <a href="#intro" class="toc-item" onclick="closeTOC()">はじめに</a>
+            <a href="#principles-overview" class="toc-item major" onclick="closeTOC()">五箇条の一覧</a>
             <a href="#principle1" class="toc-item major" onclick="closeTOC()">第一条: すべての反応に、価値がある</a>
             <a href="#principle2" class="toc-item major" onclick="closeTOC()">第二条: 知っていることと、できることは違う</a>
             <a href="#principle3" class="toc-item major" onclick="closeTOC()">第三条: 現場で使えなければ、意味がない</a>
-            <a href="#principle4" class="toc-item major" onclick="closeTOC()">第四条: 一人の天才より、普通のチーム</a>
+            <a href="#principle4" class="toc-item major" onclick="closeTOC()">第四条: 一人の天才より、チームの凡人</a>
             <a href="#principle5" class="toc-item major" onclick="closeTOC()">第五条: 研修は、終わりではなく、始まりである</a>
-            <a href="#relationship" class="toc-item major" onclick="closeTOC()">五箇条の関係性</a>
-            <a href="#ending" class="toc-item major" onclick="closeTOC()">おわりに</a>
+            <a href="#relationship" class="toc-item" onclick="closeTOC()">五箇条の関係性</a>
+            <a href="#ending" class="toc-item" onclick="closeTOC()">おわりに</a>
             <a href="#colophon" class="toc-item" onclick="closeTOC()">奥付・関連資料</a>
         </div>
-    </nav>
+    </div>
 
     <script>
-        // TOC Functions
+        // はじめにの展開/折りたたみ
+        function toggleIntro() {
+            const detail = document.getElementById('intro-detail');
+            const buttonText = document.getElementById('intro-button-text');
+            
+            if (detail.style.display === 'none') {
+                detail.style.display = 'block';
+                buttonText.textContent = '序文を閉じる ▲';
+            } else {
+                detail.style.display = 'none';
+                buttonText.textContent = '序文全文を読む ▼';
+            }
+        }
+        
+        // 目次機能
         function toggleTOC() {
             const menu = document.getElementById('tocMenu');
             menu.classList.toggle('show');
@@ -1134,7 +1045,7 @@
             menu.classList.remove('show');
         }
         
-        // Close TOC when clicking outside
+        // 目次外クリックで閉じる
         document.addEventListener('click', function(e) {
             const menu = document.getElementById('tocMenu');
             const button = document.querySelector('.toc-button');
@@ -1148,7 +1059,7 @@
             }
         });
         
-        // Scroll to Top
+        // トップに戻る機能
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -1156,7 +1067,7 @@
             });
         }
         
-        // Show/Hide Top Button
+        // スクロール時にトップボタンを表示/非表示
         window.addEventListener('scroll', function() {
             const topButton = document.getElementById('topButton');
             if (window.pageYOffset > 300) {
