@@ -293,6 +293,16 @@
             text-decoration: none;
         }
         
+        .tools-section {
+            padding: 50px 40px;
+            background: #f3f4f6;
+        }
+
+        .tool-card {
+            background: white;
+            border-left-color: #5c7fc4;
+        }
+
         @media (max-width: 768px) {
             .header {
                 padding: 40px 20px;
@@ -363,7 +373,7 @@
                 <div class="card-description">
                     「すべての反応に価値がある」「知っていることと、できることは違う」――研修の背後にある5つの原則を明らかにします。多様性尊重、体験重視、現場適用、協働創造、継続成長。20年の実践が辿り着いた理念の核心。
                 </div>
-                <a href="災害対応力向上研修_哲学五箇条.html" class="card-link">哲学五箇条を読む →</a>
+                <a href="philosophy.html" class="card-link">哲学五箇条を読む →</a>
             </div>
             
             <!-- カード2：訓練企画10原則 -->
@@ -374,7 +384,7 @@
                 <div class="card-description">
                     「訓練は失敗の事前体験である」「6割の完成度で使ってみる」――従来の訓練の常識を覆す10の原則。身の丈に合った訓練、3ない訓練、自己評価による課題抽出。明日から使える実践的な方法論。
                 </div>
-                <a href="訓練企画10原則.html" class="card-link">10原則を読む →</a>
+                <a href="principles.html" class="card-link">10原則を読む →</a>
             </div>
             
             <!-- カード3：動ける60点 > 動けない100点 -->
@@ -385,18 +395,47 @@
                 <div class="card-description">
                     「時間がない」の本質は、昭和的無目的根性主義による無駄な努力。パレートの法則とデカルト的方法序説で「減じる」ことで、実践の時間が生まれる。研修A評価、教育システムC評価―74点の誠実な開示と、2026年への挑戦。
                 </div>
-                <a href="動ける60点_動けない100点.html" class="card-link">実証データと解決策を見る →</a>
+                <a href="movable-60-vs-perfect-100.html" class="card-link">実証データと解決策を見る →</a>
+            </div>
+
+
+        </div>
+        
+        <!-- ツールとリソース -->
+        <div class="tools-section">
+            <h2 class="section-title" style="color: #3e62ad;">ツールとリソース</h2>
+
+            <div class="card tool-card" id="yorozu-card">
+                <div class="card-label">知識検索 - AI</div>
+                <div class="card-title">よろず相談AI</div>
+                <div class="card-question">□ 過去の相談会でこの問題は扱われた？<br>□ 夜間対応・少人数体制はどうすればいい？</div>
+                <div class="card-description">
+                    2022年から開催している病院災害対策の専門相談会。医療機関が抱える災害対応の疑問や課題に、ホストがその場で即答するスタイルのweb相談会です。これまでの相談事例173件の知見を、AIが24時間検索できる形で提供しています。
+                </div>
+                <a href="https://yorozu-chat.vercel.app/" class="card-link" target="_blank">よろず相談AIを使う →</a>
+            </div>
+
+            <div class="card tool-card" id="calendar-card">
+                <div class="card-label">自己研鑽資料申込</div>
+                <div class="card-title">減災カレンダーHDMG</div>
+                <div class="card-question">□ 体系的に災害対応力を身につけたい<br>□ 自分と同僚ででも学びたい</div>
+                <div class="card-description">
+                    病院災害対策の基本技能を体系的に学ぶ自己研修テキスト。お申込して、PDFファイルをダウンロードしてください。
+                </div>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkHcuiqXJDbhJWZNQKaKDWMmVPj-km8QwORc5tWWG7JhKRbw/viewform?usp=header" class="card-link" target="_blank">申込フォームへ →</a>
+            </div>
+
+            <div class="card tool-card" id="bosaijojo-card">
+                <div class="card-label">ラジオ番組</div>
+                <div class="card-title">防災ジョジョ</div>
+                <div class="card-question">□ 通勤・移動中に防災を学びたい<br>□ 身近な言葉で災害対応を理解したい</div>
+                <div class="card-description">
+                    過去から現在に至る「震災」様々な事例から学ぶ、「災害時に生き延びるための教訓とヒント」を直伝。中央エフエム制作、湖山医療福祉グループ提供のラジオ番組です。
+                </div>
+                <a href="https://www.tmhp.jp/kikou/disclosure/media/movie/bousairadio.html" class="card-link" target="_blank">防災ジョジョを聴く →</a>
             </div>
         </div>
-        
-        <!-- 全部読むセクション -->
-        <div class="all-in-one">
-            <h2>または、3つまとめて理解する</h2>
-            <p>理念・実践・戦略。3つの視点から体系的に学ぶことで、<br>災害対応力向上の全体像が見えてきます。</p>
-            <p style="font-size: 0.9em; margin-bottom: 40px;">推奨学習時間：約20分</p>
-            <a href="#" class="all-in-one-link" onclick="alert('3つの資料を順番に開きます'); window.open('災害対応力向上研修_哲学五箇条.html'); setTimeout(() => window.open('訓練企画10原則.html'), 500); setTimeout(() => window.open('段階派遣効果.html'), 1000); return false;">3つまとめて開く</a>
-        </div>
-        
+
         <!-- フッター -->
         <div class="footer">
             <div class="footer-content">

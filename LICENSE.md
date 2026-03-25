@@ -15,7 +15,7 @@
 
 [![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-**著作権**: ©HDMG2004 2025 中島康 / 東京医療減災Labo
+**著作権**: ©HDMG2004 2026 中島康 / 東京医療減災Labo
 
 #### 許可事項
 - ✅ **表示**: 適切なクレジットを表示すること
@@ -37,9 +37,6 @@
 
 ### 対象ファイル
 - HTML、CSS、JavaScriptのコード部分
-- テンプレート構造
-- スタイリング
-- インタラクション機能
 
 ### ライセンス
 **MIT License**
@@ -47,7 +44,7 @@
 ```
 MIT License
 
-Copyright (c) 2025 東京医療減災Labo (HDMG2004)
+Copyright (c) 2026 東京医療減災Labo (HDMG2004)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -73,37 +70,21 @@ SOFTWARE.
 ## 利用ガイドライン / Usage Guidelines
 
 ### 研修・教育での利用
-医療機関・教育機関での非営利の研修・教育目的での利用を推奨します。
-以下の表示を行ってください：
-
 ```
 出典: 東京医療減災Labo「実践知の体系」
-https://[ユーザー名].github.io/[リポジトリ名]/
-©HDMG2004 2025 | CC BY-NC-SA 4.0
+https://hdmg2004-ux.github.io/tokyo-gensai-labo/
+©HDMG2004 2026 | CC BY-NC-SA 4.0
 ```
 
 ### 商用利用をご希望の方
-- 書籍への転載
-- 有料セミナーでの使用
-- コンサルティング資料への組み込み
-
-などをご希望の場合は、事前に以下にご連絡ください：
-
 **Email**: tbk_gensai_labo@tmhp.jp
-
-### 引用・参照
-学術論文、ブログ記事などでの引用は歓迎します。
-適切な出典表記をお願いします。
 
 ---
 
 ## 免責事項 / Disclaimer
 
-本コンテンツは情報提供を目的としており、専門的なアドバイスではありません。
-実際の災害対応計画の策定においては、各施設の状況に応じた専門家の助言を得ることを推奨します。
-
-著者および東京医療減災Laboは、本コンテンツの利用により生じたいかなる損害についても責任を負いません。
+本コンテンツは情報提供を目的としており、専門的なアドバイスではありません。実際の災害対応計画の策定においては、各施設の状況に応じた専門家の助言を得ることを推奨します。
 
 ---
 
-**最終更新**: 2025年11月5日
+**最終更新**: 2026年3月25日
