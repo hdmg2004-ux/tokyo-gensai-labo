@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東京医療減災Labo — 有事に備え、平時に鍛える。</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #3e62ad;
+  --blue-dark: #2d4a8c;
+  --blue-light: #5c7fc4;
+  --blue-pale: #dce8f8;
+  --blue-mist: #f0f5fc;
+  --thread-v: rgba(62,98,173,0.18);
+  --thread-h: rgba(62,98,173,0.10);
+  --text: #1a2540;
+  --text-mid: #3d5077;
+  --text-light: #6b7fa8;
+  --white: #ffffff;
+  --serif: 'Noto Serif JP', serif;
+  --sans: 'Noto Sans JP', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--blue-mist);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── WEAVE PATTERN ── */
+.weave-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.weave-bg svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.55;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(240,245,252,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(62,98,173,0.12);
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo .loom-mark {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--text-mid);
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--blue); }
+
+/* ── HERO ── */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 2rem 60px;
+  overflow: hidden;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  text-align: center;
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--blue-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding: 6px 16px;
+  border: 1px solid rgba(62,98,173,0.25);
+  border-radius: 2px;
+}
+.hero-copy {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  color: var(--blue);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.6rem;
+}
+.hero-copy .period { color: var(--blue-light); }
+.hero-sub {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.9;
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto 2.8rem;
+}
+.hero-shuttle {
+  margin-top: 3rem;
+  opacity: 0.7;
+}
+
+/* ── LOOM ILLUSTRATION ── */
+.loom-illustration {
+  width: 100%;
+  max-width: 520px;
+  margin: 3rem auto 0;
+}
+
+/* ── SECTIONS ── */
+section {
+  position: relative;
+  padding: 100px 2rem;
+}
+.section-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--blue-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+.section-heading {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 1.6rem;
+}
+.section-heading em {
+  color: var(--blue);
+  font-style: normal;
+}
+.section-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2;
+  font-weight: 300;
+}
+.section-body + .section-body { margin-top: 1.2rem; }
+
+/* ── CONCEPT: WEAVE ── */
+#concept {
+  background: var(--white);
+}
+.thread-diagram {
+  margin: 3rem auto 0;
+  max-width: 600px;
+}
+.thread-row {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.thread-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+}
+.thread-text {}
+.thread-text strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--blue);
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.thread-text span {
+  font-size: 14px;
+  color: var(--text-mid);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ── TARGET ── */
+#target {
+  background: var(--blue-mist);
+}
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.audience-card {
+  background: var(--white);
+  border: 1px solid rgba(62,98,173,0.12);
+  border-radius: 4px;
+  padding: 1.8rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.audience-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--blue);
+}
+.audience-card .card-title {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.audience-card .card-body {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ── WEAK TIES ── */
+#weakties {
+  background: var(--white);
+}
+.wt-block {
+  margin-top: 2.5rem;
+  padding: 2rem 2rem;
+  border-left: 3px solid var(--blue-pale);
+  background: var(--blue-mist);
+  border-radius: 0 4px 4px 0;
+}
+.wt-block .wt-en {
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  color: var(--blue);
+  margin-bottom: 0.6rem;
+  font-style: italic;
+}
+.wt-block .wt-ja {
+  font-size: 14px;
+  color: var(--text-mid);
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+/* ── CONTACT ── */
+#contact {
+  background: var(--blue);
+  text-align: center;
+}
+#contact .section-label { color: rgba(255,255,255,0.55); }
+#contact .section-heading { color: var(--white); }
+#contact .section-body { color: rgba(255,255,255,0.75); }
+.contact-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 15px;
+  color: var(--white);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 12px 32px;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, border-color 0.2s;
+}
+.contact-link:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.7);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--blue-dark);
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  font-size: 12px;
+  padding: 2rem;
+  letter-spacing: 0.06em;
+}
+
+/* ── FADE IN ── */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.will-animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in:nth-child(2) { transition-delay: 0.1s; }
+.fade-in:nth-child(3) { transition-delay: 0.2s; }
+.fade-in:nth-child(4) { transition-delay: 0.3s; }
+
+/* ── SHUTTLE ANIMATION ── */
+.shuttle-wrap {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  height: 14px;
+  overflow: visible;
+}
+.shuttle-line {
+  position: absolute;
+  left: 0; right: 0;
+  top: 6px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(62,98,173,0.3) 20%, rgba(62,98,173,0.3) 80%, transparent);
+}
+.shuttle {
+  position: absolute;
+  top: 0;
+  width: 28px;
+  height: 12px;
+  animation: fly 3s ease-in-out infinite alternate;
+}
+
+@keyframes fly {
+  0%   { left: 0; }
+  100% { left: calc(100% - 28px); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  section { padding: 70px 1.4rem; }
+  .thread-row { flex-direction: column; gap: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <svg class="loom-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Simplified loom/weave mark -->
+      <rect x="1" y="4" width="2" height="20" rx="1" fill="#3e62ad" opacity="0.9"/>
+      <rect x="7" y="4" width="2" height="20" rx="1" fill="#3e62ad" opacity="0.7"/>
+      <rect x="13" y="4" width="2" height="20" rx="1" fill="#3e62ad" opacity="0.9"/>
+      <rect x="19" y="4" width="2" height="20" rx="1" fill="#3e62ad" opacity="0.7"/>
+      <rect x="25" y="4" width="2" height="20" rx="1" fill="#3e62ad" opacity="0.9"/>
+      <rect x="0" y="8" width="28" height="2" rx="1" fill="#5c7fc4" opacity="0.8"/>
+      <rect x="0" y="14" width="28" height="2" rx="1" fill="#5c7fc4" opacity="0.6"/>
+      <rect x="0" y="20" width="28" height="2" rx="1" fill="#5c7fc4" opacity="0.8"/>
+    </svg>
+    東京医療減災Labo
+  </a>
+  <ul class="nav-links">
+    <li><a href="#concept">コンセプト</a></li>
+    <li><a href="#target">対象</a></li>
+    <li><a href="#weakties">つながり</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <!-- Weave background -->
+  <div class="weave-bg">
+    <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="warp" x="0" y="0" width="24" height="1" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="0" y2="900" stroke="#3e62ad" stroke-width="0.8" opacity="0.12"/>
+        </pattern>
+        <pattern id="weft" x="0" y="0" width="1" height="28" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="1200" y2="0" stroke="#3e62ad" stroke-width="0.5" opacity="0.07"/>
+        </pattern>
+      </defs>
+      <!-- Warp threads (vertical) -->
+      <rect width="1200" height="900" fill="url(#warp)"/>
+      <!-- Weft threads (horizontal) -->
+      <rect width="1200" height="900" fill="url(#weft)"/>
+      <!-- Accent diagonal suggesting cloth drape -->
+      <line x1="900" y1="0" x2="1200" y2="400" stroke="#3e62ad" stroke-width="0.5" opacity="0.08"/>
+      <line x1="800" y1="0" x2="1200" y2="500" stroke="#3e62ad" stroke-width="0.5" opacity="0.06"/>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <p class="hero-tag fade-in">縦糸と横糸をつなぐ飛び杼 — 東京医療減災Labo</p>
+    <h1 class="hero-copy fade-in">
+      有事に備え、<br>平時に鍛える<span class="period">。</span>
+    </h1>
+    <p class="hero-sub fade-in">
+      縦糸が通る。横糸が走る。一本一本が弱くとも、<br>
+      布は強くなる。そのための飛び杼が、ここにある。
+    </p>
+
+    <!-- Shuttle animation -->
+    <div class="hero-shuttle fade-in">
+      <div class="shuttle-wrap">
+        <div class="shuttle-line"></div>
+        <svg class="shuttle" viewBox="0 0 28 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 6C1 6 4 1 14 1C24 1 27 6 27 6C27 6 24 11 14 11C4 11 1 6 1 6Z" fill="#3e62ad" opacity="0.85"/>
+          <line x1="14" y1="2" x2="14" y2="10" stroke="white" stroke-width="0.8" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Woven cloth illustration -->
+    <div class="loom-illustration fade-in">
+      <svg viewBox="0 0 520 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Warp threads -->
+        <line x1="30"  y1="0" x2="30"  y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.5"/>
+        <line x1="70"  y1="0" x2="70"  y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.35"/>
+        <line x1="110" y1="0" x2="110" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.5"/>
+        <line x1="150" y1="0" x2="150" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.35"/>
+        <line x1="190" y1="0" x2="190" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.5"/>
+        <line x1="230" y1="0" x2="230" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.35"/>
+        <line x1="270" y1="0" x2="270" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.5"/>
+        <line x1="310" y1="0" x2="310" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.35"/>
+        <line x1="350" y1="0" x2="350" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.5"/>
+        <line x1="390" y1="0" x2="390" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.35"/>
+        <line x1="430" y1="0" x2="430" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.5"/>
+        <line x1="470" y1="0" x2="470" y2="80" stroke="#3e62ad" stroke-width="1.5" opacity="0.35"/>
+        <!-- Weft threads (over/under) -->
+        <path d="M0 20 Q50 18 70 20 Q90 22 110 20 Q130 18 150 20 Q170 22 190 20 Q210 18 230 20 Q250 22 270 20 Q290 18 310 20 Q330 22 350 20 Q370 18 390 20 Q410 22 430 20 Q450 18 520 20" stroke="#5c7fc4" stroke-width="2.5" fill="none" opacity="0.7"/>
+        <path d="M0 40 Q50 42 70 40 Q90 38 110 40 Q130 42 150 40 Q170 38 190 40 Q210 42 230 40 Q250 38 270 40 Q290 42 310 40 Q330 38 350 40 Q370 42 390 40 Q410 38 430 40 Q450 42 520 40" stroke="#5c7fc4" stroke-width="2.5" fill="none" opacity="0.55"/>
+        <path d="M0 60 Q50 58 70 60 Q90 62 110 60 Q130 58 150 60 Q170 62 190 60 Q210 58 230 60 Q250 62 270 60 Q290 58 310 60 Q330 62 350 60 Q370 58 390 60 Q410 62 430 60 Q450 58 520 60" stroke="#5c7fc4" stroke-width="2.5" fill="none" opacity="0.7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section id="concept">
+  <div class="weave-bg">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="warp2" x="0" y="0" width="40" height="1" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="0" y2="600" stroke="#3e62ad" stroke-width="0.6" opacity="0.06"/>
+        </pattern>
+      </defs>
+      <rect width="1200" height="600" fill="url(#warp2)"/>
+    </svg>
+  </div>
+  <div class="section-inner">
+    <p class="section-label fade-in">コンセプト</p>
+    <h2 class="section-heading fade-in">
+      縦糸と横糸が交わるとき、<br><em>布は生まれる。</em>
+    </h2>
+    <p class="section-body fade-in">
+      医療機関・行政・保健所は、それぞれが太く強く撚れた<strong>縦糸</strong>です。
+      専門性が高いがゆえに縦割りになる——その構造には合理性があります。
+      しかし縦糸だけでは布にならない。簾のように、人々を支えることはできない。
+    </p>
+    <p class="section-body fade-in">
+      そこに通るのが<strong>横糸としての職員個人</strong>です。
+      組織に属しながら地域に生きる個人が縦糸を横断するとき、
+      はじめて布が生まれ、住民を守る力になります。
+      東京医療減災Laboは、その個人に色彩と模様をもたらす<strong>飛び杼</strong>として機能します。
+    </p>
+
+    <div class="thread-diagram">
+      <div class="thread-row fade-in">
+        <svg class="thread-icon" viewBox="0 0 44 44" fill="none">
+          <line x1="14" y1="4" x2="14" y2="40" stroke="#3e62ad" stroke-width="3" stroke-linecap="round"/>
+          <line x1="22" y1="4" x2="22" y2="40" stroke="#3e62ad" stroke-width="3" stroke-linecap="round"/>
+          <line x1="30" y1="4" x2="30" y2="40" stroke="#3e62ad" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="thread-text">
+          <strong>縦糸 — 医療機関・行政・保健所</strong>
+          <span>それぞれが太く強く撚れた組織。専門性が高いがゆえに縦割りになる。平時はそれで回るが、有事には暖簾のように人々を支えられない。</span>
+        </div>
+      </div>
+      <div class="thread-row fade-in">
+        <svg class="thread-icon" viewBox="0 0 44 44" fill="none">
+          <line x1="4" y1="16" x2="40" y2="16" stroke="#5c7fc4" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="22" x2="40" y2="22" stroke="#5c7fc4" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="28" x2="40" y2="28" stroke="#5c7fc4" stroke-width="2" stroke-linecap="round"/>
+          <!-- crossings -->
+          <circle cx="14" cy="16" r="2.5" fill="#5c7fc4" opacity="0.7"/>
+          <circle cx="22" cy="22" r="2.5" fill="#5c7fc4" opacity="0.7"/>
+          <circle cx="30" cy="28" r="2.5" fill="#5c7fc4" opacity="0.7"/>
+        </svg>
+        <div class="thread-text">
+          <strong>横糸 — 個人</strong>
+          <span>組織人であり、生活者でもある個人。縦糸の組織を横断するように通ることで、はじめて布になる。有事に人々を支えるのは、この横糸の力。</span>
+        </div>
+      </div>
+      <div class="thread-row fade-in">
+        <svg class="thread-icon" viewBox="0 0 44 44" fill="none">
+          <ellipse cx="22" cy="22" rx="18" ry="7" fill="#3e62ad" opacity="0.15"/>
+          <ellipse cx="22" cy="22" rx="18" ry="7" stroke="#3e62ad" stroke-width="1.5"/>
+          <line x1="22" y1="15" x2="22" y2="29" stroke="#3e62ad" stroke-width="1.2" opacity="0.6"/>
+        </svg>
+        <div class="thread-text">
+          <strong>飛び杼 — 東京医療減災Labo</strong>
+          <span>横糸としての個人が縦糸の組織を渡るとき、色彩と模様をもたらすのが飛び杼の役割。訓練設計の知見を届け、布に豊かさを与える。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET -->
+<section id="target">
+  <div class="section-inner">
+    <p class="section-label fade-in">対象</p>
+    <h2 class="section-heading fade-in">
+      縦糸を強く、<br><em>横糸を通す。</em>
+    </h2>
+    <p class="section-body fade-in">
+      エッジな能力を持つ少数精鋭のためのプログラムは、世の中にすでにあります。
+      東京医療減災Laboが向き合うのは、組織の基礎力と、
+      その組織を横断する個人の力——布の強さはそこで決まります。
+    </p>
+
+    <div class="audience-grid" style="margin-top: 3rem;">
+      <div class="audience-card fade-in">
+        <p class="card-title">医療機関</p>
+        <p class="card-body">病院・診療所が持つ専門性という縦糸。アクション・カード導入から実践訓練まで、その縦糸を太く強くする支援を行う。</p>
+      </div>
+      <div class="audience-card fade-in">
+        <p class="card-title">行政機関・保健所</p>
+        <p class="card-body">地域医療をコーディネートする役割を担う縦糸。平時から有事への転換を支える実践力の習得を支援する。</p>
+      </div>
+      <div class="audience-card fade-in" style="border-top-color: #5c7fc4;">
+        <p class="card-title" style="color: #3e62ad;">職員個人——横糸</p>
+        <p class="card-body">組織に属しながら、地域に生きる職員個人。縦割りの組織を横断するこの横糸が動けるとき、布は住民を守る力を持つ。動ける個人を育てること。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEAK TIES -->
+<section id="weakties">
+  <div class="weave-bg">
+    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="weft2" x="0" y="0" width="1" height="50" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="1200" y2="0" stroke="#3e62ad" stroke-width="0.5" opacity="0.05"/>
+        </pattern>
+      </defs>
+      <rect width="1200" height="500" fill="url(#weft2)"/>
+    </svg>
+  </div>
+  <div class="section-inner">
+    <p class="section-label fade-in">つながりの哲学</p>
+    <h2 class="section-heading fade-in">
+      弱いつながりが、<em>強い布をつくる。</em>
+    </h2>
+
+    <div class="wt-block fade-in">
+      <p class="wt-en">"The strength of weak ties."</p>
+      <p class="wt-ja">
+        社会学者マーク・グラノヴェッターが示したように、
+        強固な内部ネットワークよりも、
+        異なる集団をゆるやかにつなぐ<strong>弱い紐帯</strong>こそが、
+        情報とノウハウを広域に伝達する力を持ちます。
+      </p>
+    </div>
+
+    <p class="section-body fade-in" style="margin-top: 2rem;">
+      東京医療減災Laboが生み出す研修・訓練・ツールは、
+      参加した組織と組織の間に「弱いつながり」を意図的に編み込みます。
+      平時には目立たないこの結び目が、有事においてはじめてその強さを発揮する。
+      布を織る、ということの本質がそこにあります。
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner" style="text-align: center;">
+    <p class="section-label fade-in">お問い合わせ</p>
+    <h2 class="section-heading fade-in">
+      布を織り始めましょう。
+    </h2>
+    <p class="section-body fade-in">
+      研修・訓練の依頼、コンサルテーション、見学のご相談など、<br>
+      まずはお気軽にご連絡ください。
+    </p>
+    <a href="/cdn-cgi/l/email-protection#f185939aae96949f829098ae9d90939eb1859c9981df9b81" class="contact-link fade-in">
+      <span class="__cf_email__" data-cfemail="82f6e0e9dde5e7ecf1e3ebddeee3e0edc2f6efeaf2ace8f2">[email&#160;protected]</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 東京医療減災Labo — Tokyo Medical Hospital Disaster Reduction Laboratory</p>
+</footer>
+
+<script>
+document.querySelectorAll('.fade-in').forEach(el => {
+  el.classList.add('will-animate');
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+setTimeout(() => {
+  document.querySelectorAll('#hero .fade-in').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), i * 150);
+  });
+}, 50);
+</script>
+</body>
+</html>
