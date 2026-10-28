@@ -297,6 +297,63 @@
             text-decoration: none;
         }
         
+        .apps-section {
+            padding: 50px 40px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .section-lead {
+            max-width: 720px;
+            margin: -20px auto 40px;
+            text-align: center;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .app-card {
+            border-left-color: #c41e3a;
+        }
+
+        .app-version {
+            display: inline-block;
+            font-size: 0.45em;
+            font-weight: normal;
+            color: #6b7280;
+            background: #f3f4f6;
+            border-radius: 12px;
+            padding: 3px 12px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .card-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .card-link.sub {
+            background: white;
+            color: #3e62ad;
+            border: 2px solid #3e62ad;
+            box-shadow: none;
+            padding: 13px 26px;
+        }
+
+        .card-link.sub:hover {
+            background: #eef2fa;
+            color: #1e3c72;
+        }
+
+        .card-note {
+            font-size: 0.9em;
+            color: #6b7280;
+            margin-top: 18px;
+            line-height: 1.7;
+        }
+
         .tools-section {
             padding: 50px 40px;
             background: #f3f4f6;
@@ -316,7 +373,7 @@
                 font-size: 1.8em;
             }
             
-            .intro, .cards-section, .all-in-one {
+            .intro, .cards-section, .apps-section, .tools-section, .all-in-one {
                 padding: 30px 20px;
             }
             
@@ -404,7 +461,45 @@
 
 
         </div>
-        
+
+        <!-- 病院の災害対応ツール（本体・説明書の正本は各ツールのリポジトリ。ここは紹介とリンクのみ） -->
+        <div class="apps-section" id="apps">
+            <h2 class="section-title">病院の<span class="saigai-red">災</span>害対応ツール</h2>
+            <p class="section-lead">
+                ブラウザで開くだけで動く、無償の単一HTMLツールです。ネット接続がなくても使え、入力した内容は端末の外へ送信されません。<br>
+                行動判断支援票は、東京都立病院機構の病院での<span class="saigai-red">災</span>害対応の実践から生まれました。本ツールは、東京医療減<span class="saigai-red">災</span>Laboが開発・提供しています。
+            </p>
+
+            <div class="card app-card" id="bcp-disaster-card">
+                <div class="card-label">発災直後の判断</div>
+                <div class="card-title">発<span class="saigai-red">災</span>時行動判断支援ツール<span class="app-version">v2.3</span></div>
+                <div class="card-question">□ 外来は続けるか、止めるか？<br>□ 入院の受け入れはどこまでできるか？</div>
+                <div class="card-description">
+                    院内の設備・部門の状況を ○△× で評価すると、被害程度と、外来・入院の行動基準が分かります。評価の帳票は『行動判断支援票2026』と同じ構造で、A4 に印刷して掲示できます。Web版は一度開けばオフラインでも動き、新しい版が出ると画面でお知らせします。
+                </div>
+                <div class="card-links">
+                    <a href="https://bcp-disaster.vercel.app/" class="card-link" target="_blank" rel="noopener">Web版で開く →</a>
+                    <a href="https://github.com/hdmg2004-ux/bcp-disaster/releases/latest" class="card-link sub" target="_blank" rel="noopener">ファイル版をダウンロード</a>
+                    <a href="https://github.com/hdmg2004-ux/bcp-disaster/releases/latest/download/guide_bcp_disaster.pdf" class="card-link sub" target="_blank" rel="noopener">説明書（PDF）</a>
+                </div>
+                <div class="card-note">説明書には、ご紹介・『行動判断支援票2026』の解説・白紙の支援票が入っています。</div>
+            </div>
+
+            <div class="card app-card" id="bcp-disaster-med-card">
+                <div class="card-label">災害対策本部の運営</div>
+                <div class="card-title">病院医療継続 活動ツール<span class="app-version">β v11.1</span></div>
+                <div class="card-question">□ 本部はいま何を判断し、何を指示するか？<br>□ BCPとアクション・カードを一体で整えたい</div>
+                <div class="card-description">
+                    「総論」「アクション・カード」「本部運営ツール」の3部構成。地震・火災・水害・降灰に対応し、平時に施設の情報を入力しておけば、発<span class="saigai-red">災</span>時はカードを確認しながら動けます。報告書（第１報・第２報）と行動判断支援票を収録し、BCP一式として印刷もできます。
+                </div>
+                <div class="card-links">
+                    <a href="https://github.com/hdmg2004-ux/bcp-disaster-med/releases/latest" class="card-link" target="_blank" rel="noopener">ダウンロード →</a>
+                    <a href="https://github.com/hdmg2004-ux/bcp-disaster-med/releases/latest/download/guide_bcp_disaster_med.pdf" class="card-link sub" target="_blank" rel="noopener">説明書（PDF）</a>
+                </div>
+                <div class="card-note">Assets の <code>bcp_disaster_med.html</code> をダウンロードし、ブラウザで開いてください。版の切り替えや端末の移行は、ツール内の「バックアップ」で引き継げます。</div>
+            </div>
+        </div>
+
         <!-- ツールとリソース -->
         <div class="tools-section">
             <h2 class="section-title" style="color: #3e62ad;">ツールとリソース</h2>
@@ -457,7 +552,13 @@
             <div class="footer-content">
                 <h3>東京医療減<span class="saigai-red">災</span>Labo</h3>
                 <p>「有事に備え、平時に鍛える。<br>机上の空論から実践の知恵へ。<br>五感で学ぶ減<span class="saigai-red">災</span>対策」</p>
-                <p style="margin-top: 30px;">©HDMG2004 2026</p>
+                <p style="margin-top: 30px;">© 東京医療減災Labo 2025–</p>
                  <div style="margin-top: 20px;">
-                     <p style="margin-top: 20px;">お問い合わせ: <a href="mailto:tbk_gensai_labo@tmhp.jp" style="color: #ffd700; text-decoration: none;">tbk_gensai_labo@tmhp.jp
-                    </a></p>    
+                     <p style="margin-top: 20px;">お問い合わせ: <a href="mailto:hdmg2004@gmail.com" style="color: #ffd700; text-decoration: none;">hdmg2004@gmail.com
+                    </a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

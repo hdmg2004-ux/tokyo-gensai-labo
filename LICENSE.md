@@ -15,7 +15,7 @@
 
 [![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-**著作権**: ©HDMG2004 2026 中島康 / 東京医療減災Labo
+**著作権**: © 東京医療減災Labo 2025–
 
 #### 許可事項
 - ✅ **表示**: 適切なクレジットを表示すること
@@ -29,7 +29,12 @@
 #### 例外
 教育機関・医療機関での研修利用については、事前にご相談ください。
 
-**お問い合わせ**: tbk_gensai_labo@tmhp.jp
+**お問い合わせ**: hdmg2004@gmail.com
+
+---
+
+### 対象外
+`docs/index.html` で紹介している「発災時行動判断支援ツール」「病院医療継続 活動ツール」の本体と説明書（PDF）は、本リポジトリには含まれていません。それぞれのリポジトリ（[bcp-disaster](https://github.com/hdmg2004-ux/bcp-disaster)、[bcp-disaster-med](https://github.com/hdmg2004-ux/bcp-disaster-med)）の LICENSE に従います。
 
 ---
 
@@ -44,7 +49,7 @@
 ```
 MIT License
 
-Copyright (c) 2026 東京医療減災Labo (HDMG2004)
+Copyright (c) 2025- 東京医療減災Labo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -73,11 +78,11 @@ SOFTWARE.
 ```
 出典: 東京医療減災Labo「実践知の体系」
 https://hdmg2004-ux.github.io/tokyo-gensai-labo/
-©HDMG2004 2026 | CC BY-NC-SA 4.0
+© 東京医療減災Labo 2025– | CC BY-NC-SA 4.0
 ```
 
 ### 商用利用をご希望の方
-**Email**: tbk_gensai_labo@tmhp.jp
+**Email**: hdmg2004@gmail.com
 
 ---
 
@@ -87,4 +92,4 @@ https://hdmg2004-ux.github.io/tokyo-gensai-labo/
 
 ---
 
-**最終更新**: 2026年3月25日
+**最終更新**: 2026年10月29日
