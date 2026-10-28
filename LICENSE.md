@@ -11,20 +11,20 @@
 - 動ける60点 > 動けない100点
 
 ### ライセンス
-**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**
+**Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**
 
-[![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 **著作権**: © 東京医療減災Labo 2025–
 
 #### 許可事項
-- ✅ **表示**: 適切なクレジットを表示すること
-- ✅ **継承**: 同一のライセンスで再配布すること
+- ✅ **共有**: 改変しないままであれば、複製・再配布できます
+- ✅ **表示**: 適切なクレジット（著作権表示・出典・ライセンス）を表示すること
 - ✅ **非営利**: 個人・教育・研究目的での利用
 
 #### 禁止事項
 - ❌ **商用利用**: 営利目的での使用は禁止
-- ❌ **無断改変**: 許可なく内容を改変することは禁止
+- ❌ **改変**: 内容を改変したもの（翻案・抜粋の再構成などの派生物を含む）の配布は禁止
 
 #### 例外
 教育機関・医療機関での研修利用については、事前にご相談ください。
@@ -78,7 +78,7 @@ SOFTWARE.
 ```
 出典: 東京医療減災Labo「実践知の体系」
 https://hdmg2004-ux.github.io/tokyo-gensai-labo/
-© 東京医療減災Labo 2025– | CC BY-NC-SA 4.0
+© 東京医療減災Labo 2025– | CC BY-NC-ND 4.0
 ```
 
 ### 商用利用をご希望の方
