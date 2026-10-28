@@ -1,74 +1,45 @@
 # ライセンス / License
 
-本プロジェクトは、コンテンツとコードで異なるライセンスを適用しています。
+## 対象
 
-## コンテンツライセンス / Content License
+本リポジトリに含まれるすべてのファイル（文章・テキストコンテンツ、HTML・CSS・JavaScript のコード、画像、`notes/` 内の資料を含む）。
 
-### 対象ファイル
-- `docs/` フォルダ内のHTMLに含まれる文章・テキストコンテンツ
 - 災害対応力向上研修 哲学五箇条
 - 訓練企画10原則
 - 動ける60点 > 動けない100点
+- ポータル（`docs/index.html`）ほか `docs/` 内のページと、その設計・デザイン
 
-### ライセンス
-**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**
+## ライセンス
 
-[![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+**Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**
+
+[![CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 **著作権**: © 東京医療減災Labo 2025–
 
-#### 許可事項
-- ✅ **表示**: 適切なクレジットを表示すること
-- ✅ **継承**: 同一のライセンスで再配布すること
+ライセンス全文：https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.ja
+
+### 許可事項
+- ✅ **共有**: 改変しないままであれば、複製・再配布できます
+- ✅ **表示**: 適切なクレジット（著作権表示・出典・ライセンス）を表示すること
 - ✅ **非営利**: 個人・教育・研究目的での利用
 
-#### 禁止事項
+### 禁止事項
 - ❌ **商用利用**: 営利目的での使用は禁止
-- ❌ **無断改変**: 許可なく内容を改変することは禁止
+- ❌ **改変**: 改変したもの（翻案・抜粋の再構成、コードやデザインを流用したページなどの派生物を含む）の配布は禁止
 
-#### 例外
+### 例外
 教育機関・医療機関での研修利用については、事前にご相談ください。
 
 **お問い合わせ**: hdmg2004@gmail.com
 
----
+## 対象外
 
-### 対象外
 `docs/index.html` で紹介している「発災時行動判断支援ツール」「病院医療継続 活動ツール」の本体と説明書（PDF）は、本リポジトリには含まれていません。それぞれのリポジトリ（[bcp-disaster](https://github.com/hdmg2004-ux/bcp-disaster)、[bcp-disaster-med](https://github.com/hdmg2004-ux/bcp-disaster-med)）の LICENSE に従います。
 
----
+## 以前の版について
 
-## コードライセンス / Code License
-
-### 対象ファイル
-- HTML、CSS、JavaScriptのコード部分
-
-### ライセンス
-**MIT License**
-
-```
-MIT License
-
-Copyright (c) 2025- 東京医療減災Labo
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+2026年10月29日より前は、コード部分に MIT License、コンテンツに CC BY-NC-SA 4.0 を適用していました。現在の版には、上記の CC BY-NC-ND 4.0 が適用されます。
 
 ---
 
@@ -78,7 +49,7 @@ SOFTWARE.
 ```
 出典: 東京医療減災Labo「実践知の体系」
 https://hdmg2004-ux.github.io/tokyo-gensai-labo/
-© 東京医療減災Labo 2025– | CC BY-NC-SA 4.0
+© 東京医療減災Labo 2025– | CC BY-NC-ND 4.0
 ```
 
 ### 商用利用をご希望の方

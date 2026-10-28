@@ -1,6 +1,6 @@
 # 東京医療減災Labo 実践知の体系
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 > **20年の実践から生まれた災害対応力向上の体系**
 > 理念・実践・戦略の3つの視点と、病院で使える無償ツールへの入口
@@ -44,7 +44,7 @@ GitHub Pages（Branch: `main` / Folder: `/docs`）。`main` に push すると�
 ```
 .
 ├── README.md        このファイル
-├── LICENSE.md       ライセンス（コンテンツ CC BY-NC-SA 4.0／コード MIT）
+├── LICENSE.md       ライセンス（全体に CC BY-NC-ND 4.0）
 ├── docs/            公開サイト（GitHub Pages）
 │   ├── index.html                     ポータル
 │   ├── philosophy.html                哲学五箇条
@@ -70,7 +70,7 @@ GitHub Pages（Branch: `main` / Folder: `/docs`）。`main` に push すると�
 
 © 東京医療減災Labo 2025–
 
-コンテンツは CC BY-NC-SA 4.0、コードは MIT License。紹介しているツールの本体・説明書は本リポジトリに含まれず、各リポジトリの LICENSE に従います。詳しくは [LICENSE.md](LICENSE.md)。
+コンテンツ・コードを含むリポジトリ全体に CC BY-NC-ND 4.0（改変禁止・営利目的での使用禁止）を適用します。紹介しているツールの本体・説明書は本リポジトリに含まれず、各リポジトリの LICENSE に従います。詳しくは [LICENSE.md](LICENSE.md)。
 
 ## 📧 お問い合わせ
 
@@ -80,6 +80,7 @@ hdmg2004@gmail.com
 
 ### Version 3.1（2026-10-29）
 - ポータルに「病院の災害対応ツール」を新設（発災時行動判断支援ツール v2.3／病院医療継続 活動ツール β v11.1 の紹介とリンク）
+- ライセンスをリポジトリ全体で CC BY-NC-ND 4.0（改変禁止）に統一（従来はコンテンツ CC BY-NC-SA 4.0／コード MIT）
 - 著作表示・連絡先を「© 東京医療減災Labo」「hdmg2004@gmail.com」に統一
 - ファイル整理：`docs_old/`・`HP/`（gensai-labo.tokyo の旧下書き）・汎用のデプロイ手順・`PROJECT_STRUCTURE.md`（本READMEに統合）を削除、作業用資料を `notes/` へ移動
 
