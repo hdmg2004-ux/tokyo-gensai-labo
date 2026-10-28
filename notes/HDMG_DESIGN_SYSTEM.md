@@ -954,5 +954,5 @@ export function AvailabilityBadge({ available, capacity }: AvailabilityBadgeProp
 ---
 
 **作成**: Claude + ユーザー  
-**ライセンス**: MIT  
+**ライセンス**: CC BY-NC-ND 4.0（リポジトリの LICENSE.md による）  
 **お問い合わせ**: hdmg2004@gmail.com
