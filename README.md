@@ -2,124 +2,92 @@
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-> **20年の実践から生まれた災害対応力向上の完全体系**  
-> 理念・実践・戦略の3つの視点から、医療機関の災害対応力を高める知識を体系化
+> **20年の実践から生まれた災害対応力向上の体系**
+> 理念・実践・戦略の3つの視点と、病院で使える無償ツールへの入口
 
-## 📚 概要
+## 🌐 公開サイト
 
-東京医療減災Laboが20年以上にわたる災害対応力向上研修の実践から導き出した、3つの核心的な知識体系を公開します。あわせて、よろず相談AIと減災カレンダーHDMGへのアクセス窓口も提供しています。
+https://hdmg2004-ux.github.io/tokyo-gensai-labo/
 
-- **哲学五箇条** - 研修の理念（Why）
-- **訓練企画10原則** - 実践の方法（How）
-- **動ける60点 > 動けない100点** - 組織戦略とエビデンス（What & Evidence）
-- **よろず相談AI** - 過去の相談事例173件をAIで検索
-- **減災カレンダーHDMG** - 自己研修テキスト申込
+GitHub Pages（Branch: `main` / Folder: `/docs`）。`main` に push すると数分で反映されます。
 
-## 🌐 アクセス
+## 📚 載せているもの
 
-**公開サイト**: [https://hdmg2004-ux.github.io/tokyo-gensai-labo](https://hdmg2004-ux.github.io/tokyo-gensai-labo)
+### 課題別ガイド（本リポジトリにページがある）
 
-## 📁 プロジェクト構造
+| ページ | テーマ | ファイル |
+|---|---|---|
+| 災害対応力向上研修 哲学五箇条 | 理念（Why） | [`docs/philosophy.html`](docs/philosophy.html) |
+| 訓練企画10原則 | 実践（How） | [`docs/principles.html`](docs/principles.html) |
+| 動ける60点 ＞ 動けない100点 | 戦略とエビデンス（What） | [`docs/movable-60-vs-perfect-100.html`](docs/movable-60-vs-perfect-100.html) |
+
+### 病院の災害対応ツール（紹介とリンクのみ）
+
+本体・説明書の**正本は各ツールのリポジトリ**です。ポータルには紹介カードと固定リンク（`releases/latest`）だけを置き、ファイルは複製しません。
+
+| ツール | 現行版 | リポジトリ | 入手先 |
+|---|---|---|---|
+| 発災時行動判断支援ツール | v2.3 | [hdmg2004-ux/bcp-disaster](https://github.com/hdmg2004-ux/bcp-disaster) | Web版 https://bcp-disaster.vercel.app/ ／ Releases（`bcp_disaster.html`・`guide_bcp_disaster.pdf`） |
+| 病院医療継続 活動ツール | β v11.1 | [hdmg2004-ux/bcp-disaster-med](https://github.com/hdmg2004-ux/bcp-disaster-med) | Releases（`bcp_disaster_med.html`・`guide_bcp_disaster_med.pdf`） |
+
+新しい版を Release したときにポータル側で直すのは、`docs/index.html` のカードにある版表記（`app-version`）だけです。リンクは latest を指すので変更不要です（Asset 名を変えた場合は除く）。
+
+### ツールとリソース（外部リンク）
+
+- よろず相談AI — https://yorozu-chat.vercel.app/
+- 減災カレンダーHDMG — 自己研修テキスト申込（Googleフォーム）
+- 防災ジョジョ — ラジオ番組
+- 問う日和 — 2週間に一度のフォローアップメール（Googleフォーム）
+
+## 📁 構成
 
 ```
 .
-├── README.md                           # このファイル
-├── technical-specification-v2.md       # 技術仕様書
-├── LICENSE.md                          # ライセンス情報
-├── docs/                               # 公開Webサイト（GitHub Pages）
-│   ├── index.html                     # トップページ（ポータル）
-│   ├── philosophy.html                # 災害対応力向上研修 哲学五箇条
-│   ├── principles.html                # 訓練企画10原則
-│   └── movable-60-vs-perfect-100.html # 動ける60点 > 動けない100点
-└── [その他のプロジェクトファイル]
+├── README.md        このファイル
+├── LICENSE.md       ライセンス（コンテンツ CC BY-NC-SA 4.0／コード MIT）
+├── docs/            公開サイト（GitHub Pages）
+│   ├── index.html                     ポータル
+│   ├── philosophy.html                哲学五箇条
+│   ├── principles.html                訓練企画10原則
+│   ├── movable-60-vs-perfect-100.html 動ける60点
+│   ├── images/                        ロゴ画像
+│   └── favicon・manifest・アイコン類
+└── notes/           公開しない作業用の資料
+    ├── technical-specification-v3.md  技術仕様（v3.0 時点）
+    ├── HDMG_DESIGN_SYSTEM.md          デザインシステム
+    └── 既存コンテンツ追加提案_20260403.md  JADM31 WS データにもとづく追記案（未反映）
 ```
 
-## 📖 コンテンツ詳細
+- 法人サイト https://gensai-labo.tokyo/ のソースは別リポジトリ [hdmg2004-ux/gensai-labo.tokyo](https://github.com/hdmg2004-ux/gensai-labo.tokyo) です。
 
-### 1. 災害対応力向上研修 哲学五箇条
-**ファイル**: [`docs/philosophy.html`](docs/philosophy.html)  
-**テーマ**: 理念（Why）
+## 📝 編集するとき
 
-研修の背後にある5つの原則：
-1. すべての反応に、価値がある（多様性尊重）
-2. 知っていることと、できることは違う（体験重視）
-3. 現場で使えなければ、意味がない（現場適用）
-4. 一人の天才より、チームの凡人（協働創造）
-5. 研修は、終わりではなく、始まりである（継続成長）
+- 新しいページ → `docs/` に HTML を作り、`docs/index.html` からリンク
+- 色・書体は `notes/HDMG_DESIGN_SYSTEM.md` に合わせる
+- 依存ライブラリなし（HTML／CSS／Vanilla JS）
 
-### 2. 訓練企画10原則
-**ファイル**: [`docs/principles.html`](docs/principles.html)  
-**テーマ**: 実践（How）
+## 📄 ライセンス・著作権
 
-実効性のある訓練を作る10の原則：OODAループ、失敗から学ぶ、記録と共有、目的の明確化、計画より実行、前向きに終わる、6〜8割の完成度、アクション・カード、3ない訓練、3回の出だし訓練
+© 東京医療減災Labo 2025–
 
-### 3. 動ける60点 > 動けない100点
-**ファイル**: [`docs/movable-60-vs-perfect-100.html`](docs/movable-60-vs-perfect-100.html)  
-**テーマ**: 戦略とエビデンス（What & Evidence）
-
-推奨度9.25が実践率2.5になる「70%ギャップ」の原因と解決策。
-
-### 4. よろず相談AI
-**URL**: [https://yorozu-chat.vercel.app/](https://yorozu-chat.vercel.app/)  
-**テーマ**: 知識検索
-
-2022年から開催している病院災害対策の専門相談会。これまでの相談事例173件の知見をAIが24時間検索できる形で提供。index.htmlからリンク。
-
-### 5. 減災カレンダーHDMG
-**テーマ**: 自己研鑽資料申込
-
-病院災害対策の基本技能を体系的に学ぶ自己研修テキスト。Googleフォームから申込・PDFダウンロード。index.htmlからリンク。
-
-## 🚀 使い方
-
-### ローカルで閲覧
-```bash
-git clone [このリポジトリのURL]
-cd [リポジトリ名]/docs
-open index.html  # macOS
-```
-
-### GitHub Pagesで公開
-1. Settings → Pages
-2. Branch: `main` / Folder: `/docs`
-3. Save
-
-## 🛠️ 技術スタック
-
-- **HTML5** / **CSS3** / **Vanilla JavaScript**
-- 依存関係なし（完全スタンドアロン）
-
-## 📄 ライセンス
-
-### コンテンツ: CC BY-NC-SA 4.0
-著作権者: 中島康 / 東京医療減災Labo
-
-### コード: MIT License
-
-## 👤 著者
-
-**中島 康（Yasushi Nakajima）**  
-東京医療減災Labo / ©HDMG2004 2026
+コンテンツは CC BY-NC-SA 4.0、コードは MIT License。紹介しているツールの本体・説明書は本リポジトリに含まれず、各リポジトリの LICENSE に従います。詳しくは [LICENSE.md](LICENSE.md)。
 
 ## 📧 お問い合わせ
 
-**Email**: [tbk_gensai_labo@tmhp.jp](mailto:tbk_gensai_labo@tmhp.jp)
+hdmg2004@gmail.com
 
 ## 🔄 更新履歴
 
-### Version 3.0 (2026-03-25)
-- index.htmlによろず相談AI・減災カレンダーHDMGカードを追加
-- 「ツールとリソース」セクションを新設（課題別ガイドと分離）
-- 「3つまとめて開く」セクションを削除
-- HDMG_DESIGN_SYSTEMのカラー変数に統一
+### Version 3.1（2026-10-29）
+- ポータルに「病院の災害対応ツール」を新設（発災時行動判断支援ツール v2.3／病院医療継続 活動ツール β v11.1 の紹介とリンク）
+- 著作表示・連絡先を「© 東京医療減災Labo」「hdmg2004@gmail.com」に統一
+- ファイル整理：`docs_old/`・`HP/`（gensai-labo.tokyo の旧下書き）・汎用のデプロイ手順・`PROJECT_STRUCTURE.md`（本READMEに統合）を削除、作業用資料を `notes/` へ移動
 
-### Version 2.0 (2026-02-10)
-- プロジェクト構造を`docs/`フォルダに整理
-- ファイル名を英語表記に統一（GitHub対応）
+### Version 3.0（2026-03-25）
+- よろず相談AI・減災カレンダーHDMGカードを追加、「ツールとリソース」を新設
 
-### Version 1.0 (2025-11-04)
+### Version 2.0（2026-02-10）
+- `docs/` フォルダに整理、ファイル名を英語表記に統一
+
+### Version 1.0（2025-11-04）
 - 初版公開
-
----
-
-**Made with ❤️ by 東京医療減災Labo**

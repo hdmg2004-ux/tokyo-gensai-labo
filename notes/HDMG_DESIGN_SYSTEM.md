@@ -955,4 +955,4 @@ export function AvailabilityBadge({ available, capacity }: AvailabilityBadgeProp
 
 **作成**: Claude + ユーザー  
 **ライセンス**: MIT  
-**お問い合わせ**: tbk_gensai_labo@tmhp.jp
+**お問い合わせ**: hdmg2004@gmail.com
