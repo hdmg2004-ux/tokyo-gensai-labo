@@ -31,7 +31,7 @@
 ### 例外
 教育機関・医療機関での研修利用については、事前にご相談ください。
 
-**お問い合わせ**: hdmg2004@gmail.com
+**お問い合わせ**: tbk_gensai_labo@tmhp.jp
 
 ## 対象外
 
@@ -53,7 +53,7 @@ https://hdmg2004-ux.github.io/tokyo-gensai-labo/
 ```
 
 ### 商用利用をご希望の方
-**Email**: hdmg2004@gmail.com
+**Email**: tbk_gensai_labo@tmhp.jp
 
 ---
 
